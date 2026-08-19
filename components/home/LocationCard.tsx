@@ -24,8 +24,19 @@ export function LocationCard({ location }: { location: Location }) {
       </div>
 
       <div>
-        <Link href={`/locations/${location.slug}`} className="hover:text-orange">
-          <h3 className="font-display text-4xl uppercase tracking-wide text-black">{location.name}</h3>
+        <Link
+          href={`/locations/${location.slug}`}
+          className="group inline-flex items-center gap-3 text-black transition-colors hover:text-orange"
+        >
+          <h3 className="font-display text-4xl uppercase tracking-wide">{location.name}</h3>
+          <span
+            aria-hidden="true"
+            className="-mt-1 flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full border border-black transition-colors group-hover:border-orange"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={5} className="h-2 w-2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m0 0-6-6m6 6-6 6" />
+            </svg>
+          </span>
         </Link>
 
         <div className="mt-3 flex flex-wrap gap-2">

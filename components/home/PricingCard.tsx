@@ -1,16 +1,86 @@
-import { BookNowButton } from "@/components/ui/BookNowButton";
+import Link from "next/link";
 import type { PricingTier } from "@/lib/data/pricing";
 
-export function PricingCard({ tier }: { tier: PricingTier }) {
-  return (
-    <div className="flex flex-col rounded-2xl border border-green-dark/10 bg-white/60 p-6">
-      <h3 className="font-display text-xl uppercase tracking-wide">{tier.name}</h3>
-      <p className="mt-2 text-sm text-green-dark/80">{tier.tagline}</p>
+type PricingColor = {
+  border: string;
+  cardShadow: string;
+  buttonShadow: string;
+  accentBg: string;
+  accentText: string;
+  buttonHoverBg: string;
+};
 
-      <ul className="mt-6 flex flex-1 flex-col gap-3 text-sm">
+const PRICING_COLORS: PricingColor[] = [
+  {
+    border: "border-green-light",
+    cardShadow: "shadow-[8px_8px_0_0_var(--color-green-light)]",
+    buttonShadow: "shadow-[4px_4px_0_0_var(--color-green-light)]",
+    accentBg: "bg-green-light",
+    accentText: "text-green-light",
+    buttonHoverBg: "hover:bg-green-light",
+  },
+  {
+    border: "border-blue",
+    cardShadow: "shadow-[8px_8px_0_0_var(--color-blue)]",
+    buttonShadow: "shadow-[4px_4px_0_0_var(--color-blue)]",
+    accentBg: "bg-blue",
+    accentText: "text-blue",
+    buttonHoverBg: "hover:bg-blue",
+  },
+  {
+    border: "border-orange",
+    cardShadow: "shadow-[8px_8px_0_0_var(--color-orange)]",
+    buttonShadow: "shadow-[4px_4px_0_0_var(--color-orange)]",
+    accentBg: "bg-orange",
+    accentText: "text-orange",
+    buttonHoverBg: "hover:bg-orange",
+  },
+  {
+    border: "border-wood-light",
+    cardShadow: "shadow-[8px_8px_0_0_var(--color-wood-light)]",
+    buttonShadow: "shadow-[4px_4px_0_0_var(--color-wood-light)]",
+    accentBg: "bg-wood-light",
+    accentText: "text-wood-light",
+    buttonHoverBg: "hover:bg-wood-light",
+  },
+  {
+    border: "border-wood-dark",
+    cardShadow: "shadow-[8px_8px_0_0_var(--color-wood-dark)]",
+    buttonShadow: "shadow-[4px_4px_0_0_var(--color-wood-dark)]",
+    accentBg: "bg-wood-dark",
+    accentText: "text-wood-dark",
+    buttonHoverBg: "hover:bg-wood-dark",
+  },
+];
+
+export function PricingCard({ tier, index }: { tier: PricingTier; index: number }) {
+  const color = PRICING_COLORS[index % PRICING_COLORS.length];
+
+  return (
+    <div className={`flex flex-col rounded-2xl border-2 ${color.border} bg-white px-4 py-6 ${color.cardShadow}`}>
+      {tier.nameLines ? (
+        <h3 className="font-display uppercase leading-none tracking-wide text-black">
+          <span className="block text-left text-xs">{tier.nameLines.small}</span>
+          <span className="block text-center text-4xl">{tier.nameLines.large}</span>
+        </h3>
+      ) : (
+        // Same two-line shape as the split headers (an invisible spacer line
+        // matching the small-label line's height) so every card's underline
+        // lands at the same vertical position regardless of title style.
+        <h3 className="font-display uppercase leading-none tracking-wide text-black">
+          <span aria-hidden="true" className="invisible block text-left text-xs">
+            &nbsp;
+          </span>
+          <span className="block text-center text-4xl">{tier.name}</span>
+        </h3>
+      )}
+      <div className={`mt-2 h-1 w-full rounded-full ${color.accentBg}`} />
+      <p className="mt-3 font-sans text-sm font-normal text-black/80">{tier.tagline}</p>
+
+      <ul className="mt-6 flex flex-1 flex-col gap-3 font-sans text-sm font-normal">
         {tier.features.map((feature) => (
-          <li key={feature} className="flex gap-2">
-            <span aria-hidden="true" className="text-orange">
+          <li key={feature} className="flex items-start gap-2">
+            <span aria-hidden="true" className={`${color.accentText} text-xl leading-none`}>
               •
             </span>
             <span>{feature}</span>
@@ -18,7 +88,13 @@ export function PricingCard({ tier }: { tier: PricingTier }) {
         ))}
       </ul>
 
-      <BookNowButton className="mt-8" />
+      {/* Placeholder target, same as BookNowButton, until the Glofox booking link/iframe replaces this route. */}
+      <Link
+        href="/book"
+        className={`mt-8 inline-flex items-center justify-center rounded-xl border-2 ${color.border} bg-white px-5 py-3 font-display text-lg uppercase tracking-wide text-black transition-colors ${color.buttonShadow} ${color.buttonHoverBg} hover:text-white`}
+      >
+        Book Now
+      </Link>
     </div>
   );
 }

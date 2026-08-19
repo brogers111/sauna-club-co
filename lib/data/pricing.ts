@@ -1,6 +1,9 @@
 export type PricingTier = {
   slug: string;
   name: string;
+  // For tiers whose name needs a small label line above the main word
+  // (e.g. "Monthly" / "Unlimited") instead of one plain heading.
+  nameLines?: { small: string; large: string };
   tagline: string;
   features: string[];
   // TODO: confirm real prices before launch — not present in the source design.
@@ -11,8 +14,8 @@ export type PricingTier = {
 export const pricingTiers: PricingTier[] = [
   {
     slug: "single-session",
-    name: "Single Session",
-    tagline: "Perfect for first-timers, drop-ins, or anyone needing a reset.",
+    name: "1 Session",
+    tagline: "Perfect for first-timers, drop-ins, or simple resets.",
     features: [
       "1 Hour full facility access",
       "Saunas, cold plunges & hot tub",
@@ -25,7 +28,7 @@ export const pricingTiers: PricingTier[] = [
   {
     slug: "4-sessions",
     name: "4 Sessions",
-    tagline: "Ideal for building a consistent weekly wellness routine.",
+    tagline: "Ideal for building a wellness routine.",
     features: [
       "4 Single-Hour passes",
       "Full access to all facility amenities",
@@ -51,7 +54,8 @@ export const pricingTiers: PricingTier[] = [
   {
     slug: "monthly-unlimited",
     name: "Monthly Unlimited",
-    tagline: "Maximum flexibility to make contrast therapy a daily habit.",
+    nameLines: { small: "Monthly", large: "Unlimited" },
+    tagline: "Maximum flexibility to develop a daily habit.",
     features: [
       "Unlimited 1-Hour visits for 30 days",
       "Full access to all facility amenities",
@@ -64,7 +68,8 @@ export const pricingTiers: PricingTier[] = [
   {
     slug: "3-month-unlimited",
     name: "3 Month Unlimited",
-    tagline: "Our best rate for long-term dedication to daily wellness.",
+    nameLines: { small: "3 Month", large: "Unlimited" },
+    tagline: "Our best rate for long-term dedication.",
     features: [
       "Unlimited 1-Hour visits for 90 days",
       "Full access to all facility amenities",
