@@ -14,7 +14,10 @@ export type Location = {
     coldPlunges: number;
     hotTubs: number;
   };
-  description: string;
+  // Short, concise version for <meta> tags — not the full on-page copy.
+  metaDescription: string;
+  // On-page copy, one entry per paragraph.
+  description: string[];
   heroImage: {
     src: string;
     alt: string;
@@ -41,15 +44,19 @@ export const locations: Location[] = [
       coldPlunges: 3,
       hotTubs: 1,
     },
-    description:
+    metaDescription:
       "Ready to relax and socialize with fellow locals? Stop by Sauna Club Co in Wheat Ridge, CO for your escape.",
+    description: [
+      "Escape the rush and reset your body at our Wheat Ridge location. Designed around the core pillars of heat, cold, and connection, this facility offers an elevated space to push your limits, reduce stress, and restore your mind.",
+      "Inside, you'll find two custom saunas for deep detoxification and muscle relief, complemented by three precision-chilled plunge tubs and a hot tub for total body recovery. Move seamlessly between fire and ice, then stick around to socialize and recharge in a welcoming, community-driven atmosphere.",
+    ],
     heroImage: {
       src: "/images/hero-image.webp",
       alt: "Steam rising inside the cedar sauna at Sauna Club Co's Wheat Ridge location",
     },
     image: {
-      src: "/images/sauna-interior.webp",
-      alt: "Interior of the wood-paneled sauna at Sauna Club Co Wheat Ridge",
+      src: "/images/people-sauna-1.webp",
+      alt: "Two men enjoying the sauna together at Sauna Club Co Wheat Ridge",
     },
   },
 ];

@@ -26,9 +26,8 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
 
   return buildMetadata({
     title: `Sauna & Cold Plunge in ${location.name}, ${location.region}`,
-    description: location.description,
+    description: location.metaDescription,
     path: `/locations/${location.slug}`,
-    image: location.image.src,
   });
 }
 
@@ -58,7 +57,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
     `${location.amenities.saunas} Sauna${location.amenities.saunas === 1 ? "" : "s"}`,
     `${location.amenities.coldPlunges} Cold Plunge${location.amenities.coldPlunges === 1 ? "" : "s"}`,
     `${location.amenities.hotTubs} Hot Tub${location.amenities.hotTubs === 1 ? "" : "s"}`,
-    "Community",
+    "∞ Community",
   ];
 
   return (
@@ -74,7 +73,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
           ...services.map((service) => serviceSchema(location, service)),
         ]}
       />
-      <Header />
+      <Header overlay />
       <main>
         <section className="relative flex h-[50vh] min-h-90 items-center justify-center overflow-hidden">
           <Image
@@ -85,8 +84,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-green-dark/40" />
-          <h1 className="relative z-10 font-display text-5xl uppercase tracking-wide text-tan-light">
+          <h1 className="relative z-10 font-display text-5xl uppercase tracking-wide text-tan-light [text-shadow:0_4px_24px_rgb(0_0_0/45%)]">
             {location.name}
           </h1>
         </section>
@@ -99,7 +97,11 @@ export default async function LocationPage({ params }: LocationPageProps) {
               </Badge>
             ))}
           </div>
-          <p className="mt-6 text-green-dark/90">{location.description}</p>
+          <div className="mt-6 flex flex-col gap-4 text-black/80">
+            {location.description.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
           <BookNowButton className="mt-8" />
         </section>
 
@@ -110,7 +112,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
               {services.map((service) => (
                 <div key={service.name}>
                   <h3 className="font-display text-xl uppercase tracking-wide">{service.name}</h3>
-                  <p className="mt-2 text-sm text-green-dark/90">{service.description}</p>
+                  <p className="mt-2 text-sm text-black/80">{service.description}</p>
                 </div>
               ))}
             </div>

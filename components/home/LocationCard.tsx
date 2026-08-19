@@ -8,7 +8,7 @@ export function LocationCard({ location }: { location: Location }) {
     `${location.amenities.saunas} Sauna${location.amenities.saunas === 1 ? "" : "s"}`,
     `${location.amenities.coldPlunges} Cold Plunge${location.amenities.coldPlunges === 1 ? "" : "s"}`,
     `${location.amenities.hotTubs} Hot Tub${location.amenities.hotTubs === 1 ? "" : "s"}`,
-    "Community",
+    "∞ Community",
   ];
 
   return (
@@ -25,7 +25,7 @@ export function LocationCard({ location }: { location: Location }) {
 
       <div>
         <Link href={`/locations/${location.slug}`} className="hover:text-orange">
-          <h3 className="font-display text-2xl uppercase tracking-wide">{location.name}</h3>
+          <h3 className="font-display text-4xl uppercase tracking-wide text-black">{location.name}</h3>
         </Link>
 
         <div className="mt-3 flex flex-wrap gap-2">
@@ -36,7 +36,11 @@ export function LocationCard({ location }: { location: Location }) {
           ))}
         </div>
 
-        <p className="mt-4 text-green-dark/90">{location.description}</p>
+        <div className="mt-4 flex flex-col gap-4 text-black/80">
+          {location.description.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -24,9 +24,9 @@ export default function LocationsIndexPage() {
         ])}
       />
       <Header />
-      <main className="mx-auto max-w-6xl px-6 py-20">
+      <main className="mx-auto max-w-6xl px-6 py-10">
         <SectionHeading>Locations</SectionHeading>
-        <div className="mt-10 flex flex-col gap-16">
+        <div className="mt-6 flex flex-col gap-16">
           {locations.map((location) => (
             <LocationCard key={location.slug} location={location} />
           ))}

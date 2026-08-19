@@ -10,7 +10,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { SITE_DESCRIPTION } from "@/lib/site-config";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Sauna, Cold Plunge & Hot Tub Studio in Wheat Ridge, CO",
+  title: "Sauna & Cold Plunge Studio in Wheat Ridge, CO",
   description: SITE_DESCRIPTION,
   path: "/",
 });
@@ -18,7 +18,7 @@ export const metadata: Metadata = buildMetadata({
 export default function HomePage() {
   return (
     <>
-      <Header />
+      <Header overlay />
       <main>
         <Hero />
         <ServicesSection />

@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { BookNowButton } from "@/components/ui/BookNowButton";
+import { Button } from "@/components/ui/Button";
+import { isActiveNavLink } from "@/lib/nav";
 import { MobileNav } from "./MobileNav";
 
 const NAV_LINKS = [
@@ -10,44 +15,58 @@ const NAV_LINKS = [
   { href: "/about", label: "About" },
 ];
 
-export function Header() {
+type HeaderProps = {
+  // Pages with an image/color band directly beneath the header (e.g. a hero)
+  // let the nav float in front of it instead of reserving its own space.
+  overlay?: boolean;
+};
+
+export function Header({ overlay = false }: HeaderProps) {
+  const pathname = usePathname();
+
   return (
-    <header className="sticky top-0 z-50 bg-tan-light/95 backdrop-blur supports-backdrop-filter:bg-tan-light/80">
-      <div className="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-2" aria-label={"Sauna Club Co home"}>
-          <Image
-            src="/images/full-logo-black.png"
-            alt="Sauna Club Co"
-            width={160}
-            height={84}
-            priority
-            className="h-10 w-auto"
-          />
-        </Link>
-
-        <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium uppercase tracking-wide text-green-dark hover:text-orange"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-4">
-          <Link
-            href="/account"
-            className="hidden text-sm font-medium uppercase tracking-wide text-green-dark hover:text-orange md:inline"
-          >
-            My Account
+    <>
+      <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 sm:px-8 lg:px-16">
+        <div className="relative flex items-center gap-6 rounded-b-3xl bg-tan-light px-6 py-5 shadow-md md:gap-10 md:px-10">
+          <Link href="/" className="flex items-center gap-2" aria-label="Sauna Club Co home">
+            <Image
+              src="/images/full-logo-black.png"
+              alt="Sauna Club Co"
+              width={200}
+              height={104}
+              priority
+              className="h-13 w-auto"
+            />
           </Link>
-          <BookNowButton />
-          <MobileNav />
+
+          <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
+            {NAV_LINKS.map((link) => {
+              const active = isActiveNavLink(pathname, link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`text-md hover:text-orange ${active ? "font-medium" : "font-normal"}`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </nav>
+
+          <div className="flex items-center gap-3">
+            <Button href="/account" variant="muted" className="hidden md:inline-flex">
+              My Account
+            </Button>
+            <BookNowButton />
+            <MobileNav />
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      {overlay ? null : (
+        <div className="h-18 md:h-21" aria-hidden="true" />
+      )}
+    </>
   );
 }

@@ -12,7 +12,7 @@ export function buildMetadata({
   title,
   description,
   path,
-  image = "/images/hero-image.webp",
+  image = "/images/og-image.jpg",
 }: BuildMetadataOptions): Metadata {
   const url = `${SITE_URL}${path}`;
 

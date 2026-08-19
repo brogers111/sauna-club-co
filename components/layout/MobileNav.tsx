@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { isActiveNavLink } from "@/lib/nav";
 
 const NAV_LINKS = [
   { href: "/locations", label: "Locations" },
@@ -13,6 +15,7 @@ const NAV_LINKS = [
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <div className="md:hidden">
@@ -35,19 +38,27 @@ export function MobileNav() {
       </button>
 
       {open ? (
-        <nav id="mobile-nav-menu" aria-label="Primary" className="absolute inset-x-0 top-full bg-tan-light px-6 pb-6 shadow-sm">
+        <nav
+          id="mobile-nav-menu"
+          aria-label="Primary"
+          className="absolute inset-x-0 top-full rounded-b-[2.5rem] bg-tan-light px-6 pb-6 shadow-sm"
+        >
           <ul className="flex flex-col gap-4">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="block text-sm font-medium uppercase tracking-wide text-green-dark"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const active = isActiveNavLink(pathname, link.href);
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    aria-current={active ? "page" : undefined}
+                    className={`block text-sm text-green-dark ${active ? "font-medium" : "font-normal"}`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       ) : null}

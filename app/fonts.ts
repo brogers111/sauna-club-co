@@ -15,5 +15,9 @@ export const dushick = localFont({
   weight: "400",
   style: "normal",
   variable: "--font-dushick",
-  display: "swap",
+  // "block" (not "swap"): this font backs FitText's width-fitting math, which
+  // measures character widths — swapping from a mismatched fallback font would
+  // recompute (and visibly resize) the headline once the real font loads.
+  // Safe to block briefly since it's small (~20KB) and same-origin.
+  display: "block",
 });
