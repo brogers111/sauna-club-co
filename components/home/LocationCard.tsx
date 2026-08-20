@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { Badge } from "@/components/ui/Badge";
 import type { Location } from "@/lib/data/locations";
 
@@ -13,7 +14,7 @@ export function LocationCard({ location }: { location: Location }) {
 
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center">
-      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+      <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
         <Image
           src={location.image.src}
           alt={location.image.alt}
@@ -29,14 +30,7 @@ export function LocationCard({ location }: { location: Location }) {
           className="group inline-flex items-center gap-3 text-black transition-colors hover:text-orange"
         >
           <h3 className="font-display text-4xl uppercase tracking-wide">{location.name}</h3>
-          <span
-            aria-hidden="true"
-            className="-mt-1 flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full border border-black transition-colors group-hover:border-orange"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={5} className="h-2 w-2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m0 0-6-6m6 6-6 6" />
-            </svg>
-          </span>
+          <ArrowIcon direction="right" className="-mt-1 h-5 w-5 shrink-0" />
         </Link>
 
         <div className="mt-3 flex flex-wrap gap-2">

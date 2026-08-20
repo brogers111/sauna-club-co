@@ -27,7 +27,7 @@ export function Header({ overlay = false }: HeaderProps) {
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 sm:px-8 lg:px-16">
-        <div className="relative flex items-center gap-6 rounded-b-2xl bg-tan-light px-6 py-4 shadow-md md:gap-10 md:px-10">
+        <div className="relative flex w-full items-center justify-between gap-6 rounded-b-2xl bg-tan-light px-6 py-4 shadow-md md:w-auto md:gap-10 md:px-10">
           <Link href="/" className="flex items-center gap-2" aria-label="Sauna Club Co home">
             <Image
               src="/images/full-logo-black.png"
@@ -56,10 +56,19 @@ export function Header({ overlay = false }: HeaderProps) {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Button href="/account" variant="muted" className="hidden md:inline-flex">
-              My Account
-            </Button>
-            <BookNowButton />
+            {/* Wrapped rather than passed as a className: Button/BookNowButton
+                already hardcode "inline-flex" in their own base classes, which
+                ties with (and can silently beat) a `hidden` override applied
+                to the same element depending on Tailwind's generated rule
+                order. Hiding the wrapper instead avoids the conflict entirely. */}
+            <div className="hidden md:block">
+              <Button href="/account" variant="muted">
+                My Account
+              </Button>
+            </div>
+            <div className="hidden md:block">
+              <BookNowButton />
+            </div>
             <MobileNav />
           </div>
         </div>

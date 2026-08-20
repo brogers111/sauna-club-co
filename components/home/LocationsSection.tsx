@@ -6,9 +6,9 @@ import { locations } from "@/lib/data/locations";
 export function LocationsSection() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-10" id="locations">
-      <div className="flex items-end justify-between gap-6">
+      <div className="flex items-start gap-6 md:items-end md:justify-between">
         <SectionHeading>Locations</SectionHeading>
-        <div className="relative aspect-8/4 w-40 shrink-0 overflow-hidden rounded-2xl sm:w-60">
+        <div className="relative hidden aspect-8/4 w-40 shrink-0 self-end overflow-hidden rounded-2xl sm:w-60 md:block">
           <Image
             src="/images/wheat-ridge.webp"
             alt="Aerial view of the Wheat Ridge, CO neighborhood surrounding Sauna Club Co"

@@ -10,7 +10,7 @@ import { breadcrumbListSchema } from "@/lib/seo/schema";
 
 export const metadata: Metadata = buildMetadata({
   title: "Locations",
-  description: "Find a Sauna Club Co sauna, cold plunge, and hot tub studio near you.",
+  description: "Find a Sauna Club Co studio near you. Enjoy the comfort, relaxation, and socialization our club has to offer!",
   path: "/locations",
 });
 

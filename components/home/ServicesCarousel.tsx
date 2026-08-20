@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { ArrowIcon } from "@/components/ui/ArrowIcon";
 
 const TEXT_FADE_MS = 400;
 
@@ -94,7 +95,7 @@ export function ServicesCarousel() {
           return (
             <div
               key={service.slug}
-              className="absolute top-1/2 aspect-5/4 overflow-hidden rounded-2xl shadow-md transition-all duration-500 ease-out"
+              className="absolute top-1/2 aspect-4/6 overflow-hidden rounded-2xl shadow-md transition-all duration-500 ease-out md:aspect-5/4"
               style={{
                 left: style.left,
                 width: style.width,
@@ -114,35 +115,55 @@ export function ServicesCarousel() {
           );
         })}
 
+        {/* Desktop: arrows sit beside the middle image, overlaid on the stage. */}
         <button
           type="button"
           onClick={() => go(-1)}
           aria-label="Show previous service"
-          className="absolute left-[25%] top-1/2 z-40 flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border-2 border-black text-black transition-colors hover:bg-black hover:text-tan-light"
+          className="absolute left-[25%] top-1/2 z-40 hidden -translate-x-1/2 -translate-y-1/2 cursor-pointer text-black transition-colors hover:text-orange md:block"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3} className="h-3.5 w-3.5">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 5 8 12l7 7" />
-          </svg>
+          <ArrowIcon direction="left" className="h-5 w-5" />
         </button>
 
         <button
           type="button"
           onClick={() => go(1)}
           aria-label="Show next service"
-          className="absolute left-[75%] top-1/2 z-40 flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border-2 border-black text-black transition-colors hover:bg-black hover:text-tan-light"
+          className="absolute left-[75%] top-1/2 z-40 hidden -translate-x-1/2 -translate-y-1/2 cursor-pointer text-black transition-colors hover:text-orange md:block"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3} className="h-3.5 w-3.5">
-            <path strokeLinecap="round" strokeLinejoin="round" d="m9 5 7 7-7 7" />
-          </svg>
+          <ArrowIcon direction="right" className="h-5 w-5" />
+        </button>
+      </div>
+
+      {/* Mobile: arrows sit in normal flow below the stage instead of
+          overlapping the (now off-screen-at-the-edges) side images. */}
+      <div className="mt-4 flex items-center justify-center gap-10 md:hidden">
+        <button
+          type="button"
+          onClick={() => go(-1)}
+          aria-label="Show previous service"
+          className="cursor-pointer text-black transition-colors hover:text-orange"
+        >
+          <ArrowIcon direction="left" className="h-5 w-5" />
+        </button>
+        <button
+          type="button"
+          onClick={() => go(1)}
+          aria-label="Show next service"
+          className="cursor-pointer text-black transition-colors hover:text-orange"
+        >
+          <ArrowIcon direction="right" className="h-5 w-5" />
         </button>
       </div>
 
       <div className="mt-4 flex flex-col items-center text-center">
-        {/* Icon and heading each anchor to a fixed point either side of the
-            centerline, independently of the H3's text length, so neither
-            shifts position as the active slide (and heading length) changes. */}
-        <div className="relative h-14 w-full">
-          <div className="absolute top-1/2 right-[calc(50%+50px)] -translate-y-1/2">
+        {/* Icon and heading sit in a plain left-aligned row on mobile
+            (pl-10). At md+, they instead each anchor to a fixed point either
+            side of the centerline, independently of the H3's text length,
+            so neither shifts position as the active slide (and heading
+            length) changes. */}
+        <div className="relative flex w-full items-center gap-3 pl-10 md:h-14 md:gap-0 md:pl-0">
+          <div className="md:absolute md:top-1/2 md:right-[calc(50%+50px)] md:-translate-y-1/2">
             <Image
               src={STEAM_ICON[active.steamVariant]}
               alt={`Steam icon highlighting the currently active service, ${active.heading}`}
@@ -152,7 +173,7 @@ export function ServicesCarousel() {
             />
           </div>
 
-          <div className="absolute top-1/2 left-[calc(50%-50px)] -translate-y-1/2 text-left">
+          <div className="text-left md:absolute md:top-1/2 md:left-[calc(50%-50px)] md:-translate-y-1/2">
             {SERVICES.map((service, index) => {
               const isActive = index === activeIndex;
               return (

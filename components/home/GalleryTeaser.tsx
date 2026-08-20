@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowIcon } from "@/components/ui/ArrowIcon";
 
 export function GalleryTeaser() {
   return (
@@ -30,14 +31,7 @@ export function GalleryTeaser() {
             className="group mt-2 inline-flex items-center gap-3 self-end text-black transition-colors hover:text-orange"
           >
             <span className="font-display text-4xl uppercase tracking-wide">See More</span>
-            <span
-              aria-hidden="true"
-              className="-mt-1 flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full border border-black transition-colors group-hover:border-orange"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={5} className="h-2 w-2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m0 0-6-6m6 6-6 6" />
-              </svg>
-            </span>
+            <ArrowIcon direction="right" className="-mt-1 h-5 w-5 shrink-0" />
           </Link>
         </div>
 

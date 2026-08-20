@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
   if (!location) return {};
 
   return buildMetadata({
-    title: `Sauna & Cold Plunge in ${location.name}, ${location.region}`,
+    title: `Sauna & Cold Plunge Studio in ${location.name}, ${location.region}`,
     description: location.metaDescription,
     path: `/locations/${location.slug}`,
   });

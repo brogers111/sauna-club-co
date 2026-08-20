@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { FitText } from "./FitText";
 
 export function Hero() {
@@ -26,11 +27,9 @@ export function Hero() {
         <a
           href="#services"
           aria-label="Scroll to our services"
-          className="absolute bottom-6 left-1/2 z-10 flex h-9 w-9 -translate-x-1/2 items-center justify-center rounded-full border-2 border-tan-light text-tan-light transition-colors hover:bg-tan-light hover:text-green-dark"
+          className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-tan-light transition-colors hover:text-orange"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3} className="h-4 w-4">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14m0 0-6-6m6 6 6-6" />
-          </svg>
+          <ArrowIcon direction="down" className="h-10 w-10" />
         </a>
       </div>
     </section>
