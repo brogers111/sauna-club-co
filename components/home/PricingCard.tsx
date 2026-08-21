@@ -60,7 +60,7 @@ export function PricingCard({ tier, index }: { tier: PricingTier; index: number 
     <div className={`flex flex-col rounded-2xl border-2 ${color.border} bg-white px-4 py-6 ${color.cardShadow}`}>
       {tier.nameLines ? (
         <h3 className="font-display uppercase leading-none tracking-wide text-black">
-          <span className="block text-left text-xs">{tier.nameLines.small}</span>
+          <span className="block text-left text-lg">{tier.nameLines.small}</span>
           <span className="block text-center text-4xl">{tier.nameLines.large}</span>
         </h3>
       ) : (
@@ -68,16 +68,16 @@ export function PricingCard({ tier, index }: { tier: PricingTier; index: number 
         // matching the small-label line's height) so every card's underline
         // lands at the same vertical position regardless of title style.
         <h3 className="font-display uppercase leading-none tracking-wide text-black">
-          <span aria-hidden="true" className="invisible block text-left text-xs">
+          <span aria-hidden="true" className="invisible block text-left text-lg">
             &nbsp;
           </span>
           <span className="block text-center text-4xl">{tier.name}</span>
         </h3>
       )}
       <div className={`mt-2 h-1 w-full rounded-full ${color.accentBg}`} />
-      <p className="mt-3 font-sans text-sm font-normal text-black/80">{tier.tagline}</p>
+      <p className="mt-3 px-4 font-sans text-sm font-normal text-black/80 md:px-0">{tier.tagline}</p>
 
-      <ul className="mt-6 flex flex-1 flex-col gap-3 font-sans text-sm font-normal">
+      <ul className="mt-6 flex flex-1 flex-col gap-3 px-4 font-sans text-sm font-normal md:px-0">
         {tier.features.map((feature) => (
           <li key={feature} className="flex items-start gap-2">
             <span aria-hidden="true" className={`${color.accentText} text-xl leading-none`}>

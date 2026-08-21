@@ -82,7 +82,7 @@ export function ServicesCarousel() {
 
   return (
     <div>
-      <div className="relative h-70 overflow-hidden sm:h-90 md:h-105">
+      <div className="relative h-60 overflow-hidden sm:h-90 md:h-105">
         {/* Edge fades — the outer edges of the side images dissolve into the page background. */}
         <div className="pointer-events-none absolute inset-y-0 left-0 z-30 w-16 bg-linear-to-r from-tan-light to-transparent sm:w-24 md:w-32" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-30 w-16 bg-linear-to-l from-tan-light to-transparent sm:w-24 md:w-32" />
@@ -114,30 +114,11 @@ export function ServicesCarousel() {
             </div>
           );
         })}
-
-        {/* Desktop: arrows sit beside the middle image, overlaid on the stage. */}
-        <button
-          type="button"
-          onClick={() => go(-1)}
-          aria-label="Show previous service"
-          className="absolute left-[25%] top-1/2 z-40 hidden -translate-x-1/2 -translate-y-1/2 cursor-pointer text-black transition-colors hover:text-orange md:block"
-        >
-          <ArrowIcon direction="left" className="h-5 w-5" />
-        </button>
-
-        <button
-          type="button"
-          onClick={() => go(1)}
-          aria-label="Show next service"
-          className="absolute left-[75%] top-1/2 z-40 hidden -translate-x-1/2 -translate-y-1/2 cursor-pointer text-black transition-colors hover:text-orange md:block"
-        >
-          <ArrowIcon direction="right" className="h-5 w-5" />
-        </button>
       </div>
 
-      {/* Mobile: arrows sit in normal flow below the stage instead of
-          overlapping the (now off-screen-at-the-edges) side images. */}
-      <div className="mt-4 flex items-center justify-center gap-10 md:hidden">
+      {/* Arrows + steam icon sit in one centered row below the image stage,
+          on both mobile and desktop — no more overlaying the stage itself. */}
+      <div className="mt-4 flex items-center justify-center gap-6">
         <button
           type="button"
           onClick={() => go(-1)}
@@ -146,6 +127,15 @@ export function ServicesCarousel() {
         >
           <ArrowIcon direction="left" className="h-5 w-5" />
         </button>
+
+        <Image
+          src={STEAM_ICON[active.steamVariant]}
+          alt={`Steam icon highlighting the currently active service, ${active.heading}`}
+          width={64}
+          height={52}
+          className="h-12 w-auto"
+        />
+
         <button
           type="button"
           onClick={() => go(1)}
@@ -156,58 +146,39 @@ export function ServicesCarousel() {
         </button>
       </div>
 
-      <div className="mt-4 flex flex-col items-center text-center">
-        {/* Icon and heading sit in a plain left-aligned row on mobile
-            (pl-10). At md+, they instead each anchor to a fixed point either
-            side of the centerline, independently of the H3's text length,
-            so neither shifts position as the active slide (and heading
-            length) changes. */}
-        <div className="relative flex w-full items-center gap-3 pl-10 md:h-14 md:gap-0 md:pl-0">
-          <div className="md:absolute md:top-1/2 md:right-[calc(50%+50px)] md:-translate-y-1/2">
-            <Image
-              src={STEAM_ICON[active.steamVariant]}
-              alt={`Steam icon highlighting the currently active service, ${active.heading}`}
-              width={64}
-              height={52}
-              className="h-12 w-auto"
-            />
-          </div>
+      <div className="mt-4 text-center">
+        {SERVICES.map((service, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <h3
+              key={service.slug}
+              className={isActive ? "font-display text-4xl uppercase tracking-wide text-black" : "sr-only"}
+              aria-hidden={isActive ? undefined : true}
+            >
+              {service.heading}
+            </h3>
+          );
+        })}
+      </div>
 
-          <div className="text-left md:absolute md:top-1/2 md:left-[calc(50%-50px)] md:-translate-y-1/2">
-            {SERVICES.map((service, index) => {
-              const isActive = index === activeIndex;
-              return (
-                <h3
-                  key={service.slug}
-                  className={isActive ? "whitespace-nowrap font-display text-4xl uppercase tracking-wide text-black" : "sr-only"}
-                  aria-hidden={isActive ? undefined : true}
-                >
-                  {service.heading}
-                </h3>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Grid-stacked (all 3 paragraphs share the same cell) so the
-            container's height is always the tallest paragraph's height —
-            nothing below jumps around as shorter/longer text swaps in. */}
-        <div className="mt-4 grid w-full max-w-3xl justify-items-center">
-          {SERVICES.map((service, index) => {
-            const isTextActive = index === textIndex;
-            const shown = isTextActive && textVisible;
-            return (
-              <p
-                key={service.slug}
-                style={{ gridArea: "1 / 1" }}
-                className={`text-black/80 transition-opacity duration-400 ${shown ? "opacity-100" : "pointer-events-none opacity-0"}`}
-                aria-hidden={isTextActive ? undefined : true}
-              >
-                {service.paragraph}
-              </p>
-            );
-          })}
-        </div>
+      {/* Grid-stacked (all 3 paragraphs share the same cell) so the
+          container's height is always the tallest paragraph's height —
+          nothing below jumps around as shorter/longer text swaps in. */}
+      <div className="mx-auto mt-4 grid w-full max-w-3xl justify-items-center text-center">
+        {SERVICES.map((service, index) => {
+          const isTextActive = index === textIndex;
+          const shown = isTextActive && textVisible;
+          return (
+            <p
+              key={service.slug}
+              style={{ gridArea: "1 / 1" }}
+              className={`text-black/80 transition-opacity duration-400 ${shown ? "opacity-100" : "pointer-events-none opacity-0"}`}
+              aria-hidden={isTextActive ? undefined : true}
+            >
+              {service.paragraph}
+            </p>
+          );
+        })}
       </div>
     </div>
   );

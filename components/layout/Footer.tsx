@@ -56,7 +56,7 @@ const SOCIAL_ICONS: { key: string; href: string; label: string; Icon: ComponentT
 export function Footer() {
   return (
     <footer className="mx-6 mt-24 rounded-t-3xl bg-tan-light text-black shadow-[0_-8px_24px_-6px_rgba(0,0,0,0.15)]">
-      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-10 px-10 py-12 md:flex-row md:items-start md:justify-between">
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-10 px-8 py-12 md:flex-row md:items-start md:justify-between">
         <div className="grid grid-flow-col grid-rows-3 items-center gap-x-10 gap-y-6">
           {SOCIAL_ICONS.map(({ key, href, label, Icon }) => (
             <Link
@@ -84,13 +84,19 @@ export function Footer() {
             desktop widths, so it stays centered regardless of how wide the nav
             and newsletter columns are; falls back to normal in-flow centering
             when the layout stacks on mobile. */}
-        <Image
-          src="/images/full-logo-black.png"
-          alt="Sauna Club Co"
-          width={320}
-          height={168}
-          className="h-16 w-auto md:absolute md:top-1/2 md:left-1/2 md:h-20 md:-translate-x-1/2 md:-translate-y-1/2"
-        />
+        {/* Padding lives on this wrapper, not the image itself — Tailwind's
+            border-box reset means padding on an element with an explicit
+            fixed height (h-16) would shrink its content box and squash the
+            image, instead of just adding space around it. */}
+        <div className="py-6 md:py-0">
+          <Image
+            src="/images/full-logo-black.png"
+            alt="Sauna Club Co"
+            width={320}
+            height={168}
+            className="h-16 w-auto md:absolute md:top-1/2 md:left-1/2 md:h-20 md:-translate-x-1/2 md:-translate-y-1/2"
+          />
+        </div>
 
         <div className="flex flex-col gap-3">
           <h4 className="font-display text-2xl uppercase tracking-wide">Stay Up To Date</h4>

@@ -90,12 +90,15 @@ export default async function LocationPage({ params }: LocationPageProps) {
         </section>
 
         <section className="mx-auto max-w-4xl px-6 py-16">
-          <div className="flex flex-wrap gap-2">
-            {badges.map((badge, index) => (
-              <Badge key={badge} index={index}>
-                {badge}
-              </Badge>
-            ))}
+          <div className="flex flex-col gap-2 md:flex-row md:flex-wrap">
+            <div className="flex gap-2 md:contents">
+              <Badge index={0}>{badges[0]}</Badge>
+              <Badge index={1}>{badges[1]}</Badge>
+            </div>
+            <div className="flex gap-2 md:contents">
+              <Badge index={2}>{badges[2]}</Badge>
+              <Badge index={3}>{badges[3]}</Badge>
+            </div>
           </div>
           <div className="mt-6 flex flex-col gap-4 text-black/80">
             {location.description.map((paragraph) => (
