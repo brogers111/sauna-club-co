@@ -75,6 +75,14 @@ export function PricingCard({ tier, index }: { tier: PricingTier; index: number 
         </h3>
       )}
       <div className={`mt-2 h-1 w-full rounded-full ${color.accentBg}`} />
+
+      {tier.priceUSD != null ? (
+        <div className="mt-3 text-center">
+          <span className="font-display text-3xl text-black">${tier.priceUSD}</span>
+          {tier.priceNote ? <span className="ml-1 font-sans text-xs text-black/60">({tier.priceNote})</span> : null}
+        </div>
+      ) : null}
+
       <p className="mt-3 px-4 font-sans text-sm font-normal text-black/80 md:px-0">{tier.tagline}</p>
 
       <ul className="mt-6 flex flex-1 flex-col gap-3 px-4 font-sans text-sm font-normal md:px-0">

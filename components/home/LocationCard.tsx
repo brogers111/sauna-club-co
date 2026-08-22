@@ -29,7 +29,9 @@ export function LocationCard({ location }: { location: Location }) {
           href={`/locations/${location.slug}`}
           className="group inline-flex items-center gap-3 text-black transition-colors hover:text-orange"
         >
-          <h3 className="font-display text-4xl uppercase tracking-wide">{location.name}</h3>
+          <h3 className="font-display text-4xl uppercase tracking-wide">
+            {location.name}, {location.region}
+          </h3>
           <ArrowIcon direction="right" className="-mt-1 h-5 w-5 shrink-0" />
         </Link>
 
@@ -47,6 +49,10 @@ export function LocationCard({ location }: { location: Location }) {
             <Badge index={3}>{badges[3]}</Badge>
           </div>
         </div>
+
+        <p className="mt-4 font-sans font-medium text-black">
+          {location.streetAddress}, {location.city}, {location.region} {location.postalCode}
+        </p>
 
         <div className="mt-4 flex flex-col gap-4 text-black/80">
           {location.description.map((paragraph) => (

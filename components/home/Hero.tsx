@@ -4,8 +4,8 @@ import { FitText } from "./FitText";
 
 export function Hero() {
   return (
-    <section className="h-dvh p-5">
-      <div className="relative h-full w-full overflow-hidden rounded-[2.5rem]">
+    <section className="h-dvh">
+      <div className="relative h-full w-full overflow-hidden">
         <Image
           src="/images/hero-image.webp"
           alt="Person relaxing in a steaming cedar sauna at Sauna Club Co"

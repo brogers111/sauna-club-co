@@ -6,8 +6,9 @@ export type PricingTier = {
   nameLines?: { small: string; large: string };
   tagline: string;
   features: string[];
-  // TODO: confirm real prices before launch — not present in the source design.
   priceUSD: number | null;
+  // e.g. "$24.75 each" — shown as a small note under multi-session prices.
+  priceNote?: string;
   billingDescription: string;
 };
 
@@ -22,7 +23,7 @@ export const pricingTiers: PricingTier[] = [
       "Showers & changing rooms included",
       "Great for trying contrast therapy",
     ],
-    priceUSD: null,
+    priceUSD: 30,
     billingDescription: "One-time purchase",
   },
   {
@@ -35,7 +36,8 @@ export const pricingTiers: PricingTier[] = [
       "Cycle between heat, cold & hot tub",
       "Flexible drop-in scheduling",
     ],
-    priceUSD: null,
+    priceUSD: 99,
+    priceNote: "$24.75 each",
     billingDescription: "One-time purchase",
   },
   {
@@ -48,7 +50,8 @@ export const pricingTiers: PricingTier[] = [
       "Cycle between heat, cold & hot tub",
       "Best value for regular drop-ins",
     ],
-    priceUSD: null,
+    priceUSD: 179,
+    priceNote: "$22.38 each",
     billingDescription: "Billed monthly",
   },
   {
@@ -62,7 +65,7 @@ export const pricingTiers: PricingTier[] = [
       "Daily sauna, cold plunge & hot tub",
       "Billed month-to-month",
     ],
-    priceUSD: null,
+    priceUSD: 149,
     billingDescription: "Billed month-to-month",
   },
   {
@@ -76,7 +79,7 @@ export const pricingTiers: PricingTier[] = [
       "Daily sauna, cold plunge & hot tub",
       "Lowest monthly price option",
     ],
-    priceUSD: null,
+    priceUSD: 399,
     billingDescription: "Billed every 3 months",
   },
 ];
