@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ComponentType } from "react";
+import { CopyrightNotice } from "./CopyrightNotice";
 import { NewsletterForm } from "./NewsletterForm";
 import { SOCIAL_LINKS } from "@/lib/site-config";
 
@@ -89,13 +90,19 @@ export function Footer() {
             fixed height (h-16) would shrink its content box and squash the
             image, instead of just adding space around it. */}
         <div className="py-6 md:py-0">
-          <Image
-            src="/images/full-logo-black.png"
-            alt="Sauna Club Co"
-            width={320}
-            height={168}
-            className="h-16 w-auto md:absolute md:top-1/2 md:left-1/2 md:h-20 md:-translate-x-1/2 md:-translate-y-1/2"
-          />
+          <Link
+            href="/"
+            aria-label="Sauna Club Co home"
+            className="block md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2"
+          >
+            <Image
+              src="/images/full-logo-black.png"
+              alt="Sauna Club Co"
+              width={320}
+              height={168}
+              className="h-16 w-auto md:h-20"
+            />
+          </Link>
         </div>
 
         <div className="flex flex-col gap-3">
@@ -107,6 +114,8 @@ export function Footer() {
           </p>
         </div>
       </div>
+
+      <CopyrightNotice />
     </footer>
   );
 }

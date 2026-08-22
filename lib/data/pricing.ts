@@ -33,7 +33,7 @@ export const pricingTiers: PricingTier[] = [
     features: [
       "4 Single-Hour passes",
       "Full access to all facility amenities",
-      "Cycle between heat, cold & hot tub",
+      "Cycle between hot & cold",
       "Flexible drop-in scheduling",
     ],
     priceUSD: 99,
@@ -47,7 +47,7 @@ export const pricingTiers: PricingTier[] = [
     features: [
       "8 Single-Hour passes per month",
       "Full access to all facility amenities",
-      "Cycle between heat, cold & hot tub",
+      "Cycle between hot & cold",
       "Best value for regular drop-ins",
     ],
     priceUSD: 179,

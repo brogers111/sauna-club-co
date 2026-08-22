@@ -18,6 +18,10 @@ export type Location = {
   metaDescription: string;
   // On-page copy, one entry per paragraph.
   description: string[];
+  // Reworded copy for the /locations index page — kept distinct from
+  // `description` (used on the homepage and the location detail page) to
+  // avoid duplicate content across pages.
+  locationsIndexDescription: string[];
   heroImage: {
     src: string;
     alt: string;
@@ -49,6 +53,10 @@ export const locations: Location[] = [
     description: [
       "Escape the rush and reset your body at our Wheat Ridge location. Designed around the core pillars of heat, cold, and connection, this facility offers an elevated space to push your limits, reduce stress, and restore your mind.",
       "Inside, you'll find two custom saunas for deep detoxification and muscle relief, complemented by three precision-chilled plunge tubs and a hot tub for total body recovery. Move seamlessly between fire and ice, then stick around to socialize and recharge in a welcoming, community-driven atmosphere.",
+    ],
+    locationsIndexDescription: [
+      "Step away from the everyday grind and reconnect with yourself at our Wheat Ridge studio. Built around heat, cold, and community, the space gives you room to challenge your limits, unwind from stress, and clear your head.",
+      "The studio features two saunas built for deep detox and muscle recovery, three chilled plunge tubs, and a hot tub to round out your session. Cycle between hot and cold at your own pace, then linger afterward in a laid-back, social setting built for making connections.",
     ],
     heroImage: {
       src: "/images/hero-image.webp",
