@@ -11,7 +11,7 @@ const FOOTER_LINKS = [
   { href: "/about", label: "About" },
   { href: "/sitemap.xml", label: "Sitemap" },
   { href: "/privacy-policy", label: "Privacy Policy" },
-  { href: "/terms-of-service", label: "Terms of Service" },
+  { href: "/terms-of-service", label: "Terms & Conditions" },
 ];
 
 function InstagramIcon() {
@@ -106,7 +106,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <h4 className="font-display text-2xl uppercase tracking-wide">Stay Up To Date</h4>
+          <h3 className="font-display text-2xl uppercase tracking-wide">Stay Up To Date</h3>
           <NewsletterForm />
           <p className="max-w-xs text-sm">
             Subscribe to follow along with our latest updates, news, events, and blogs or give us a follow on social
