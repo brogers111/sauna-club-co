@@ -77,11 +77,20 @@ export function Footer() {
           layout. */}
       <div className="flex flex-col items-center gap-10 px-8 py-12 md:hidden">
         <nav aria-label="Footer" className="grid grid-flow-col grid-rows-4 gap-x-10 gap-y-6 text-center">
-          {FOOTER_LINKS.map((link) => (
-            <Link key={link.href} href={link.href} className="text-md font-normal hover:text-orange">
-              {link.label}
-            </Link>
-          ))}
+          {FOOTER_LINKS.map((link) =>
+            // A plain <a>, not next/link's <Link> — /sitemap.xml is a route
+            // handler that serves raw XML, not an app page, so Link's
+            // automatic RSC prefetch (?_rsc=...) 404s against it.
+            link.href.endsWith(".xml") ? (
+              <a key={link.href} href={link.href} className="text-md font-normal hover:text-orange">
+                {link.label}
+              </a>
+            ) : (
+              <Link key={link.href} href={link.href} className="text-md font-normal hover:text-orange">
+                {link.label}
+              </Link>
+            ),
+          )}
         </nav>
 
         <Link href="/" aria-label="Sauna Club Co home">
@@ -114,11 +123,20 @@ export function Footer() {
       {/* Desktop layout — unchanged from before the mobile split. */}
       <div className="relative mx-auto hidden max-w-6xl items-start justify-between px-4 py-12 md:flex">
         <nav aria-label="Footer" className="grid grid-flow-col grid-rows-4 gap-x-10 gap-y-6">
-          {FOOTER_LINKS.map((link) => (
-            <Link key={link.href} href={link.href} className="text-md font-normal hover:text-orange">
-              {link.label}
-            </Link>
-          ))}
+          {FOOTER_LINKS.map((link) =>
+            // A plain <a>, not next/link's <Link> — /sitemap.xml is a route
+            // handler that serves raw XML, not an app page, so Link's
+            // automatic RSC prefetch (?_rsc=...) 404s against it.
+            link.href.endsWith(".xml") ? (
+              <a key={link.href} href={link.href} className="text-md font-normal hover:text-orange">
+                {link.label}
+              </a>
+            ) : (
+              <Link key={link.href} href={link.href} className="text-md font-normal hover:text-orange">
+                {link.label}
+              </Link>
+            ),
+          )}
           <span className="text-md font-bold">Follow Us:</span>
           {SOCIAL_LINK_ITEMS.map((item) => (
             <Link

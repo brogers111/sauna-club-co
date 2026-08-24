@@ -91,12 +91,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-2xl px-6 py-16">
-          <h2 className="text-center font-display text-5xl uppercase tracking-wide text-black md:text-7xl">Contact Us</h2>
-          <ContactForm phone={location?.phone} />
-        </section>
-
-        <section className="mx-auto max-w-6xl px-6 pb-20">
+        <section className="mx-auto max-w-6xl px-6 py-16">
           <h2 className="font-display text-5xl uppercase tracking-wide text-black md:text-7xl">Get Directions</h2>
 
           <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
@@ -142,6 +137,11 @@ export default function AboutPage() {
               </a>
             </div>
           </div>
+        </section>
+
+        <section className="mx-auto max-w-2xl px-6 pb-20">
+          <h2 className="text-center font-display text-5xl uppercase tracking-wide text-black md:text-7xl">Contact Us</h2>
+          <ContactForm phone={location?.phone} />
         </section>
       </main>
       <Footer />
