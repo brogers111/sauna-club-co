@@ -8,7 +8,7 @@ const TEXT_FADE_MS = 400;
 
 type Slot = "left" | "middle" | "right";
 
-type ServiceItem = {
+export type ServiceItem = {
   slug: string;
   heading: string;
   steamVariant: Slot;
@@ -16,7 +16,10 @@ type ServiceItem = {
   paragraph: string;
 };
 
-const SERVICES: ServiceItem[] = [
+// Default homepage lineup — pass a `services` prop to reuse this carousel
+// with different copy/images (e.g. a location page) while keeping the same
+// interactive layout.
+const DEFAULT_SERVICES: ServiceItem[] = [
   {
     slug: "cold-plunge",
     heading: "Cold Plunge",
@@ -55,14 +58,14 @@ const SLOT_STYLE: Record<Slot, { left: string; width: string; zIndex: number; op
   left: { left: "6%", width: "34%", zIndex: 10, opacity: 0.9 },
 };
 
-export function ServicesCarousel() {
+export function ServicesCarousel({ services = DEFAULT_SERVICES }: { services?: ServiceItem[] }) {
   const [activeIndex, setActiveIndex] = useState(1);
   // The paragraph fades out/in on its own schedule so it never blocks or
   // delays the image/icon/heading movement, which happens immediately.
   const [textIndex, setTextIndex] = useState(1);
   const [textVisible, setTextVisible] = useState(true);
-  const active = SERVICES[activeIndex];
-  const count = SERVICES.length;
+  const active = services[activeIndex];
+  const count = services.length;
 
   function go(delta: number) {
     const next = (activeIndex + delta + count) % count;
@@ -87,7 +90,7 @@ export function ServicesCarousel() {
         <div className="pointer-events-none absolute inset-y-0 left-0 z-30 w-16 bg-linear-to-r from-tan-light to-transparent sm:w-24 md:w-32" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-30 w-16 bg-linear-to-l from-tan-light to-transparent sm:w-24 md:w-32" />
 
-        {SERVICES.map((service, index) => {
+        {services.map((service, index) => {
           const relative = (index - activeIndex + count) % count;
           const slot: Slot = relative === 0 ? "middle" : relative === 1 ? "right" : "left";
           const style = SLOT_STYLE[slot];
@@ -147,7 +150,7 @@ export function ServicesCarousel() {
       </div>
 
       <div className="mt-4 text-center">
-        {SERVICES.map((service, index) => {
+        {services.map((service, index) => {
           const isActive = index === activeIndex;
           return (
             <h3
@@ -165,7 +168,7 @@ export function ServicesCarousel() {
           container's height is always the tallest paragraph's height —
           nothing below jumps around as shorter/longer text swaps in. */}
       <div className="mx-auto mt-4 grid w-full max-w-3xl justify-items-center text-center">
-        {SERVICES.map((service, index) => {
+        {services.map((service, index) => {
           const isTextActive = index === textIndex;
           const shown = isTextActive && textVisible;
           return (

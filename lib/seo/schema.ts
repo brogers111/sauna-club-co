@@ -54,6 +54,7 @@ export function localBusinessSchema(location: Location) {
         }
       : {}),
     telephone: location.phone,
+    areaServed: location.areasServed.map((name) => ({ "@type": "City", name })),
   };
 }
 

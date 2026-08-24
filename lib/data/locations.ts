@@ -29,6 +29,9 @@ export type Location = {
   // Nearby cities/metro areas this location legitimately serves, used in
   // the detail page's "serving the area" section for local SEO.
   nearbyAreas: string[];
+  // Full list of neighborhoods/cities shown in the detail page's "Areas We
+  // Serve" pill grid and included in LocalBusiness schema's areaServed.
+  areasServed: string[];
   heroImage: {
     src: string;
     alt: string;
@@ -37,6 +40,20 @@ export type Location = {
     src: string;
     alt: string;
   };
+  // Full-bleed banner image used partway down the location detail page.
+  midPageImage: {
+    src: string;
+    alt: string;
+  };
+  // Map screenshot used in the detail page's "Get Directions" section.
+  mapImage: {
+    src: string;
+    alt: string;
+  };
+  // Turn-by-turn driving directions for the detail page's "Get Directions"
+  // section — worded distinctly from /about's version to avoid duplicate
+  // content across the two pages.
+  drivingDirections: string;
 };
 
 export const locations: Location[] = [
@@ -56,7 +73,7 @@ export const locations: Location[] = [
       hotTubs: 1,
     },
     metaDescription:
-      "Ready to relax and socialize with fellow locals? Stop by Sauna Club Co in Wheat Ridge, CO for your escape.",
+      "Ready to sauna, plunge, and socialize with fellow Wheat Ridge locals? Stop by Sauna Club Co for your post-work escape.",
     description: [
       "Escape the rush and reset your body at our Wheat Ridge location. Designed around the core pillars of heat, cold, and connection, this facility offers an elevated space to push your limits, reduce stress, and restore your mind.",
       "Inside, you'll find two custom saunas for deep detoxification and muscle relief, complemented by three precision-chilled plunge tubs and a hot tub for total body recovery. Move seamlessly between fire and ice, then stick around to socialize and recharge in a welcoming, community-driven atmosphere.",
@@ -70,6 +87,21 @@ export const locations: Location[] = [
       "Inside, you'll find two custom saunas, three precision-chilled cold plunge tubs, and a hot tub for total-body recovery — everything you need for a full contrast therapy circuit in one visit. Drop in for a single session or make it a habit with a membership; either way, you'll walk out looser, clearer-headed, and already planning your next visit.",
     ],
     nearbyAreas: ["Denver", "Lakewood", "Golden", "Arvada"],
+    areasServed: [
+      "Wheat Ridge",
+      "Arvada",
+      "Applewood",
+      "Edgewater",
+      "Golden",
+      "Lakewood",
+      "Sloan's Lake",
+      "Berkeley",
+      "West Highland",
+      "Mountain View",
+      "Lakeside",
+      "Fairmount",
+      "Genesee",
+    ],
     heroImage: {
       src: "/images/wheat-ridge-location.webp",
       alt: "Sunset view of the Denver skyline from the foothills near Wheat Ridge, CO",
@@ -78,6 +110,16 @@ export const locations: Location[] = [
       src: "/images/people-sauna-1.webp",
       alt: "Two men enjoying the sauna together at Sauna Club Co Wheat Ridge",
     },
+    midPageImage: {
+      src: "/images/wheat-ridge-location-mid.webp",
+      alt: "Sauna heater stacked with rocks inside the cedar sauna at Sauna Club Co's Wheat Ridge location",
+    },
+    mapImage: {
+      src: "/images/map.webp",
+      alt: "Map showing the Sauna Club Co Wheat Ridge, CO location",
+    },
+    drivingDirections:
+      "Heading to Sauna Club Co from I-70? Take the Kipling exit south, hang a left at Winchell's Donuts, and keep going past Dairy Queen — you'll spot us on the left, just before New Image Brewing Company.",
   },
 ];
 

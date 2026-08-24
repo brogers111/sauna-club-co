@@ -1,17 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { ComponentType } from "react";
 import { CopyrightNotice } from "./CopyrightNotice";
 import { NewsletterForm } from "./NewsletterForm";
 import { SOCIAL_LINKS } from "@/lib/site-config";
 
+// Column-major order (grid-flow-col): first 4 fill column 1 top-to-bottom,
+// next 4 fill column 2, producing 4 rows of 2 columns.
 const FOOTER_LINKS = [
   { href: "/locations", label: "Locations" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/book", label: "Book" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
   { href: "/sitemap.xml", label: "Sitemap" },
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms-of-service", label: "Terms & Conditions" },
+];
+
+// Desktop-only: appended after FOOTER_LINKS in the same
+// grid-flow-col/grid-rows-4 grid, so these naturally become a third
+// column — a "Follow Us:" heading plus the 3 platforms, spelled out.
+const SOCIAL_LINK_ITEMS = [
+  { key: "instagram", href: SOCIAL_LINKS.instagram, label: "Instagram" },
+  { key: "facebook", href: SOCIAL_LINKS.facebook, label: "Facebook" },
+  { key: "tiktok", href: SOCIAL_LINKS.tiktok, label: "TikTok" },
 ];
 
 function InstagramIcon() {
@@ -48,7 +60,9 @@ function TikTokIcon() {
   );
 }
 
-const SOCIAL_ICONS: { key: string; href: string; label: string; Icon: ComponentType }[] = [
+// Mobile-only: icons instead of spelled-out text, placed under the
+// newsletter subtext rather than mixed into the link grid.
+const SOCIAL_ICON_ITEMS = [
   { key: "instagram", href: SOCIAL_LINKS.instagram, label: "Instagram", Icon: InstagramIcon },
   { key: "facebook", href: SOCIAL_LINKS.facebook, label: "Facebook", Icon: FacebookIcon },
   { key: "tiktok", href: SOCIAL_LINKS.tiktok, label: "TikTok", Icon: TikTokIcon },
@@ -57,60 +71,82 @@ const SOCIAL_ICONS: { key: string; href: string; label: string; Icon: ComponentT
 export function Footer() {
   return (
     <footer className="mx-6 mt-24 rounded-t-3xl bg-tan-light text-black shadow-[0_-8px_24px_-6px_rgba(0,0,0,0.15)]">
-      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-10 px-8 py-12 md:flex-row md:items-start md:justify-between">
-        <div className="grid grid-flow-col grid-rows-3 items-center gap-x-10 gap-y-6">
-          {SOCIAL_ICONS.map(({ key, href, label, Icon }) => (
-            <Link
-              key={key}
-              href={href || "#"}
-              aria-label={label}
-              className="hover:text-orange"
-              target={href ? "_blank" : undefined}
-              rel={href ? "noopener noreferrer" : undefined}
-            >
-              <Icon />
+      {/* Mobile layout — separate from desktop's since the two need
+          genuinely different structure (icons vs. spelled-out social links
+          in different positions), not just responsive tweaks to one shared
+          layout. */}
+      <div className="flex flex-col items-center gap-10 px-8 py-12 md:hidden">
+        <nav aria-label="Footer" className="grid grid-flow-col grid-rows-4 gap-x-10 gap-y-6 text-center">
+          {FOOTER_LINKS.map((link) => (
+            <Link key={link.href} href={link.href} className="text-md font-normal hover:text-orange">
+              {link.label}
             </Link>
           ))}
+        </nav>
 
-          <nav aria-label="Footer" className="contents">
-            {FOOTER_LINKS.map((link) => (
-              <Link key={link.href} href={link.href} className="text-md font-normal hover:text-orange">
-                {link.label}
+        <Link href="/" aria-label="Sauna Club Co home">
+          <Image src="/images/full-logo-black.png" alt="Sauna Club Co" width={320} height={168} className="h-16 w-auto" />
+        </Link>
+
+        <div className="flex w-full flex-col gap-3">
+          <h3 className="font-display text-2xl uppercase tracking-wide">Stay Up To Date</h3>
+          <NewsletterForm />
+          <p className="max-w-xs text-sm">
+            Subscribe to follow along with our latest updates and events or give us a follow on social media!
+          </p>
+          <div className="flex items-center justify-center gap-10 pt-2">
+            {SOCIAL_ICON_ITEMS.map(({ key, href, label, Icon }) => (
+              <Link
+                key={key}
+                href={href || "#"}
+                aria-label={label}
+                className="hover:text-orange"
+                target={href ? "_blank" : undefined}
+                rel={href ? "noopener noreferrer" : undefined}
+              >
+                <Icon />
               </Link>
             ))}
-          </nav>
+          </div>
         </div>
+      </div>
 
-        {/* Absolutely centered on the whole footer (not just this flex slot) at
-            desktop widths, so it stays centered regardless of how wide the nav
-            and newsletter columns are; falls back to normal in-flow centering
-            when the layout stacks on mobile. */}
-        {/* Padding lives on this wrapper, not the image itself — Tailwind's
-            border-box reset means padding on an element with an explicit
-            fixed height (h-16) would shrink its content box and squash the
-            image, instead of just adding space around it. */}
-        <div className="py-6 md:py-0">
-          <Link
-            href="/"
-            aria-label="Sauna Club Co home"
-            className="block md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2"
-          >
-            <Image
-              src="/images/full-logo-black.png"
-              alt="Sauna Club Co"
-              width={320}
-              height={168}
-              className="h-16 w-auto md:h-20"
-            />
-          </Link>
-        </div>
+      {/* Desktop layout — unchanged from before the mobile split. */}
+      <div className="relative mx-auto hidden max-w-6xl items-start justify-between px-4 py-12 md:flex">
+        <nav aria-label="Footer" className="grid grid-flow-col grid-rows-4 gap-x-10 gap-y-6">
+          {FOOTER_LINKS.map((link) => (
+            <Link key={link.href} href={link.href} className="text-md font-normal hover:text-orange">
+              {link.label}
+            </Link>
+          ))}
+          <span className="text-md font-bold">Follow Us:</span>
+          {SOCIAL_LINK_ITEMS.map((item) => (
+            <Link
+              key={item.key}
+              href={item.href || "#"}
+              className="text-md font-normal hover:text-orange"
+              target={item.href ? "_blank" : undefined}
+              rel={item.href ? "noopener noreferrer" : undefined}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Absolutely centered on the whole footer (not just this flex slot). */}
+        <Link
+          href="/"
+          aria-label="Sauna Club Co home"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        >
+          <Image src="/images/full-logo-black.png" alt="Sauna Club Co" width={320} height={168} className="h-20 w-auto" />
+        </Link>
 
         <div className="flex flex-col gap-3">
           <h3 className="font-display text-2xl uppercase tracking-wide">Stay Up To Date</h3>
           <NewsletterForm />
           <p className="max-w-xs text-sm">
-            Subscribe to follow along with our latest updates and events or give us a follow on social
-            media!
+            Subscribe to follow along with our latest updates and events or give us a follow on social media!
           </p>
         </div>
       </div>
