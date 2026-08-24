@@ -27,13 +27,13 @@ export function Header({ overlay = false }: HeaderProps) {
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 sm:px-8 lg:px-16">
-        <div className="relative flex w-full items-center justify-between gap-6 rounded-b-2xl bg-tan-light px-6 py-4 shadow-md md:w-auto md:gap-10 md:px-10">
+        <div className="relative flex w-full items-center justify-between gap-6 rounded-b-2xl bg-black px-6 py-4 text-tan-light shadow-md md:w-auto md:gap-10 md:px-10">
           <Link href="/" className="flex items-center gap-2" aria-label="Sauna Club Co home">
             <Image
-              src="/images/full-logo-black.png"
+              src="/images/tan-logo.png"
               alt="Sauna Club Co"
-              width={200}
-              height={104}
+              width={500}
+              height={262}
               priority
               className="h-13 w-auto"
             />
@@ -67,7 +67,7 @@ export function Header({ overlay = false }: HeaderProps) {
               </Button>
             </div>
             <div className="hidden md:block">
-              <BookNowButton />
+              <BookNowButton className="text-black!" />
             </div>
             <MobileNav />
           </div>

@@ -9,6 +9,7 @@
   --color-orange: #e5572e;
   --color-green-light: #3c7a63;
   --color-green-dark: #1f4438;
+  --color-gray: #3f3f3f;
 }
 
 @theme inline {
@@ -20,6 +21,7 @@
   --color-orange: var(--color-orange);
   --color-green-light: var(--color-green-light);
   --color-green-dark: var(--color-green-dark);
+  --color-gray: var(--color-gray);
 
   --font-sans: var(--font-fredoka);
   --font-display: var(--font-dushick);

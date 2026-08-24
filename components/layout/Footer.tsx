@@ -70,7 +70,7 @@ const SOCIAL_ICON_ITEMS = [
 
 export function Footer() {
   return (
-    <footer className="mx-6 mt-24 rounded-t-3xl bg-tan-light text-black shadow-[0_-8px_24px_-6px_rgba(0,0,0,0.15)]">
+    <footer className="mx-6 mt-24 rounded-t-3xl bg-black text-tan-light shadow-[0_-8px_24px_-6px_rgba(0,0,0,0.15)]">
       {/* Mobile layout — separate from desktop's since the two need
           genuinely different structure (icons vs. spelled-out social links
           in different positions), not just responsive tweaks to one shared
@@ -94,7 +94,7 @@ export function Footer() {
         </nav>
 
         <Link href="/" aria-label="Sauna Club Co home">
-          <Image src="/images/full-logo-black.png" alt="Sauna Club Co" width={320} height={168} className="h-16 w-auto" />
+          <Image src="/images/tan-logo.png" alt="Sauna Club Co" width={500} height={262} loading="eager" className="h-16 w-auto" />
         </Link>
 
         <div className="flex w-full flex-col gap-3">
@@ -157,7 +157,7 @@ export function Footer() {
           aria-label="Sauna Club Co home"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         >
-          <Image src="/images/full-logo-black.png" alt="Sauna Club Co" width={320} height={168} className="h-20 w-auto" />
+          <Image src="/images/tan-logo.png" alt="Sauna Club Co" width={500} height={262} loading="eager" className="h-20 w-auto" />
         </Link>
 
         <div className="flex flex-col gap-3">
