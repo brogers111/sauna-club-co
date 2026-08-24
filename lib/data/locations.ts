@@ -22,6 +22,13 @@ export type Location = {
   // `description` (used on the homepage and the location detail page) to
   // avoid duplicate content across pages.
   locationsIndexDescription: string[];
+  // Longer, SEO-targeted copy for the location's own detail page — kept
+  // distinct from `description` and `locationsIndexDescription` so all
+  // three pages carry unique copy.
+  detailPageDescription: string[];
+  // Nearby cities/metro areas this location legitimately serves, used in
+  // the detail page's "serving the area" section for local SEO.
+  nearbyAreas: string[];
   heroImage: {
     src: string;
     alt: string;
@@ -58,9 +65,14 @@ export const locations: Location[] = [
       "Step away from the everyday grind and reconnect with yourself at our Wheat Ridge studio. Built around heat, cold, and community, the space gives you room to challenge your limits, unwind from stress, and clear your head.",
       "The studio features two saunas built for deep detox and muscle recovery, three chilled plunge tubs, and a hot tub to round out your session. Cycle between hot and cold at your own pace, then linger afterward in a laid-back, social setting built for making connections.",
     ],
+    detailPageDescription: [
+      "Sauna Club Co is Wheat Ridge's home for sauna, cold plunge, and hot tub contrast therapy — built as much for connection as for recovery. Alternate between heat and cold, ease into the hot tub, and stick around to talk it over with people who get it. This isn't a solo wellness routine; it's a social club built around feeling better together.",
+      "Inside, you'll find two custom saunas, three precision-chilled cold plunge tubs, and a hot tub for total-body recovery — everything you need for a full contrast therapy circuit in one visit. Drop in for a single session or make it a habit with a membership; either way, you'll walk out looser, clearer-headed, and already planning your next visit.",
+    ],
+    nearbyAreas: ["Denver", "Lakewood", "Golden", "Arvada"],
     heroImage: {
-      src: "/images/hero-image.webp",
-      alt: "Steam rising inside the cedar sauna at Sauna Club Co's Wheat Ridge location",
+      src: "/images/wheat-ridge-location.webp",
+      alt: "Sunset view of the Denver skyline from the foothills near Wheat Ridge, CO",
     },
     image: {
       src: "/images/people-sauna-1.webp",

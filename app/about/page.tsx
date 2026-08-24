@@ -10,7 +10,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { breadcrumbListSchema } from "@/lib/seo/schema";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About & Contact",
+  title: "About Us",
   description: "Learn about the history of Sauna Club Co, our founders, and our mission. Reach out with questions or feedback.",
   path: "/about",
 });
@@ -25,7 +25,7 @@ export default function AboutPage() {
       <JsonLd
         data={breadcrumbListSchema([
           { name: "Home", path: "/" },
-          { name: "About & Contact", path: "/about" },
+          { name: "About Us", path: "/about" },
         ])}
       />
       <Header overlay />
@@ -44,16 +44,16 @@ export default function AboutPage() {
               {/* FitText always scales text to exactly fill its container's
                   width, so matching /locations' "Our Locations" font size
                   (rendered in a md:w-1/2 container) means accounting for
-                  "About & Contact" being a wider string in this font.
-                  58.88% ≈ 50% × (glyph-advance width of "ABOUT & CONTACT" ÷
-                  "OUR LOCATIONS" in dushick, measured via fontTools) so both
+                  "About Us" being a much shorter string in this font.
+                  30.36% ≈ 50% × (glyph-advance width of "ABOUT US" ÷ "OUR
+                  LOCATIONS" in dushick, measured via fontTools) so both
                   headings render at the same actual size on desktop. */}
-              <div className="w-full md:mx-auto md:w-[58.88%]">
+              <div className="w-full md:mx-auto md:w-[30.36%]">
                 <FitText
                   as="h1"
                   className="font-display uppercase text-tan-light [text-shadow:0_4px_24px_rgb(0_0_0/45%)] text-[clamp(3rem,13vw,17rem)]"
                 >
-                  About &amp; Contact
+                  About Us
                 </FitText>
               </div>
             </div>
@@ -92,20 +92,40 @@ export default function AboutPage() {
         </section>
 
         <section className="mx-auto max-w-6xl px-6 py-16">
-          <a href={mapsHref} target="_blank" rel="noopener noreferrer" className="block text-black transition-colors hover:text-orange">
-            <h2 className="font-display text-5xl uppercase tracking-wide md:text-7xl">Get Directions</h2>
-            <div className="mt-6 rounded-2xl border-2 border-orange bg-tan-light p-2 shadow-[8px_8px_0_0_var(--color-orange)]">
-              <div className="relative aspect-16/7 w-full overflow-hidden rounded-xl">
+          <h2 className="font-display text-5xl uppercase tracking-wide text-black md:text-7xl">Get Directions</h2>
+
+          <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
+            <a
+              href={mapsHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-2xl border-2 border-blue bg-tan-light p-2 shadow-[8px_8px_0_0_var(--color-blue)]"
+            >
+              <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl">
                 <Image
                   src="/images/map.webp"
                   alt="Map showing the Sauna Club Co Wheat Ridge, CO location"
                   fill
-                  sizes="100vw"
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   className="object-cover"
                 />
               </div>
-              <div className="flex items-center justify-center gap-2 py-4">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true" className="h-5 w-5 shrink-0 text-black">
+            </a>
+
+            <div>
+              <p className="font-sans text-black/80">
+                Coming from I-70? Take the Kipling exit and head south. At the corner with Winchell&apos;s Donuts,
+                hang a left, then continue on past Dairy Queen — we&apos;re just ahead on your left, right before
+                New Image Brewing Company.
+              </p>
+
+              <a
+                href={mapsHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2 text-black transition-colors hover:text-orange"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true" className="h-5 w-5 shrink-0">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -113,25 +133,15 @@ export default function AboutPage() {
                   />
                   <circle cx="12" cy="9.5" r="2.25" />
                 </svg>
-                <p className="font-sans font-medium text-black">{address}</p>
-              </div>
+                <span className="font-sans font-medium">{address}</span>
+              </a>
             </div>
-          </a>
+          </div>
         </section>
 
         <section className="mx-auto max-w-2xl px-6 pb-20">
           <h2 className="text-center font-display text-5xl uppercase tracking-wide text-black md:text-7xl">Contact Us</h2>
-          {location ? (
-            <p className="mt-3 text-center font-sans text-black/80">
-              Call us at{" "}
-              <a href={`tel:${location.phone}`} className="font-medium text-black hover:text-orange">
-                {location.phone}
-              </a>
-            </p>
-          ) : null}
-          <div className="mt-8">
-            <ContactForm />
-          </div>
+          <ContactForm phone={location?.phone} />
         </section>
       </main>
       <Footer />

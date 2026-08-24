@@ -109,7 +109,7 @@ export function Footer() {
           <h3 className="font-display text-2xl uppercase tracking-wide">Stay Up To Date</h3>
           <NewsletterForm />
           <p className="max-w-xs text-sm">
-            Subscribe to follow along with our latest updates, news, events, and blogs or give us a follow on social
+            Subscribe to follow along with our latest updates and events or give us a follow on social
             media!
           </p>
         </div>

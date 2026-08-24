@@ -112,9 +112,16 @@ export default function LocationsIndexPage() {
                         </div>
                       </div>
 
-                      <p className="mt-4 font-sans font-medium text-black">
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                          `${location.streetAddress}, ${location.city}, ${location.region} ${location.postalCode}`,
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-block font-sans font-medium text-black transition-colors hover:text-orange"
+                      >
                         {location.streetAddress}, {location.city}, {location.region} {location.postalCode}
-                      </p>
+                      </a>
 
                       <div className="mt-4 flex flex-col gap-4 text-black/80">
                         {location.locationsIndexDescription.map((paragraph) => (

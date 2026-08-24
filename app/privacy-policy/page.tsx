@@ -415,7 +415,7 @@ export default function PrivacyPolicyPage() {
           <br />
           Wheat Ridge, CO 80033
           <br />
-          Email: privacy@saunaclubco.com
+          Email: jenna@saunaclubco.com
         </P>
       </main>
       <Footer />
