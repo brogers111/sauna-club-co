@@ -315,7 +315,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
           </div>
         </section>
 
-        <div className="relative aspect-16/6 w-full overflow-hidden">
+        <div className="relative aspect-4/3 w-full overflow-hidden md:aspect-16/6">
           <Image src={location.midPageImage.src} alt={location.midPageImage.alt} fill sizes="100vw" className="object-cover" />
         </div>
 
@@ -387,7 +387,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                   href={mapsHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl bg-orange px-6 py-3 text-sm font-medium text-tan-light transition hover:opacity-80"
+                  className="inline-flex items-center gap-2 rounded-xl bg-blue px-6 py-3 text-sm font-medium text-tan-light transition hover:opacity-80"
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true" className="h-5 w-5 shrink-0">
                     <path
