@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FitText } from "@/components/home/FitText";
+import { BookingIframe } from "@/components/book/BookingIframe";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -103,12 +104,7 @@ export default function BookPage() {
 
           <div className="mt-12 rounded-2xl border-2 border-green-light bg-tan-light p-2 shadow-[8px_8px_0_0_var(--color-green-light)]">
             <div className="overflow-hidden rounded-xl">
-              <iframe
-                src="https://app.glofox.com/portal/#/branch/6a7a099409481f1d490ae9e4/classes-list-view?header=classes,memberships"
-                title="Sauna Club Co booking and membership portal"
-                className="h-[80vh] w-full"
-                style={{ border: 0, display: "block" }}
-              />
+              <BookingIframe />
             </div>
           </div>
         </div>
