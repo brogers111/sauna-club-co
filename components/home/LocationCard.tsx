@@ -27,7 +27,7 @@ export function LocationCard({ location }: { location: Location }) {
       <div>
         <Link
           href={`/locations/${location.slug}`}
-          className="group inline-flex items-center gap-3 text-black transition-colors hover:text-orange"
+          className="group inline-flex items-center gap-3 text-tan-light transition-colors hover:text-orange"
         >
           <h3 className="font-display text-4xl uppercase tracking-wide">
             {location.name}, {location.region}
@@ -50,11 +50,11 @@ export function LocationCard({ location }: { location: Location }) {
           </div>
         </div>
 
-        <p className="mt-4 font-sans font-medium text-black">
+        <p className="mt-4 font-sans font-medium text-tan-light">
           {location.streetAddress}, {location.city}, {location.region} {location.postalCode}
         </p>
 
-        <div className="mt-4 flex flex-col gap-4 text-black/80">
+        <div className="mt-4 flex flex-col gap-4 text-tan-light/80">
           {location.description.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}

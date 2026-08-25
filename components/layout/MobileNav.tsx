@@ -56,7 +56,7 @@ export function MobileNav() {
     <nav
       id="mobile-nav-menu"
       aria-label="Primary"
-      className={`fixed inset-x-4 top-0 z-40 rounded-b-2xl bg-black px-6 pt-28 pb-10 text-tan-light shadow-md transition-transform duration-300 ease-out sm:inset-x-8 ${
+      className={`fixed inset-x-4 top-0 z-40 rounded-b-2xl bg-tan-light px-6 pt-28 pb-10 shadow-md transition-transform duration-300 ease-out sm:inset-x-8 ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
@@ -69,7 +69,7 @@ export function MobileNav() {
                 href={link.href}
                 onClick={closeMenu}
                 aria-current={active ? "page" : undefined}
-                className={`block text-center text-sm text-tan-light ${active ? "font-medium" : "font-normal"}`}
+                className={`block text-center text-sm text-green-dark ${active ? "font-medium" : "font-normal"}`}
               >
                 {link.label}
               </Link>
@@ -82,7 +82,7 @@ export function MobileNav() {
         <Button href="/account" variant="muted" className="w-full">
           My Account
         </Button>
-        <BookNowButton className="w-full text-black!" />
+        <BookNowButton className="w-full" />
       </div>
     </nav>
   );
@@ -95,7 +95,7 @@ export function MobileNav() {
         aria-expanded={open}
         aria-controls="mobile-nav-menu"
         aria-label={open ? "Close menu" : "Open menu"}
-        className="flex h-10 w-10 items-center justify-center rounded-full text-tan-light"
+        className="flex h-10 w-10 items-center justify-center rounded-full text-green-dark"
       >
         <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-6 w-6">

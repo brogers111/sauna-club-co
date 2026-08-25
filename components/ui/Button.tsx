@@ -13,7 +13,7 @@ const VARIANT_STYLES: Record<NonNullable<ButtonProps["variant"]>, string> = {
   primary: "bg-orange text-tan-light hover:opacity-80",
   secondary: "bg-blue text-tan-light hover:bg-green-dark",
   outline: "bg-tan-light text-black hover:opacity-80",
-  muted: "bg-gray text-tan-light hover:bg-gray/70",
+  muted: "bg-tan-dark text-black hover:bg-tan-dark/70",
 };
 
 const SIZE_STYLES: Record<NonNullable<ButtonProps["size"]>, string> = {

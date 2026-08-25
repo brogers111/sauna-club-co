@@ -58,7 +58,15 @@ const SLOT_STYLE: Record<Slot, { left: string; width: string; zIndex: number; op
   left: { left: "6%", width: "34%", zIndex: 10, opacity: 0.9 },
 };
 
-export function ServicesCarousel({ services = DEFAULT_SERVICES }: { services?: ServiceItem[] }) {
+type ServicesCarouselProps = {
+  services?: ServiceItem[];
+  // "dark" is for the homepage, whose section background is black — flips
+  // the edge fades and text colors to stay legible/blend correctly there.
+  background?: "light" | "dark";
+};
+
+export function ServicesCarousel({ services = DEFAULT_SERVICES, background = "light" }: ServicesCarouselProps) {
+  const isDark = background === "dark";
   const [activeIndex, setActiveIndex] = useState(1);
   // The paragraph fades out/in on its own schedule so it never blocks or
   // delays the image/icon/heading movement, which happens immediately.
@@ -87,8 +95,12 @@ export function ServicesCarousel({ services = DEFAULT_SERVICES }: { services?: S
     <div>
       <div className="relative h-60 overflow-hidden sm:h-90 md:h-105">
         {/* Edge fades — the outer edges of the side images dissolve into the page background. */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-30 w-16 bg-linear-to-r from-tan-light to-transparent sm:w-24 md:w-32" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-30 w-16 bg-linear-to-l from-tan-light to-transparent sm:w-24 md:w-32" />
+        <div
+          className={`pointer-events-none absolute inset-y-0 left-0 z-30 w-16 bg-linear-to-r to-transparent sm:w-24 md:w-32 ${isDark ? "from-black" : "from-tan-light"}`}
+        />
+        <div
+          className={`pointer-events-none absolute inset-y-0 right-0 z-30 w-16 bg-linear-to-l to-transparent sm:w-24 md:w-32 ${isDark ? "from-black" : "from-tan-light"}`}
+        />
 
         {services.map((service, index) => {
           const relative = (index - activeIndex + count) % count;
@@ -126,7 +138,7 @@ export function ServicesCarousel({ services = DEFAULT_SERVICES }: { services?: S
           type="button"
           onClick={() => go(-1)}
           aria-label="Show previous service"
-          className="cursor-pointer text-black transition-colors hover:text-orange"
+          className={`cursor-pointer transition-colors hover:text-orange ${isDark ? "text-tan-light" : "text-black"}`}
         >
           <ArrowIcon direction="left" className="h-5 w-5" />
         </button>
@@ -143,7 +155,7 @@ export function ServicesCarousel({ services = DEFAULT_SERVICES }: { services?: S
           type="button"
           onClick={() => go(1)}
           aria-label="Show next service"
-          className="cursor-pointer text-black transition-colors hover:text-orange"
+          className={`cursor-pointer transition-colors hover:text-orange ${isDark ? "text-tan-light" : "text-black"}`}
         >
           <ArrowIcon direction="right" className="h-5 w-5" />
         </button>
@@ -155,7 +167,11 @@ export function ServicesCarousel({ services = DEFAULT_SERVICES }: { services?: S
           return (
             <h3
               key={service.slug}
-              className={isActive ? "font-display text-4xl uppercase tracking-wide text-black" : "sr-only"}
+              className={
+                isActive
+                  ? `font-display text-4xl uppercase tracking-wide ${isDark ? "text-tan-light" : "text-black"}`
+                  : "sr-only"
+              }
               aria-hidden={isActive ? undefined : true}
             >
               {service.heading}
@@ -175,7 +191,7 @@ export function ServicesCarousel({ services = DEFAULT_SERVICES }: { services?: S
             <p
               key={service.slug}
               style={{ gridArea: "1 / 1" }}
-              className={`text-black/80 transition-opacity duration-400 ${shown ? "opacity-100" : "pointer-events-none opacity-0"}`}
+              className={`transition-opacity duration-400 ${isDark ? "text-tan-light/80" : "text-black/80"} ${shown ? "opacity-100" : "pointer-events-none opacity-0"}`}
               aria-hidden={isTextActive ? undefined : true}
             >
               {service.paragraph}

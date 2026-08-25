@@ -19,12 +19,12 @@ export default function HomePage() {
   return (
     <>
       <Header overlay />
-      <main>
+      <main className="bg-black">
         <Hero />
         <ServicesSection />
         <LocationsSection />
         <PricingSection />
-        <GalleryTeaser />
+        <GalleryTeaser background="dark" />
       </main>
       <Footer />
     </>

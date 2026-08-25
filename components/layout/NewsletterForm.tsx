@@ -17,11 +17,11 @@ export function NewsletterForm() {
         type="email"
         required
         placeholder="Enter your email..."
-        className="w-full rounded-xl border border-tan-light/20 bg-gray px-4 py-2 text-sm text-tan-light placeholder:text-tan-light/50 focus:outline-none focus:ring-2 focus:ring-tan-light/40 sm:w-64"
+        className="w-full rounded-xl border border-black/20 bg-tan-light px-4 py-2 text-sm text-black placeholder:text-black/50 focus:outline-none focus:ring-2 focus:ring-black/40 sm:w-64"
       />
       <button
         type="submit"
-        className="cursor-pointer rounded-xl bg-gray px-5 py-3 text-sm font-medium text-tan-light transition hover:bg-gray/70"
+        className="cursor-pointer rounded-xl bg-tan-dark px-5 py-3 text-sm font-medium text-black transition hover:bg-tan-dark/70"
       >
         Subscribe
       </button>

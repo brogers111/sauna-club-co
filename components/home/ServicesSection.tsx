@@ -5,10 +5,10 @@ import { ServicesCarousel } from "./ServicesCarousel";
 export function ServicesSection() {
   return (
     <section className="mx-auto max-w-6xl scroll-mt-18 px-6 pt-20 pb-10 md:scroll-mt-21" id="services">
-      <SectionHeading className="text-center">Our Services</SectionHeading>
+      <SectionHeading className="text-center text-tan-light!">Our Services</SectionHeading>
 
       <div className="mt-4">
-        <ServicesCarousel />
+        <ServicesCarousel background="dark" />
       </div>
 
       <div className="mx-[calc(50%-50vw)] mt-30 mb-10 px-5">

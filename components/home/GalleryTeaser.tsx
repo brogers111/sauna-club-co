@@ -2,7 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 
-export function GalleryTeaser() {
+type GalleryTeaserProps = {
+  // "dark" is for the homepage, whose section background is black.
+  background?: "light" | "dark";
+};
+
+export function GalleryTeaser({ background = "light" }: GalleryTeaserProps) {
+  const isDark = background === "dark";
+
   return (
     <section className="mx-auto max-w-6xl px-6 pb-10">
       {/* Mobile: simple 3-photo vertical stack. */}
@@ -39,7 +46,7 @@ export function GalleryTeaser() {
 
         <Link
           href="/about"
-          className="group inline-flex items-center gap-3 self-end text-black transition-colors hover:text-orange"
+          className={`group inline-flex items-center gap-3 self-end transition-colors hover:text-orange ${isDark ? "text-tan-light" : "text-black"}`}
         >
           <span className="font-display text-4xl uppercase tracking-wide">See More</span>
           <ArrowIcon direction="right" className="-mt-1 h-5 w-5 shrink-0" />
@@ -70,7 +77,7 @@ export function GalleryTeaser() {
 
           <Link
             href="/about"
-            className="group mt-2 inline-flex items-center gap-3 self-end text-black transition-colors hover:text-orange"
+            className={`group mt-2 inline-flex items-center gap-3 self-end transition-colors hover:text-orange ${isDark ? "text-tan-light" : "text-black"}`}
           >
             <span className="font-display text-4xl uppercase tracking-wide">See More</span>
             <ArrowIcon direction="right" className="-mt-1 h-5 w-5 shrink-0" />
