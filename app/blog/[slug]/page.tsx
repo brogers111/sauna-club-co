@@ -75,7 +75,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <div className="mx-auto max-w-3xl px-6 py-16">
           <div className="flex flex-wrap items-center gap-3 font-sans text-sm text-cream/60">
             {author ? (
-              <Link href={`/blog/authors/${author.slug}`} className="font-medium text-cream transition-colors hover:text-orange">
+              <Link href={`/blog/authors/${author.slug}`} className="font-medium text-cream transition-colors hover:text-orange-light">
                 {author.name}
               </Link>
             ) : null}

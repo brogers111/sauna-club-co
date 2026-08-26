@@ -11,7 +11,7 @@ type BookNowButtonProps = {
 // Placeholder target until the Glofox booking iframe/link replaces this route.
 export function BookNowButton({ variant = "primary", size, className, label = "Book Now" }: BookNowButtonProps) {
   return (
-    <Button href="/book" variant={variant} size={size} className={className}>
+    <Button href="/book-session" variant={variant} size={size} className={className}>
       {label}
     </Button>
   );

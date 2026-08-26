@@ -31,22 +31,22 @@ const STEPS = [
     text: (
       <>
         Complete checkout to confirm your booking. If you have any questions along the way,{" "}
-        <Link href="/contact" className="underline hover:text-wood-dark">
+        <Link href="/contact" className="underline hover:text-orange-light">
           contact our team
         </Link>
         .
       </>
     ),
-    border: "border-wood-dark",
-    shadow: "shadow-[8px_8px_0_0_var(--color-wood-dark)]",
-    accent: "text-wood-dark",
+    border: "border-green-light",
+    shadow: "shadow-[8px_8px_0_0_var(--color-green-light)]",
+    accent: "text-green-light",
   },
 ];
 
 export const metadata: Metadata = buildMetadata({
   title: "Book a Session",
   description: "Book a sauna, cold plunge, or hot tub session at Sauna Club Co.",
-  path: "/book",
+  path: "/book-session",
 });
 
 export default function BookPage() {
@@ -55,7 +55,7 @@ export default function BookPage() {
       <JsonLd
         data={breadcrumbListSchema([
           { name: "Home", path: "/" },
-          { name: "Book Session", path: "/book" },
+          { name: "Book Session", path: "/book-session" },
         ])}
       />
       <Header overlay />
@@ -108,7 +108,7 @@ export default function BookPage() {
           <p className="mt-4 max-w-2xl text-cream/80">
             Pick an available time below to book your hour-long session. Looking to buy a membership or credit pack
             instead?{" "}
-            <Link href="/buy-membership" className="underline hover:text-orange">
+            <Link href="/buy-membership" className="underline hover:text-orange-light">
               Buy a membership here
             </Link>
             .

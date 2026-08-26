@@ -146,8 +146,8 @@ export function ServicesCarousel({ services = DEFAULT_SERVICES, background = "li
         <Image
           src={STEAM_ICON[active.steamVariant]}
           alt={`Steam icon highlighting the currently active service, ${active.heading}`}
-          width={64}
-          height={52}
+          width={500}
+          height={663}
           className="h-12 w-auto"
         />
 

@@ -47,7 +47,7 @@ export function Header({ overlay = false }: HeaderProps) {
                   key={link.href}
                   href={link.href}
                   aria-current={active ? "page" : undefined}
-                  className={`text-md hover:text-orange ${active ? "font-medium" : "font-normal"}`}
+                  className={`text-md hover:text-orange-light ${active ? "font-medium" : "font-normal"}`}
                 >
                   {link.label}
                 </Link>
@@ -62,17 +62,17 @@ export function Header({ overlay = false }: HeaderProps) {
                 to the same element depending on Tailwind's generated rule
                 order. Hiding the wrapper instead avoids the conflict entirely. */}
             <div className="hidden md:block">
-              <Button href="/buy-membership" variant="secondary">
+              <Button href="/buy-membership" variant="secondary" className="text-tan-light!">
                 Buy Membership
               </Button>
             </div>
             <div className="hidden md:block">
-              <BookNowButton label="Book Session" />
+              <BookNowButton label="Book Session" className="text-tan-light!" />
             </div>
             <Link
-              href="/login"
+              href="/profile"
               aria-label="Profile"
-              className="hidden h-11 w-11 items-center justify-center rounded-xl border-2 border-wood-dark text-wood-dark transition hover:bg-wood-dark hover:text-white md:flex"
+              className="hidden h-11 w-11 items-center justify-center rounded-xl border-2 border-cream text-cream transition hover:bg-cream hover:text-tan-dark md:flex"
             >
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" aria-hidden="true">
                 <path

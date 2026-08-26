@@ -14,20 +14,24 @@ export function LocationCard({ location }: { location: Location }) {
 
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center">
-      <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
+      <Link
+        href={`/locations/${location.slug}`}
+        className="relative block aspect-4/3 overflow-hidden rounded-2xl"
+        aria-label={`View the ${location.name} location page`}
+      >
         <Image
           src={location.image.src}
           alt={location.image.alt}
           fill
           sizes="(min-width: 768px) 50vw, 100vw"
-          className="object-cover"
+          className="object-cover transition-transform duration-300 hover:scale-105"
         />
-      </div>
+      </Link>
 
       <div>
         <Link
           href={`/locations/${location.slug}`}
-          className="group inline-flex items-center gap-3 text-cream transition-colors hover:text-orange"
+          className="group inline-flex items-center gap-3 text-cream transition-colors hover:text-orange-light"
         >
           <h3 className="font-display text-4xl uppercase tracking-wide">
             {location.name}, {location.region}

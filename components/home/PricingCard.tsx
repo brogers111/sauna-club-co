@@ -59,7 +59,7 @@ const MEMBERSHIP_SLUGS = ["monthly-unlimited", "3-month-unlimited"];
 
 export function PricingCard({ tier, index }: { tier: PricingTier; index: number }) {
   const color = PRICING_COLORS[index % PRICING_COLORS.length];
-  const bookingHref = MEMBERSHIP_SLUGS.includes(tier.slug) ? "/buy-membership" : "/book";
+  const bookingHref = MEMBERSHIP_SLUGS.includes(tier.slug) ? "/buy-membership" : "/book-session";
 
   return (
     <div className={`flex flex-col rounded-2xl border-2 ${color.border} bg-tan-dark px-4 py-6 ${color.cardShadow}`}>
@@ -88,7 +88,7 @@ export function PricingCard({ tier, index }: { tier: PricingTier; index: number 
         </div>
       ) : null}
 
-      <p className="mt-3 px-4 font-sans text-sm font-normal text-cream/80 md:px-0">{tier.tagline}</p>
+      <p className="mt-3 px-4 font-sans text-sm font-normal text-cream md:px-0">{tier.tagline}</p>
 
       <ul className="mt-6 flex flex-1 flex-col gap-3 px-4 font-sans text-sm font-normal md:px-0">
         {tier.features.map((feature) => (

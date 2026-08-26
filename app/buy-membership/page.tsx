@@ -37,15 +37,15 @@ const STEPS = [
     text: (
       <>
         Complete checkout to confirm your purchase. If you have any questions along the way,{" "}
-        <Link href="/contact" className="underline hover:text-wood-dark">
+        <Link href="/contact" className="underline hover:text-orange-light">
           contact our team
         </Link>
         .
       </>
     ),
-    border: "border-wood-dark",
-    shadow: "shadow-[8px_8px_0_0_var(--color-wood-dark)]",
-    accent: "text-wood-dark",
+    border: "border-green-light",
+    shadow: "shadow-[8px_8px_0_0_var(--color-green-light)]",
+    accent: "text-green-light",
   },
 ];
 
@@ -108,7 +108,7 @@ export default function BuyMembershipPage() {
           <p className="mt-4 max-w-2xl text-cream/80">
             Choose an unlimited monthly membership or a multi-session credit pack below. Just booking a single
             session instead?{" "}
-            <Link href="/book" className="underline hover:text-orange">
+            <Link href="/book-session" className="underline hover:text-orange-light">
               Book a session here
             </Link>
             .

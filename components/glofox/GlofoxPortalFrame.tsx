@@ -50,7 +50,7 @@ export function GlofoxPortalFrame({ src, title }: GlofoxPortalFrameProps) {
                 href={src}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl bg-orange px-6 py-3 text-sm font-medium text-cream transition hover:opacity-80"
+                className="inline-flex items-center justify-center rounded-xl bg-orange px-6 py-3 text-sm font-medium text-tan-light transition hover:opacity-80"
               >
                 Open in a New Tab
               </a>

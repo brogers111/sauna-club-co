@@ -27,7 +27,7 @@ export function Hero() {
         <a
           href="#services"
           aria-label="Scroll to our services"
-          className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-cream transition-colors hover:text-orange"
+          className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-cream transition-colors hover:text-orange-light"
         >
           <ArrowIcon direction="down" className="h-10 w-10" />
         </a>

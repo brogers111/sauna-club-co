@@ -82,7 +82,7 @@ function buildLocationServices(location: Location): ServiceItem[] {
 const DIFFERENTIATORS = [
   {
     name: "Wheat Ridge Owned",
-    description: "We're not a national chain trying to check a wellness box in every zip code. Our founders actually live in the area, so Sauna Club Co was literally built by and for the local community — no corporate script, no upsell pressure, just a neighborhood spot that knows your name.",
+    description: "We're not a national chain trying to check a wellness box in every zip code. Our founders actually live in the area, so Sauna Club Co was literally built by and for the local community. No corporate script, no upsell pressure. A neighborhood spot for friends.",
     border: "border-orange",
     shadow: "shadow-[8px_8px_0_0_var(--color-orange)]",
     accent: "text-orange",
@@ -92,10 +92,10 @@ const DIFFERENTIATORS = [
     description: (
       <>
         Contrast therapy in the Denver Metro area shouldn&apos;t cost a fortune. Our{" "}
-        <Link href="/pricing" className="underline hover:text-orange">
+        <Link href="/pricing" className="underline hover:text-orange-light">
           pricing
         </Link>{" "}
-        is built for regulars, not just first-timers — so dropping in a few times a week is actually realistic, not
+        is built for regulars, not just first-timers, so dropping in a few times a week is actually realistic, not
         a luxury. We want to get to know you and welcome you by name each time you visit!
       </>
     ),
@@ -137,7 +137,7 @@ const FAQS = [
       <>
         Not at all. Single sessions are available for first-timers and drop-ins, and memberships are there if you
         want to make it a regular habit. Check out our{" "}
-        <Link href="/pricing" className="underline hover:text-orange">
+        <Link href="/pricing" className="underline hover:text-orange-light">
           pricing
         </Link>{" "}
         to find what fits.
@@ -156,7 +156,7 @@ const FAQS = [
     answer: (
       <>
         You can{" "}
-        <Link href="/book" className="underline hover:text-orange">
+        <Link href="/book-session" className="underline hover:text-orange-light">
           book online
         </Link>{" "}
         any time — pick a time from our class list, or grab a session bundle or membership from the Memberships tab.
@@ -171,7 +171,7 @@ const FAQS = [
       <>
         A single session starts at $30, with discounted multi-session bundles and unlimited memberships available
         for regulars. Visit our{" "}
-        <Link href="/pricing" className="underline hover:text-orange">
+        <Link href="/pricing" className="underline hover:text-orange-light">
           pricing page
         </Link>{" "}
         for the full breakdown.
@@ -192,7 +192,7 @@ const FAQS = [
     answer: (
       <>
         We recommend{" "}
-        <Link href="/book" className="underline hover:text-orange">
+        <Link href="/book-session" className="underline hover:text-orange-light">
           booking ahead online
         </Link>{" "}
         to guarantee your spot, but walk-ins are welcome whenever we have availability.
@@ -207,7 +207,7 @@ const FAQS = [
         We&apos;re locally owned, not a corporate franchise — so you&apos;ll get fair pricing, a genuine
         neighborhood social vibe, and a team that actually knows your name, instead of a private suite and a quick
         transaction.{" "}
-        <Link href="/about" className="underline hover:text-orange">
+        <Link href="/about" className="underline hover:text-orange-light">
           Learn more about us
         </Link>
         .
@@ -286,15 +286,15 @@ export default async function LocationPage({ params }: LocationPageProps) {
             ))}
             <p>
               Ready to get started? Browse our{" "}
-              <Link href="/pricing" className="underline hover:text-orange">
+              <Link href="/pricing" className="underline hover:text-orange-light">
                 pricing
               </Link>
               ,{" "}
-              <Link href="/book" className="underline hover:text-orange">
+              <Link href="/book-session" className="underline hover:text-orange-light">
                 book your first session
               </Link>
               , or learn more{" "}
-              <Link href="/about" className="underline hover:text-orange">
+              <Link href="/about" className="underline hover:text-orange-light">
                 about our story
               </Link>
               .
@@ -303,8 +303,8 @@ export default async function LocationPage({ params }: LocationPageProps) {
         </section>
 
         <div className="mx-[calc(50%-50vw)] mb-20 px-5">
-          <div className="flex flex-col items-center gap-4 rounded-2xl bg-wood-dark px-6 py-10 text-center">
-            <p className="font-display text-4xl uppercase tracking-wide text-cream">Schedule Your First Session</p>
+          <div className="flex flex-col items-center gap-4 rounded-2xl bg-orange px-6 py-10 text-center">
+            <p className="font-display text-4xl uppercase tracking-wide text-tan-light">Schedule Your First Session</p>
             <BookNowButton variant="outline" size="lg" />
           </div>
         </div>
@@ -326,14 +326,13 @@ export default async function LocationPage({ params }: LocationPageProps) {
             More sauna and cold plunge studios are popping up around {location.nearbyAreas[0]} every year — most of
             them corporate-backed, expensive, and built for a quick transaction, not a real connection. Sauna Club
             Co is different. We&apos;re the friendly neighborhood sauna and cold plunge social club{" "}
-            {location.name} locals actually look forward to visiting — not just another high-priced wellness
-            franchise passing through.
+            {location.name} locals actually look forward to visiting.
           </p>
           <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
             {DIFFERENTIATORS.map((item) => (
               <div key={item.name} className={`rounded-2xl border-2 bg-tan-dark px-6 py-6 ${item.border} ${item.shadow}`}>
                 <h3 className={`font-display text-2xl uppercase tracking-wide ${item.accent}`}>{item.name}</h3>
-                <p className="mt-2 text-sm text-cream/80">{item.description}</p>
+                <p className="mt-2 text-base text-cream/80">{item.description}</p>
               </div>
             ))}
           </div>
@@ -367,9 +366,9 @@ export default async function LocationPage({ params }: LocationPageProps) {
               href={mapsHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="block rounded-2xl border-2 border-blue bg-tan-dark p-2 shadow-[8px_8px_0_0_var(--color-blue)]"
+              className="block overflow-hidden rounded-2xl border-2 border-blue shadow-[8px_8px_0_0_var(--color-blue)]"
             >
-              <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl">
+              <div className="relative aspect-4/3 w-full">
                 <Image
                   src={location.mapImage.src}
                   alt={location.mapImage.alt}
@@ -388,7 +387,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                   href={mapsHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl bg-blue px-6 py-3 text-sm font-medium text-cream transition hover:opacity-80"
+                  className="inline-flex items-center gap-2 rounded-xl bg-blue px-6 py-3 text-sm font-medium text-tan-light transition hover:opacity-80"
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true" className="h-5 w-5 shrink-0">
                     <path
@@ -416,7 +415,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
         <div className="mx-[calc(50%-50vw)] mb-20 px-5">
           <div className="flex flex-col items-center gap-4 rounded-2xl bg-green-light px-6 py-10 text-center">
-            <p className="font-display text-4xl uppercase tracking-wide text-cream">Find the right membership for you</p>
+            <p className="font-display text-4xl uppercase tracking-wide text-tan-light">Find the right membership for you</p>
             <BookNowButton variant="outline" size="lg" />
           </div>
         </div>

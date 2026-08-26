@@ -70,7 +70,7 @@ export default function LocationsIndexPage() {
                 <div key={location.slug}>
                   <Link
                     href={`/locations/${location.slug}`}
-                    className="text-cream transition-colors hover:text-orange"
+                    className="text-cream transition-colors hover:text-orange-light"
                   >
                     <h2 className="font-display text-5xl uppercase tracking-wide md:text-7xl">
                       {location.name}, {location.region}
@@ -95,7 +95,7 @@ export default function LocationsIndexPage() {
                     <div>
                       <Link
                         href={`/locations/${location.slug}`}
-                        className="group inline-flex items-center gap-3 text-cream transition-colors hover:text-orange"
+                        className="group inline-flex items-center gap-3 text-cream transition-colors hover:text-orange-light"
                       >
                         <h3 className="font-display text-4xl uppercase tracking-wide">Location Details</h3>
                         <ArrowIcon direction="right" className="-mt-1 h-5 w-5 shrink-0" />
@@ -118,7 +118,7 @@ export default function LocationsIndexPage() {
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-4 inline-block font-sans font-medium text-cream transition-colors hover:text-orange"
+                        className="mt-4 inline-block font-sans font-medium text-cream transition-colors hover:text-orange-light"
                       >
                         {location.streetAddress}, {location.city}, {location.region} {location.postalCode}
                       </a>
@@ -138,7 +138,7 @@ export default function LocationsIndexPage() {
 
         <div className="mx-[calc(50%-50vw)] mb-20 px-5">
           <div className="flex flex-col items-center gap-4 rounded-2xl bg-green-light px-6 py-10 text-center">
-            <p className="font-display text-4xl uppercase tracking-wide text-cream">Schedule Your First Session</p>
+            <p className="font-display text-4xl uppercase tracking-wide text-tan-light">Schedule Your First Session</p>
             <BookNowButton variant="outline" size="lg" />
           </div>
         </div>

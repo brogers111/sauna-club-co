@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/Button";
 
 const TARGETS = {
-  book: { href: "/book", label: "Book Now" },
+  book: { href: "/book-session", label: "Book Now" },
   "wheat-ridge": { href: "/locations/wheat-ridge", label: "Visit Wheat Ridge" },
 } as const;
 
@@ -17,7 +17,7 @@ export function BlogCTA({ target, text }: BlogCTAProps) {
 
   return (
     <div className="my-8 flex flex-col items-center gap-4 rounded-2xl bg-blue px-6 py-8 text-center">
-      <p className="font-display text-2xl uppercase tracking-wide text-cream">{text}</p>
+      <p className="font-display text-2xl uppercase tracking-wide text-tan-light">{text}</p>
       <Button href={href} variant="outline">
         {label}
       </Button>

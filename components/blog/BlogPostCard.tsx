@@ -4,7 +4,7 @@ import type { BlogPost } from "@/lib/data/blog";
 
 export function BlogPostCard({ post }: { post: BlogPost }) {
   return (
-    <Link href={`/blog/${post.slug}`} className="group flex flex-col text-cream transition-colors hover:text-orange">
+    <Link href={`/blog/${post.slug}`} className="group flex flex-col text-cream transition-colors hover:text-orange-light">
       <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
         <Image
           src={post.featuredImage.src}

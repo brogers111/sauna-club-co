@@ -13,7 +13,7 @@ export function ServicesSection() {
 
       <div className="mx-[calc(50%-50vw)] mt-30 mb-10 px-5">
         <div className="flex flex-col items-center gap-4 rounded-2xl bg-blue px-6 py-10 text-center">
-          <p className="font-display text-4xl uppercase tracking-wide text-cream">Schedule Your First Session</p>
+          <p className="font-display text-4xl uppercase tracking-wide text-tan-light">Schedule Your First Session</p>
           <BookNowButton variant="outline" size="lg" />
         </div>
       </div>

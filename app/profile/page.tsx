@@ -10,7 +10,7 @@ import { GLOFOX_URLS } from "@/lib/site-config";
 export const metadata: Metadata = buildMetadata({
   title: "Login or Register",
   description: "Sign in to your Sauna Club Co account, or create a free one to book sessions and manage your membership.",
-  path: "/login",
+  path: "/profile",
 });
 
 export default function LoginPage() {
@@ -19,7 +19,7 @@ export default function LoginPage() {
       <JsonLd
         data={breadcrumbListSchema([
           { name: "Home", path: "/" },
-          { name: "Login or Register", path: "/login" },
+          { name: "Login or Register", path: "/profile" },
         ])}
       />
       <Header />

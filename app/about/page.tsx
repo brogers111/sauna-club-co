@@ -100,9 +100,9 @@ export default function AboutPage() {
               href={mapsHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="block rounded-2xl border-2 border-blue bg-tan-dark p-2 shadow-[8px_8px_0_0_var(--color-blue)]"
+              className="block overflow-hidden rounded-2xl border-2 border-blue shadow-[8px_8px_0_0_var(--color-blue)]"
             >
-              <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl">
+              <div className="relative aspect-4/3 w-full">
                 <Image
                   src={location?.mapImage.src ?? "/images/map.webp"}
                   alt={location?.mapImage.alt ?? "Map showing the Sauna Club Co Wheat Ridge, CO location"}
@@ -121,7 +121,7 @@ export default function AboutPage() {
                   href={mapsHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl bg-blue px-6 py-3 text-sm font-medium text-cream transition hover:opacity-80"
+                  className="inline-flex items-center gap-2 rounded-xl bg-blue px-6 py-3 text-sm font-medium text-tan-light transition hover:opacity-80"
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true" className="h-5 w-5 shrink-0">
                     <path

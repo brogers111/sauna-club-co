@@ -69,7 +69,7 @@ export function MobileNav() {
                 href={link.href}
                 onClick={closeMenu}
                 aria-current={active ? "page" : undefined}
-                className={`block text-center text-sm text-green-dark ${active ? "font-medium" : "font-normal"}`}
+                className={`block text-center text-sm text-cream ${active ? "font-medium" : "font-normal"}`}
               >
                 {link.label}
               </Link>
@@ -79,11 +79,11 @@ export function MobileNav() {
       </ul>
 
       <div className="mt-8 flex flex-col gap-3">
-        <Button href="/buy-membership" variant="secondary" className="w-full">
+        <Button href="/buy-membership" variant="secondary" className="w-full text-tan-dark!">
           Buy Membership
         </Button>
-        <BookNowButton label="Book Session" className="w-full" />
-        <Button href="/login" variant="muted" className="w-full">
+        <BookNowButton label="Book Session" className="w-full text-tan-dark!" />
+        <Button href="/profile" variant="muted" className="w-full border-2 border-cream text-cream!">
           Profile
         </Button>
       </div>
@@ -98,7 +98,7 @@ export function MobileNav() {
         aria-expanded={open}
         aria-controls="mobile-nav-menu"
         aria-label={open ? "Close menu" : "Open menu"}
-        className="flex h-10 w-10 items-center justify-center rounded-full text-green-dark"
+        className="flex h-10 w-10 items-center justify-center rounded-full text-cream"
       >
         <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-6 w-6">
