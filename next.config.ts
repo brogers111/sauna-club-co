@@ -25,12 +25,9 @@ const nextConfig: NextConfig = {
   trailingSlash: false,
   skipTrailingSlashRedirect: true,
   images: {
-    // Source photos are already .webp — omitting avif skips Next's
-    // on-demand webp-to-avif re-encode (CPU-heavy, and the main cause of
-    // slow first-load hero images) for a format the sources aren't in
-    // anyway, with no real quality/size loss since webp is already well
-    // compressed.
     formats: ["image/webp"],
+    deviceSizes: [640, 750, 1080, 1280, 1920],
+    imageSizes: [32, 64, 96, 128, 256],
   },
   async redirects() {
     if (!canonicalHost || isLocalHost) return [];
