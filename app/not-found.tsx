@@ -22,17 +22,17 @@ export default function NotFound() {
       <Header />
       <main className="mx-auto flex max-w-2xl flex-col items-center px-6 py-24 text-center">
         <Image
-          src="/images/icon-black.png"
+          src="/images/icon-white.png"
           alt=""
           aria-hidden="true"
           width={64}
           height={52}
           className="h-14 w-auto"
         />
-        <h1 className="mt-6 font-display text-6xl uppercase tracking-wide text-black md:text-7xl">
+        <h1 className="mt-6 font-display text-6xl uppercase tracking-wide text-cream md:text-7xl">
           Lost in the Steam
         </h1>
-        <p className="mt-6 max-w-md text-black/80">
+        <p className="mt-6 max-w-md text-cream/80">
           Looks like you took a wrong turn somewhere between the sauna and the cold plunge — this page doesn&apos;t
           exist. Let&apos;s get you back to somewhere a little warmer.
         </p>

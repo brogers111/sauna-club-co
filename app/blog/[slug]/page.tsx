@@ -67,15 +67,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <main>
         <section className="relative flex h-[50dvh] min-h-90 items-center justify-center overflow-hidden">
           <Image src={post.featuredImage.src} alt={post.featuredImage.alt} fill priority sizes="100vw" className="object-cover" />
-          <h1 className="relative z-10 max-w-4xl px-6 text-center font-display text-4xl uppercase tracking-wide text-tan-light [text-shadow:0_4px_24px_rgb(0_0_0/45%)] md:text-6xl">
+          <h1 className="relative z-10 max-w-4xl px-6 text-center font-display text-4xl uppercase tracking-wide text-cream [text-shadow:0_4px_24px_rgb(0_0_0/45%)] md:text-6xl">
             {post.title}
           </h1>
         </section>
 
         <div className="mx-auto max-w-3xl px-6 py-16">
-          <div className="flex flex-wrap items-center gap-3 font-sans text-sm text-black/60">
+          <div className="flex flex-wrap items-center gap-3 font-sans text-sm text-cream/60">
             {author ? (
-              <Link href={`/blog/authors/${author.slug}`} className="font-medium text-black transition-colors hover:text-orange">
+              <Link href={`/blog/authors/${author.slug}`} className="font-medium text-cream transition-colors hover:text-orange">
                 {author.name}
               </Link>
             ) : null}

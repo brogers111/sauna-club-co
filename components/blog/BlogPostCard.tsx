@@ -4,7 +4,7 @@ import type { BlogPost } from "@/lib/data/blog";
 
 export function BlogPostCard({ post }: { post: BlogPost }) {
   return (
-    <Link href={`/blog/${post.slug}`} className="group flex flex-col text-black transition-colors hover:text-orange">
+    <Link href={`/blog/${post.slug}`} className="group flex flex-col text-cream transition-colors hover:text-orange">
       <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
         <Image
           src={post.featuredImage.src}
@@ -15,8 +15,8 @@ export function BlogPostCard({ post }: { post: BlogPost }) {
         />
       </div>
       <h3 className="mt-4 font-display text-2xl uppercase tracking-wide">{post.title}</h3>
-      <p className="mt-1 font-sans text-sm text-black/60">{post.readTimeMinutes} min read</p>
-      <p className="mt-2 font-sans text-sm text-black/80">{post.metaDescription}</p>
+      <p className="mt-1 font-sans text-sm text-cream/60">{post.readTimeMinutes} min read</p>
+      <p className="mt-2 font-sans text-sm text-cream/80">{post.metaDescription}</p>
     </Link>
   );
 }

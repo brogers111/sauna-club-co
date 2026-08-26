@@ -56,7 +56,7 @@ export function MobileNav() {
     <nav
       id="mobile-nav-menu"
       aria-label="Primary"
-      className={`fixed inset-x-4 top-0 z-40 rounded-b-2xl bg-tan-light px-6 pt-28 pb-10 shadow-md transition-transform duration-300 ease-out sm:inset-x-8 ${
+      className={`fixed inset-x-4 top-0 z-40 rounded-b-2xl bg-tan-dark px-6 pt-28 pb-10 shadow-md transition-transform duration-300 ease-out sm:inset-x-8 ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
@@ -79,10 +79,13 @@ export function MobileNav() {
       </ul>
 
       <div className="mt-8 flex flex-col gap-3">
-        <Button href="/account" variant="muted" className="w-full">
-          My Account
+        <Button href="/buy-membership" variant="secondary" className="w-full">
+          Buy Membership
         </Button>
-        <BookNowButton className="w-full" />
+        <BookNowButton label="Book Session" className="w-full" />
+        <Button href="/login" variant="muted" className="w-full">
+          Profile
+        </Button>
       </div>
     </nav>
   );

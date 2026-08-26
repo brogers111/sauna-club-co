@@ -96,10 +96,10 @@ export function ServicesCarousel({ services = DEFAULT_SERVICES, background = "li
       <div className="relative h-60 overflow-hidden sm:h-90 md:h-105">
         {/* Edge fades — the outer edges of the side images dissolve into the page background. */}
         <div
-          className={`pointer-events-none absolute inset-y-0 left-0 z-30 w-16 bg-linear-to-r to-transparent sm:w-24 md:w-32 ${isDark ? "from-black" : "from-tan-light"}`}
+          className={`pointer-events-none absolute inset-y-0 left-0 z-30 w-16 bg-linear-to-r from-tan-light to-transparent sm:w-24 md:w-32`}
         />
         <div
-          className={`pointer-events-none absolute inset-y-0 right-0 z-30 w-16 bg-linear-to-l to-transparent sm:w-24 md:w-32 ${isDark ? "from-black" : "from-tan-light"}`}
+          className={`pointer-events-none absolute inset-y-0 right-0 z-30 w-16 bg-linear-to-l from-tan-light to-transparent sm:w-24 md:w-32`}
         />
 
         {services.map((service, index) => {
@@ -138,7 +138,7 @@ export function ServicesCarousel({ services = DEFAULT_SERVICES, background = "li
           type="button"
           onClick={() => go(-1)}
           aria-label="Show previous service"
-          className={`cursor-pointer transition-colors hover:text-orange ${isDark ? "text-tan-light" : "text-black"}`}
+          className={`cursor-pointer transition-colors hover:text-orange ${isDark ? "text-cream" : "text-cream"}`}
         >
           <ArrowIcon direction="left" className="h-5 w-5" />
         </button>
@@ -155,7 +155,7 @@ export function ServicesCarousel({ services = DEFAULT_SERVICES, background = "li
           type="button"
           onClick={() => go(1)}
           aria-label="Show next service"
-          className={`cursor-pointer transition-colors hover:text-orange ${isDark ? "text-tan-light" : "text-black"}`}
+          className={`cursor-pointer transition-colors hover:text-orange ${isDark ? "text-cream" : "text-cream"}`}
         >
           <ArrowIcon direction="right" className="h-5 w-5" />
         </button>
@@ -169,7 +169,7 @@ export function ServicesCarousel({ services = DEFAULT_SERVICES, background = "li
               key={service.slug}
               className={
                 isActive
-                  ? `font-display text-4xl uppercase tracking-wide ${isDark ? "text-tan-light" : "text-black"}`
+                  ? `font-display text-4xl uppercase tracking-wide ${isDark ? "text-cream" : "text-cream"}`
                   : "sr-only"
               }
               aria-hidden={isActive ? undefined : true}
@@ -191,7 +191,7 @@ export function ServicesCarousel({ services = DEFAULT_SERVICES, background = "li
             <p
               key={service.slug}
               style={{ gridArea: "1 / 1" }}
-              className={`transition-opacity duration-400 ${isDark ? "text-tan-light/80" : "text-black/80"} ${shown ? "opacity-100" : "pointer-events-none opacity-0"}`}
+              className={`transition-opacity duration-400 ${isDark ? "text-cream/80" : "text-cream/80"} ${shown ? "opacity-100" : "pointer-events-none opacity-0"}`}
               aria-hidden={isTextActive ? undefined : true}
             >
               {service.paragraph}

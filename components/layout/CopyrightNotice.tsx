@@ -26,7 +26,7 @@ export function CopyrightNotice() {
   const year = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   return (
-    <p className="pb-4 text-center font-sans text-sm text-black/50">
+    <p className="pb-4 text-center font-sans text-sm text-cream/50">
       Sauna Club Co LLC{year !== null ? `, © ${year}` : ""}
     </p>
   );

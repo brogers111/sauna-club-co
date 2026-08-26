@@ -7,7 +7,7 @@ type SectionHeadingProps = {
 export function SectionHeading({ children, className = "", as = "h2" }: SectionHeadingProps) {
   const Tag = as;
   return (
-    <Tag className={`font-display text-6xl uppercase tracking-wide text-black md:text-7xl ${className}`}>
+    <Tag className={`font-display text-6xl uppercase tracking-wide text-cream md:text-7xl ${className}`}>
       {children}
     </Tag>
   );

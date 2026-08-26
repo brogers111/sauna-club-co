@@ -46,7 +46,7 @@ export function GalleryTeaser({ background = "light" }: GalleryTeaserProps) {
 
         <Link
           href="/about"
-          className={`group inline-flex items-center gap-3 self-end transition-colors hover:text-orange ${isDark ? "text-tan-light" : "text-black"}`}
+          className={`group inline-flex items-center gap-3 self-end transition-colors hover:text-orange ${isDark ? "text-cream" : "text-cream"}`}
         >
           <span className="font-display text-4xl uppercase tracking-wide">See More</span>
           <ArrowIcon direction="right" className="-mt-1 h-5 w-5 shrink-0" />
@@ -77,7 +77,7 @@ export function GalleryTeaser({ background = "light" }: GalleryTeaserProps) {
 
           <Link
             href="/about"
-            className={`group mt-2 inline-flex items-center gap-3 self-end transition-colors hover:text-orange ${isDark ? "text-tan-light" : "text-black"}`}
+            className={`group mt-2 inline-flex items-center gap-3 self-end transition-colors hover:text-orange ${isDark ? "text-cream" : "text-cream"}`}
           >
             <span className="font-display text-4xl uppercase tracking-wide">See More</span>
             <ArrowIcon direction="right" className="-mt-1 h-5 w-5 shrink-0" />

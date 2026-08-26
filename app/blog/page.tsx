@@ -42,7 +42,7 @@ export default function BlogIndexPage() {
               <div className="w-full md:mx-auto md:w-[48.4%]">
                 <FitText
                   as="h1"
-                  className="font-display uppercase text-tan-light [text-shadow:0_4px_24px_rgb(0_0_0/45%)] text-[clamp(3rem,13vw,17rem)]"
+                  className="font-display uppercase text-cream [text-shadow:0_4px_24px_rgb(0_0_0/45%)] text-[clamp(3rem,13vw,17rem)]"
                 >
                   Sauna Insights
                 </FitText>
@@ -53,7 +53,7 @@ export default function BlogIndexPage() {
 
         <div className="mx-auto max-w-6xl px-6 py-16">
           {posts.length === 0 ? (
-            <p className="py-10 text-center font-sans text-black/60">New posts are on the way — check back soon.</p>
+            <p className="py-10 text-center font-sans text-cream/60">New posts are on the way — check back soon.</p>
           ) : (
             <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
               {posts.map((post) => (

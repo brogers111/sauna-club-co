@@ -6,6 +6,7 @@ import { ServicesSection } from "@/components/home/ServicesSection";
 import { LocationsSection } from "@/components/home/LocationsSection";
 import { PricingSection } from "@/components/home/PricingSection";
 import { GalleryTeaser } from "@/components/home/GalleryTeaser";
+import { NewsletterSection } from "@/components/home/NewsletterSection";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { SITE_DESCRIPTION } from "@/lib/site-config";
 
@@ -19,12 +20,13 @@ export default function HomePage() {
   return (
     <>
       <Header overlay />
-      <main className="bg-black">
+      <main>
         <Hero />
         <ServicesSection />
         <LocationsSection />
         <PricingSection />
-        <GalleryTeaser background="dark" />
+        <NewsletterSection />
+        <GalleryTeaser />
       </main>
       <Footer />
     </>

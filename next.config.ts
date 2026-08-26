@@ -1,13 +1,15 @@
 import type { NextConfig } from "next";
 import { GLOFOX_PORTAL_ORIGIN } from "./lib/site-config";
 
+const IFRAME_RESIZER_CDN = "https://cdnjs.cloudflare.com";
+
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
 const canonicalHost = SITE_URL ? new URL(SITE_URL).hostname : null;
 const isLocalHost = canonicalHost === "localhost";
 const isDev = process.env.NODE_ENV !== "production";
 const CSP = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
+  `script-src 'self' 'unsafe-inline' ${IFRAME_RESIZER_CDN}${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data:",
   "font-src 'self'",

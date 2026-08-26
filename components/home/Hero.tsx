@@ -18,7 +18,7 @@ export function Hero() {
         <div className="relative z-10 flex h-full items-center px-5">
           <FitText
             as="h1"
-            className="font-display uppercase text-tan-light [text-shadow:0_4px_24px_rgb(0_0_0/45%)] text-[clamp(3rem,13vw,17rem)]"
+            className="font-display uppercase text-cream [text-shadow:0_4px_24px_rgb(0_0_0/45%)] text-[clamp(3rem,13vw,17rem)]"
           >
             Plan Your Unwind
           </FitText>
@@ -27,7 +27,7 @@ export function Hero() {
         <a
           href="#services"
           aria-label="Scroll to our services"
-          className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-tan-light transition-colors hover:text-orange"
+          className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-cream transition-colors hover:text-orange"
         >
           <ArrowIcon direction="down" className="h-10 w-10" />
         </a>

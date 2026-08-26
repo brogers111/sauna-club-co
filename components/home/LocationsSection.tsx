@@ -7,7 +7,7 @@ export function LocationsSection() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-10" id="locations">
       <div className="flex items-start gap-6 md:items-end md:justify-between">
-        <SectionHeading className="text-tan-light!">Locations</SectionHeading>
+        <SectionHeading>Locations</SectionHeading>
         <div className="relative hidden aspect-8/4 w-40 shrink-0 self-end overflow-hidden rounded-2xl sm:w-60 md:block">
           <Image
             src="/images/wheat-ridge.webp"

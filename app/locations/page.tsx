@@ -47,7 +47,7 @@ export default function LocationsIndexPage() {
               <div className="w-full md:mx-auto md:w-1/2">
                 <FitText
                   as="h1"
-                  className="font-display uppercase text-tan-light [text-shadow:0_4px_24px_rgb(0_0_0/45%)] text-[clamp(3rem,13vw,17rem)]"
+                  className="font-display uppercase text-cream [text-shadow:0_4px_24px_rgb(0_0_0/45%)] text-[clamp(3rem,13vw,17rem)]"
                 >
                   Our Locations
                 </FitText>
@@ -70,7 +70,7 @@ export default function LocationsIndexPage() {
                 <div key={location.slug}>
                   <Link
                     href={`/locations/${location.slug}`}
-                    className="text-black transition-colors hover:text-orange"
+                    className="text-cream transition-colors hover:text-orange"
                   >
                     <h2 className="font-display text-5xl uppercase tracking-wide md:text-7xl">
                       {location.name}, {location.region}
@@ -95,7 +95,7 @@ export default function LocationsIndexPage() {
                     <div>
                       <Link
                         href={`/locations/${location.slug}`}
-                        className="group inline-flex items-center gap-3 text-black transition-colors hover:text-orange"
+                        className="group inline-flex items-center gap-3 text-cream transition-colors hover:text-orange"
                       >
                         <h3 className="font-display text-4xl uppercase tracking-wide">Location Details</h3>
                         <ArrowIcon direction="right" className="-mt-1 h-5 w-5 shrink-0" />
@@ -118,12 +118,12 @@ export default function LocationsIndexPage() {
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-4 inline-block font-sans font-medium text-black transition-colors hover:text-orange"
+                        className="mt-4 inline-block font-sans font-medium text-cream transition-colors hover:text-orange"
                       >
                         {location.streetAddress}, {location.city}, {location.region} {location.postalCode}
                       </a>
 
-                      <div className="mt-4 flex flex-col gap-4 text-black/80">
+                      <div className="mt-4 flex flex-col gap-4 text-cream/80">
                         {location.locationsIndexDescription.map((paragraph) => (
                           <p key={paragraph}>{paragraph}</p>
                         ))}
@@ -138,7 +138,7 @@ export default function LocationsIndexPage() {
 
         <div className="mx-[calc(50%-50vw)] mb-20 px-5">
           <div className="flex flex-col items-center gap-4 rounded-2xl bg-green-light px-6 py-10 text-center">
-            <p className="font-display text-4xl uppercase tracking-wide text-tan-light">Schedule Your First Session</p>
+            <p className="font-display text-4xl uppercase tracking-wide text-cream">Schedule Your First Session</p>
             <BookNowButton variant="outline" size="lg" />
           </div>
         </div>

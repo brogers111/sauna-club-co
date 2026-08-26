@@ -9,6 +9,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BookNowButton } from "@/components/ui/BookNowButton";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { ServicesCarousel, type ServiceItem } from "@/components/home/ServicesCarousel";
+import { NewsletterSection } from "@/components/home/NewsletterSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getLocationBySlug, locations, type Location } from "@/lib/data/locations";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -259,7 +260,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
             sizes="100vw"
             className="object-cover object-center"
           />
-          <h1 className="relative z-10 px-5 text-center font-display uppercase text-tan-light [text-shadow:0_4px_24px_rgb(0_0_0/45%)]">
+          <h1 className="relative z-10 px-5 text-center font-display uppercase text-cream [text-shadow:0_4px_24px_rgb(0_0_0/45%)]">
             <span className="block text-5xl tracking-wide sm:text-6xl md:text-8xl">Sauna &amp; Cold Plunge</span>
             <span className="mt-2 block text-xl tracking-wide sm:text-2xl md:text-4xl">
               {" "}in {location.name}, {location.region}
@@ -279,7 +280,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
               <Badge index={3}>{badges[3]}</Badge>
             </div>
           </div>
-          <div className="mt-6 flex flex-col gap-4 text-black/80">
+          <div className="mt-6 flex flex-col gap-4 text-cream/80">
             {location.detailPageDescription.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -303,7 +304,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
         <div className="mx-[calc(50%-50vw)] mb-20 px-5">
           <div className="flex flex-col items-center gap-4 rounded-2xl bg-wood-dark px-6 py-10 text-center">
-            <p className="font-display text-4xl uppercase tracking-wide text-tan-light">Schedule Your First Session</p>
+            <p className="font-display text-4xl uppercase tracking-wide text-cream">Schedule Your First Session</p>
             <BookNowButton variant="outline" size="lg" />
           </div>
         </div>
@@ -321,7 +322,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
         <section className="mx-auto max-w-6xl px-6 py-16">
           <SectionHeading as="h2" className="text-center">{`Designed Different`}</SectionHeading>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-black/80">
+          <p className="mx-auto mt-4 max-w-2xl text-center text-cream/80">
             More sauna and cold plunge studios are popping up around {location.nearbyAreas[0]} every year — most of
             them corporate-backed, expensive, and built for a quick transaction, not a real connection. Sauna Club
             Co is different. We&apos;re the friendly neighborhood sauna and cold plunge social club{" "}
@@ -330,9 +331,9 @@ export default async function LocationPage({ params }: LocationPageProps) {
           </p>
           <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
             {DIFFERENTIATORS.map((item) => (
-              <div key={item.name} className={`rounded-2xl border-2 bg-white px-6 py-6 ${item.border} ${item.shadow}`}>
+              <div key={item.name} className={`rounded-2xl border-2 bg-tan-dark px-6 py-6 ${item.border} ${item.shadow}`}>
                 <h3 className={`font-display text-2xl uppercase tracking-wide ${item.accent}`}>{item.name}</h3>
-                <p className="mt-2 text-sm text-black/80">{item.description}</p>
+                <p className="mt-2 text-sm text-cream/80">{item.description}</p>
               </div>
             ))}
           </div>
@@ -341,7 +342,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
         <section className="py-16">
           <div className="mx-auto max-w-2xl px-6 text-center">
             <SectionHeading as="h2" className="text-center">Areas We Serve</SectionHeading>
-            <p className="mx-auto mt-4 text-center text-black/80">
+            <p className="mx-auto mt-4 text-center text-cream/80">
               Sauna Club Co is your go-to sauna, cold plunge, and contrast therapy social club in the Wheat Ridge area.
               Below is just a small segment of the neighborhoods and communities we&apos;re proud to serve. Your city not on the list? Join us so we can add it!
             </p>
@@ -350,7 +351,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
             {location.areasServed.map((area, index) => {
               const color = AREA_COLORS[index % AREA_COLORS.length];
               return (
-                <div key={area} className={`rounded-xl border-2 bg-white px-5 py-2 ${color.border} ${color.shadow}`}>
+                <div key={area} className={`rounded-xl border-2 bg-tan-dark px-5 py-2 ${color.border} ${color.shadow}`}>
                   <h3 className={`font-display text-lg uppercase tracking-wide ${color.accent}`}>{area}</h3>
                 </div>
               );
@@ -366,7 +367,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
               href={mapsHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="block rounded-2xl border-2 border-blue bg-tan-light p-2 shadow-[8px_8px_0_0_var(--color-blue)]"
+              className="block rounded-2xl border-2 border-blue bg-tan-dark p-2 shadow-[8px_8px_0_0_var(--color-blue)]"
             >
               <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl">
                 <Image
@@ -380,14 +381,14 @@ export default async function LocationPage({ params }: LocationPageProps) {
             </a>
 
             <div>
-              <p className="text-center font-sans text-black/80 md:text-left">{location.drivingDirections}</p>
+              <p className="text-center font-sans text-cream/80 md:text-left">{location.drivingDirections}</p>
 
               <div className="mt-6 flex justify-center">
                 <a
                   href={mapsHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl bg-blue px-6 py-3 text-sm font-medium text-tan-light transition hover:opacity-80"
+                  className="inline-flex items-center gap-2 rounded-xl bg-blue px-6 py-3 text-sm font-medium text-cream transition hover:opacity-80"
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true" className="h-5 w-5 shrink-0">
                     <path
@@ -404,6 +405,8 @@ export default async function LocationPage({ params }: LocationPageProps) {
           </div>
         </section>
 
+        <NewsletterSection />
+
         <section className="mx-auto max-w-4xl px-6 py-16">
           <SectionHeading as="h2" className="text-center">Frequently Asked Questions</SectionHeading>
           <div className="mt-8">
@@ -413,7 +416,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
         <div className="mx-[calc(50%-50vw)] mb-20 px-5">
           <div className="flex flex-col items-center gap-4 rounded-2xl bg-green-light px-6 py-10 text-center">
-            <p className="font-display text-4xl uppercase tracking-wide text-tan-light">Find the right membership for you</p>
+            <p className="font-display text-4xl uppercase tracking-wide text-cream">Find the right membership for you</p>
             <BookNowButton variant="outline" size="lg" />
           </div>
         </div>

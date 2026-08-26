@@ -52,7 +52,7 @@ export default function AboutPage() {
               <div className="w-full md:mx-auto md:w-[30.36%]">
                 <FitText
                   as="h1"
-                  className="font-display uppercase text-tan-light [text-shadow:0_4px_24px_rgb(0_0_0/45%)] text-[clamp(3rem,13vw,17rem)]"
+                  className="font-display uppercase text-cream [text-shadow:0_4px_24px_rgb(0_0_0/45%)] text-[clamp(3rem,13vw,17rem)]"
                 >
                   About Us
                 </FitText>
@@ -64,8 +64,8 @@ export default function AboutPage() {
         <section className="mx-auto max-w-6xl px-6 py-16">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
             <div>
-              <h2 className="text-center font-display text-5xl uppercase tracking-wide text-black md:text-left md:text-7xl">Our Story</h2>
-              <div className="mt-4 flex flex-col gap-4 text-center text-black/80 md:text-left">
+              <h2 className="text-center font-display text-5xl uppercase tracking-wide text-cream md:text-left md:text-7xl">Our Story</h2>
+              <div className="mt-4 flex flex-col gap-4 text-center text-cream/80 md:text-left">
                 <p>
                   Sauna Club Co started with a simple idea: recovery shouldn&apos;t be a solo chore squeezed in
                   before or after the gym — it should be something people actually look forward to. What began as a
@@ -100,7 +100,7 @@ export default function AboutPage() {
               href={mapsHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="block rounded-2xl border-2 border-blue bg-tan-light p-2 shadow-[8px_8px_0_0_var(--color-blue)]"
+              className="block rounded-2xl border-2 border-blue bg-tan-dark p-2 shadow-[8px_8px_0_0_var(--color-blue)]"
             >
               <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl">
                 <Image
@@ -114,14 +114,14 @@ export default function AboutPage() {
             </a>
 
             <div>
-              <p className="text-center font-sans text-black/80 md:text-left">{location?.drivingDirections}</p>
+              <p className="text-center font-sans text-cream/80 md:text-left">{location?.drivingDirections}</p>
 
               <div className="mt-6 flex justify-center">
                 <a
                   href={mapsHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl bg-blue px-6 py-3 text-sm font-medium text-tan-light transition hover:opacity-80"
+                  className="inline-flex items-center gap-2 rounded-xl bg-blue px-6 py-3 text-sm font-medium text-cream transition hover:opacity-80"
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true" className="h-5 w-5 shrink-0">
                     <path
@@ -139,7 +139,7 @@ export default function AboutPage() {
         </section>
 
         <section className="mx-auto max-w-2xl px-6 pt-16 pb-20">
-          <h2 className="text-center font-display text-5xl uppercase tracking-wide text-black md:text-7xl">Contact Us</h2>
+          <h2 className="text-center font-display text-5xl uppercase tracking-wide text-cream md:text-7xl">Contact Us</h2>
           <ContactForm phone={location?.phone} />
         </section>
       </main>

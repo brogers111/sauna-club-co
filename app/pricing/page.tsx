@@ -47,7 +47,7 @@ export default function PricingPage() {
               <div className="w-full md:mx-auto md:w-[39.4%]">
                 <FitText
                   as="h1"
-                  className="font-display uppercase text-tan-light [text-shadow:0_4px_24px_rgb(0_0_0/45%)] text-[clamp(3rem,13vw,17rem)]"
+                  className="font-display uppercase text-cream [text-shadow:0_4px_24px_rgb(0_0_0/45%)] text-[clamp(3rem,13vw,17rem)]"
                 >
                   Our Pricing
                 </FitText>

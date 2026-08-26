@@ -1,20 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --color-tan-light: #f5f0e5;
-  --color-tan-dark: #ddd4bd;
-  --color-blue: #2e6f8d;
-  --color-wood-light: #e0a23a;
-  --color-wood-dark: #b4652d;
-  --color-orange: #e5572e;
-  --color-green-light: #3c7a63;
-  --color-green-dark: #1f4438;
-  --color-gray: #3f3f3f;
+  /* Dark theme, keyed off a reference palette of #E2734D / #2C2B2B / #242424.
+     Token names are unchanged from the original light theme so every
+     existing Tailwind class (bg-tan-light, border-wood-dark, etc.) keeps
+     working — only what each name resolves to has changed. tan-light is
+     now the page canvas (was the lightest surface, now the darkest),
+     tan-dark is the raised-surface/card tone one step lighter, and cream
+     is the new light-foreground token for text that used to be black. */
+  --color-tan-light: #242424;
+  --color-tan-dark: #2c2b2b;
+  --color-cream: #ede7dd;
+  --color-blue: #6e93a8;
+  --color-wood-light: #d9a15b;
+  --color-wood-dark: #8c4a32;
+  --color-orange: #e2734d;
+  --color-green-light: #6e9b7c;
+  --color-green-dark: #33503e;
+  --color-gray: #9c9895;
 }
 
 @theme inline {
   --color-tan-light: var(--color-tan-light);
   --color-tan-dark: var(--color-tan-dark);
+  --color-cream: var(--color-cream);
   --color-blue: var(--color-blue);
   --color-wood-light: var(--color-wood-light);
   --color-wood-dark: var(--color-wood-dark);
@@ -29,5 +38,5 @@
 
 body {
   background: var(--color-tan-light);
-  color: var(--color-green-dark);
+  color: var(--color-cream);
 }

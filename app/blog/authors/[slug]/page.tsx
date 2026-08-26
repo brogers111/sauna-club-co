@@ -58,8 +58,8 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
             </div>
           ) : null}
           <div>
-            <h1 className="font-display text-5xl uppercase tracking-wide text-black md:text-6xl">{author.name}</h1>
-            <p className="mt-3 font-sans text-black/80">{author.bio}</p>
+            <h1 className="font-display text-5xl uppercase tracking-wide text-cream md:text-6xl">{author.name}</h1>
+            <p className="mt-3 font-sans text-cream/80">{author.bio}</p>
           </div>
         </div>
 

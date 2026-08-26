@@ -5,7 +5,7 @@ const COLORS = ["bg-orange", "bg-wood-light", "bg-blue", "bg-green-light"];
 export function Badge({ children, index = 0 }: { children: ReactNode; index?: number }) {
   return (
     <span
-      className={`inline-flex items-center rounded-md px-3 pt-1 font-display text-md uppercase text-tan-light ${COLORS[index % COLORS.length]}`}
+      className={`inline-flex items-center rounded-md px-3 pt-1 font-display text-md uppercase text-cream ${COLORS[index % COLORS.length]}`}
     >
       {children}
     </span>

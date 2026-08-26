@@ -28,7 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-scroll-behavior="smooth"
       className={`${fredoka.variable} ${dushick.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-tan-light text-black">
+      <body className="min-h-full flex flex-col font-sans bg-tan-light text-cream">
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         {children}
       </body>

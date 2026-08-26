@@ -11,17 +11,23 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { breadcrumbListSchema } from "@/lib/seo/schema";
 import { GLOFOX_URLS } from "@/lib/site-config";
 
+export const metadata: Metadata = buildMetadata({
+  title: "Buy a Membership",
+  description: "Purchase a Sauna Club Co membership or session credit pack — unlimited monthly access or multi-session bundles.",
+  path: "/buy-membership",
+});
+
 const STEPS = [
   {
     label: "Step 1",
-    text: "Pick an available time from the list below to book your hour-long session.",
+    text: "Choose an unlimited monthly membership or a multi-session credit pack from the list below.",
     border: "border-orange",
     shadow: "shadow-[8px_8px_0_0_var(--color-orange)]",
     accent: "text-orange",
   },
   {
     label: "Step 2",
-    text: "Once you've found a time that works for you, sign in or create a free account if this is your first time booking with us.",
+    text: "Once you've found the option that works for you, sign in or create a free account if this is your first time purchasing with us.",
     border: "border-wood-light",
     shadow: "shadow-[8px_8px_0_0_var(--color-wood-light)]",
     accent: "text-wood-light",
@@ -30,7 +36,7 @@ const STEPS = [
     label: "Step 3",
     text: (
       <>
-        Complete checkout to confirm your booking. If you have any questions along the way,{" "}
+        Complete checkout to confirm your purchase. If you have any questions along the way,{" "}
         <Link href="/contact" className="underline hover:text-wood-dark">
           contact our team
         </Link>
@@ -43,19 +49,13 @@ const STEPS = [
   },
 ];
 
-export const metadata: Metadata = buildMetadata({
-  title: "Book a Session",
-  description: "Book a sauna, cold plunge, or hot tub session at Sauna Club Co.",
-  path: "/book",
-});
-
-export default function BookPage() {
+export default function BuyMembershipPage() {
   return (
     <>
       <JsonLd
         data={breadcrumbListSchema([
           { name: "Home", path: "/" },
-          { name: "Book Session", path: "/book" },
+          { name: "Buy Membership", path: "/buy-membership" },
         ])}
       />
       <Header overlay />
@@ -63,24 +63,24 @@ export default function BookPage() {
         <section className="h-[70dvh] min-h-90">
           <div className="relative h-full w-full overflow-hidden">
             <Image
-              src="/images/book-hero.webp"
-              alt="Empty cedar sauna benches with ambient backlighting at Sauna Club Co"
+              src="/images/sauna-interior.webp"
+              alt="Interior of the wood-paneled sauna at Sauna Club Co"
               fill
               priority
               sizes="100vw"
               className="object-cover"
             />
             <div className="relative z-10 flex h-full items-center px-5">
-              {/* 50.91% ≈ 50% × (glyph-advance width of "BOOK A SESSION" ÷
+              {/* 61.13% ≈ 50% × (glyph-advance width of "BUY A MEMBERSHIP" ÷
                   "OUR LOCATIONS" in dushick, measured via fontTools) so this
                   H1 renders at the same actual size as the other hero pages
                   on desktop. */}
-              <div className="w-full md:mx-auto md:w-[50.91%]">
+              <div className="w-full md:mx-auto md:w-[61.13%]">
                 <FitText
                   as="h1"
                   className="font-display uppercase text-cream [text-shadow:0_4px_24px_rgb(0_0_0/45%)] text-[clamp(3rem,13vw,17rem)]"
                 >
-                  Book a Session
+                  Buy a Membership
                 </FitText>
               </div>
             </div>
@@ -104,19 +104,19 @@ export default function BookPage() {
         </div>
 
         <div className="mx-auto max-w-6xl px-6 pb-16">
-          <SectionHeading as="h2">Available Sessions</SectionHeading>
+          <SectionHeading as="h2">Memberships &amp; Credit Packs</SectionHeading>
           <p className="mt-4 max-w-2xl text-cream/80">
-            Pick an available time below to book your hour-long session. Looking to buy a membership or credit pack
-            instead?{" "}
-            <Link href="/buy-membership" className="underline hover:text-orange">
-              Buy a membership here
+            Choose an unlimited monthly membership or a multi-session credit pack below. Just booking a single
+            session instead?{" "}
+            <Link href="/book" className="underline hover:text-orange">
+              Book a session here
             </Link>
             .
           </p>
 
           <div className="mt-8 rounded-2xl border-2 border-green-light bg-tan-dark p-2 shadow-[8px_8px_0_0_var(--color-green-light)]">
             <div className="overflow-hidden rounded-xl">
-              <GlofoxPortalFrame src={GLOFOX_URLS.bookSessions} title="Sauna Club Co booking portal" />
+              <GlofoxPortalFrame src={GLOFOX_URLS.buyMembership} title="Sauna Club Co membership and credit pack portal" />
             </div>
           </div>
         </div>

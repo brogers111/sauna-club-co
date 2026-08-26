@@ -17,7 +17,7 @@ export function BlogCTA({ target, text }: BlogCTAProps) {
 
   return (
     <div className="my-8 flex flex-col items-center gap-4 rounded-2xl bg-blue px-6 py-8 text-center">
-      <p className="font-display text-2xl uppercase tracking-wide text-tan-light">{text}</p>
+      <p className="font-display text-2xl uppercase tracking-wide text-cream">{text}</p>
       <Button href={href} variant="outline">
         {label}
       </Button>

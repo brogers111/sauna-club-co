@@ -14,19 +14,19 @@ export const metadata: Metadata = buildMetadata({
 });
 
 function H2({ children }: { children: string }) {
-  return <h2 className="mt-12 font-display text-3xl uppercase tracking-wide text-black first:mt-0">{children}</h2>;
+  return <h2 className="mt-12 font-display text-3xl uppercase tracking-wide text-cream first:mt-0">{children}</h2>;
 }
 
 function H3({ children }: { children: string }) {
-  return <h3 className="mt-6 font-display text-xl uppercase tracking-wide text-black">{children}</h3>;
+  return <h3 className="mt-6 font-display text-xl uppercase tracking-wide text-cream">{children}</h3>;
 }
 
 function P({ children }: { children: ReactNode }) {
-  return <p className="mt-3 leading-relaxed text-black/80">{children}</p>;
+  return <p className="mt-3 leading-relaxed text-cream/80">{children}</p>;
 }
 
 function UL({ children }: { children: ReactNode }) {
-  return <ul className="mt-3 flex flex-col gap-2 pl-6 leading-relaxed text-black/80 [&>li]:list-disc">{children}</ul>;
+  return <ul className="mt-3 flex flex-col gap-2 pl-6 leading-relaxed text-cream/80 [&>li]:list-disc">{children}</ul>;
 }
 
 export default function TermsOfServicePage() {
@@ -40,7 +40,7 @@ export default function TermsOfServicePage() {
       />
       <Header />
       <main className="mx-auto max-w-4xl px-6 py-16">
-        <h1 className="font-display text-6xl uppercase tracking-wide text-black md:text-7xl">Terms &amp; Conditions</h1>
+        <h1 className="font-display text-6xl uppercase tracking-wide text-cream md:text-7xl">Terms &amp; Conditions</h1>
 
         <H2>Late Cancellation and No-Show Policy</H2>
         <P>
