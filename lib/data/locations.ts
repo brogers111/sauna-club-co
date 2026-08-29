@@ -75,12 +75,12 @@ export const locations: Location[] = [
     metaDescription:
       "Ready to sauna, plunge, and socialize with fellow Wheat Ridge locals? Stop by Sauna Club Co for your post-work escape.",
     description: [
-      "Escape the rush and reset your body at our Wheat Ridge location. Designed around the core pillars of heat, cold, and connection, this facility offers an elevated space to push your limits, reduce stress, and restore your mind.",
-      "Inside, you'll find two custom saunas for deep detoxification and muscle relief, complemented by three precision-chilled plunge tubs and a hot tub for total body recovery. Move seamlessly between fire and ice, then stick around to socialize and recharge in a welcoming, community-driven atmosphere.",
+      "Tucked into the heart of Wheat Ridge, our flagship location is built around three simple pillars: heat, cold, and connection. It's a space to shake off the day, heighten your wellness, and leave lighter than you walked in.",
+      "Inside, two custom-built Finnish saunas deliver deep heat for muscle relief and mental clarity, paired with three precision-chilled plunge tubs and a mineral hot tub for total-body recovery. Move between fire and ice at your own pace. Then stay awhile! This isn't a facility you rush through; it's a room full of regulars, new faces, and real conversation, built for the moment your workday ends and the rest of your life begins.",
     ],
     locationsIndexDescription: [
-      "Step away from the everyday grind and reconnect with yourself at our Wheat Ridge studio. Built around heat, cold, and community, the space gives you room to challenge your limits, unwind from stress, and clear your head.",
-      "The studio features two saunas built for deep detox and muscle recovery, three chilled plunge tubs, and a hot tub to round out your session. Cycle between hot and cold at your own pace, then linger afterward in a laid-back, social setting built for making connections.",
+      "Welcome to Wheat Ridge — Sauna Club Co.'s home base, built around three simple pillars: heat, cold, and community. Come to sweat, come to plunge, come to sit still for the first time all day. Bring friends and family. Bring a warm heart. Bring an open mind.",
+      "Two classic cedar saunas set the tone for deep, restorative heat. Three precision-chilled plunge tubs bring the shock that clears your head. A mineral hot tub rounds it all out, easing you back to baseline. Cycle through at your own pace — there's no clock here, no rush to the next thing. Just fire, ice, and a room full of people who get it. Stay for one round or many; either way, you'll leave better than you came.",
     ],
     detailPageDescription: [
       "Sauna Club Co is Wheat Ridge's home for sauna, cold plunge, and hot tub contrast therapy — built as much for connection as for recovery. Alternate between heat and cold, ease into the hot tub, and stick around to talk it over with people who get it. This isn't a solo wellness routine; it's a social club built around feeling better together.",

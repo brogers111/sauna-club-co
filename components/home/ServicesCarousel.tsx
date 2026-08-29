@@ -26,7 +26,7 @@ const DEFAULT_SERVICES: ServiceItem[] = [
     steamVariant: "left",
     image: { src: "/images/man-cold-plunge.webp", alt: "Man submerged in a cold plunge tub at Sauna Club Co" },
     paragraph:
-      "Brace yourself and step into our precision-chilled cold plunge tubs for a rush of invigorating cold exposure. Alternating between heat and cold — a practice known as contrast therapy — helps reduce inflammation, speeds muscle recovery, and sharpens mental clarity. Regular cold plunge sessions can also boost circulation, strengthen immune response, and build resilience to everyday stress. Take the plunge and feel the reset.",
+      "Cold water immersion has been used for centuries, from Scandinavian ice bathing to Roman cold plunge pools, for its ability to sharpen the mind and lift mood through a natural rush of adrenaline and dopamine. Beyond the immediate high, regular cold exposure supports faster muscle recovery, reduced inflammation, increased fat metabolism, and a stronger long-term resilience to stress.",
   },
   {
     slug: "sauna",
@@ -34,7 +34,7 @@ const DEFAULT_SERVICES: ServiceItem[] = [
     steamVariant: "middle",
     image: { src: "/images/guys-sauna-1.webp", alt: "Two men relaxing on the cedar benches inside the sauna" },
     paragraph:
-      "Experience a profound sense of relaxation and renewal as you settle into our expertly crafted saunas. Choose from our large, multi-person benches for a shared social heat, or enjoy a more reflective session. Beyond the soothing warmth and immediate relief of muscle tension, regular sauna use supports cardiovascular health, stimulates a deep sweat for detoxification, and can improve sleep quality. Let the gentle heat and aromatic wood create a serene retreat.",
+      " Experience a profound sense of relaxation and renewal as you settle into our expertly crafted saunas. Custom-built, real wood, real steam, real heat, no shortcuts. Enjoy our large, multi-person saunas for a shared social heat, or zen out alone for a more reflective session. Beyond the soothing warmth and immediate relief of muscle tension, regular sauna use supports cardiovascular health, detoxification, and improves sleep quality. Recover. Circulate. Sleep deeper. Think clearer. Train harder. Glow.",
   },
   {
     slug: "socialize",
@@ -42,7 +42,7 @@ const DEFAULT_SERVICES: ServiceItem[] = [
     steamVariant: "right",
     image: { src: "/images/people-sauna-2.webp", alt: "A group socializing together inside the sauna" },
     paragraph:
-      "Sauna Club Co isn't just about the heat and cold — it's about the people you share it with. Our benches and lounge spaces are built for connection, whether you're catching up with old friends or making new ones. Socializing in a low-stress, screen-free environment has been shown to ease anxiety, elevate mood, and strengthen a sense of community. Come for the recovery, stay for the company.",
+      "Put the phone down. Pick a bench up. No screens. No scrolling. Just heat, cold, and the people next to you. Sauna Club Co. is built for conversation; the kind that happens naturally when you're sweating next to a stranger who's about to become a friend. Real conversation lowers stress and lifts mood faster than almost anything else and it's a lot harder to come by when everyone's heads-down in a phone. Come for the heat, stay for the company.",
   },
 ];
 

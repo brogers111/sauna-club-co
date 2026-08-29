@@ -4,12 +4,12 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FitText } from "@/components/home/FitText";
-import { GlofoxPortalFrame } from "@/components/glofox/GlofoxPortalFrame";
+import { GlofoxResizableEmbed } from "@/components/glofox/GlofoxResizableEmbed";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { breadcrumbListSchema } from "@/lib/seo/schema";
-import { GLOFOX_URLS } from "@/lib/site-config";
+import { GLOFOX_BRANCH_ID, GLOFOX_URLS } from "@/lib/site-config";
 
 export const metadata: Metadata = buildMetadata({
   title: "Buy a Membership",
@@ -115,8 +115,12 @@ export default function BuyMembershipPage() {
           </p>
 
           <div className="mt-8 rounded-2xl border-2 border-green-light bg-tan-dark p-2 shadow-[8px_8px_0_0_var(--color-green-light)]">
-            <div className="overflow-hidden rounded-xl">
-              <GlofoxPortalFrame src={GLOFOX_URLS.buyMembership} title="Sauna Club Co membership and credit pack portal" />
+            <div className="overflow-hidden rounded-xl bg-tan-dark p-4">
+              <GlofoxResizableEmbed
+                id={`glofox_${GLOFOX_BRANCH_ID}_memberships`}
+                src={GLOFOX_URLS.buyMembership}
+                title="Sauna Club Co membership and credit pack portal"
+              />
             </div>
           </div>
         </div>

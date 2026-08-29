@@ -37,11 +37,11 @@ export function ContactForm({ phone }: ContactFormProps) {
     <>
       {phone ? (
         <p className="mt-3 text-center font-sans text-cream/80">
-          Have questions or need help booking a session or membership? Give us a call during normal business hours at{" "}
+          Have questions? Need help booking a session or membership? Give us a call during normal business hours at{" "}
           <a href={`tel:${phone}`} className="font-medium text-cream hover:text-orange">
             {phone}
           </a>{" "}
-          or fill out the form below, and we&apos;ll get back to you within 1–2 business days.
+          or fill out the form below.
         </p>
       ) : null}
 

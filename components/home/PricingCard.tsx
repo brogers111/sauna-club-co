@@ -69,9 +69,6 @@ export function PricingCard({ tier, index }: { tier: PricingTier; index: number 
           <span className="block text-center text-4xl">{tier.nameLines.large}</span>
         </h3>
       ) : (
-        // Same two-line shape as the split headers (an invisible spacer line
-        // matching the small-label line's height) so every card's underline
-        // lands at the same vertical position regardless of title style.
         <h3 className="font-display uppercase leading-none tracking-wide text-cream">
           <span aria-hidden="true" className="invisible block text-left text-lg">
             &nbsp;
