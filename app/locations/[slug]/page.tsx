@@ -60,21 +60,21 @@ function buildLocationServices(location: Location): ServiceItem[] {
       heading: "Cold Plunge",
       steamVariant: "left",
       image: { src: "/images/man-cold-plunge.webp", alt: "Man submerged in a cold plunge tub at Sauna Club Co" },
-      paragraph: `Our ${location.name} cold plunge tubs are precision-chilled for real contrast therapy — the kind that sharpens focus, speeds up recovery, and leaves you feeling wide awake. Whether you're searching for a cold plunge near ${nearestArea} or just want the best cold plunge in ${location.name}, this is where locals come to reset.`,
+      paragraph: `Our ${location.name} cold plunge tubs are precision-chilled for real contrast therapy, the practice of cycling between hot and cold. Contrast therapy promotes flushing of cardiovascular and lymphatic systems while also acting to sharpen focus, speed muscle recovery, and invigorate your entire body. If you're searching for a cold plunge near ${nearestArea} or ${location.name}, this is where locals come to reset.`,
     },
     {
       slug: "sauna",
       heading: "Sauna",
       steamVariant: "middle",
       image: { src: "/images/guys-sauna-1.webp", alt: "Two men relaxing on the cedar benches inside the sauna" },
-      paragraph: `Sink into the heat at ${location.name}'s go-to sauna. Our custom-built saunas are designed for a deep, consistent warmth that helps you sweat out stress, loosen tight muscles, and unwind after a long day — the kind of sauna experience ${nearestArea}-area locals keep coming back for.`,
+      paragraph: `Sink into the heat at ${location.name}'s go-to sauna. Our custom-built saunas are designed for a deep, consistent warmth that helps you sweat out stress, loosen tight muscles, and unwind after a long day. This is a sauna experience that ${nearestArea}-area locals keep coming back for.`,
     },
     {
       slug: "hot-mineral-bath",
       heading: "Hot Mineral Bath",
       steamVariant: "right",
       image: { src: "/images/people-sauna-2.webp", alt: "A group socializing together inside the sauna" },
-      paragraph: `Every contrast therapy session ends the same way — easing into our ${location.name} hot mineral bath to relax, warm back up, and catch up with the friends you came with. It's the social heart of the club, and the reason so many members treat Sauna Club Co like their neighborhood gathering spot.`,
+      paragraph: `Ease into our ${location.name} mineral bath to warm back up, soothe your joints, and elevate your complexion. Delicate minerals and magnesium soften your skin as you ease into a deep sense of relaxation, calming you from head to toe.`,
     },
   ];
 }
@@ -204,9 +204,9 @@ const FAQS = [
     question: "What makes Sauna Club Co different from other sauna and cold plunge studios near Denver?",
     answer: (
       <>
-        We&apos;re locally owned, not a corporate franchise — so you&apos;ll get fair pricing, a genuine
-        neighborhood social vibe, and a team that actually knows your name, instead of a private suite and a quick
-        transaction.{" "}
+        We&apos;re locally owned, not a corporate franchise, so you&apos;ll get fair pricing, 
+        a genuine neighborhood social vibe, and a team that actually knows your name, instead 
+        of a private suite or a grungy communal space.{" "}
         <Link href="/about" className="underline hover:text-orange-light">
           Learn more about us
         </Link>
@@ -215,6 +215,32 @@ const FAQS = [
     ),
     plainAnswer:
       "We're locally owned, not a corporate franchise — so you'll get fair pricing, a genuine neighborhood social vibe, and a team that actually knows your name, instead of a private suite and a quick transaction.",
+  },
+  {
+    question: "Can I bring friends or family?",
+    answer: (
+      <>
+        Yes! Either have them{" "}
+        <Link href="/book-session" className="underline hover:text-orange-light">
+          sign up
+        </Link>{" "}
+        ahead of time or in person.
+      </>
+    ),
+    plainAnswer: "Yes! Either have them sign up ahead of time or in person.",
+  },
+  {
+    question: "Can I gift purchased sessions to friends or family?",
+    answer: (
+      <>
+        Yes!{" "}
+        <Link href="/about" className="underline hover:text-orange-light">
+          Give us a call
+        </Link>{" "}
+        or find us at the club, we will handle the transfer for you.
+      </>
+    ),
+    plainAnswer: "Yes! Give us a call or find us at the club, we will handle the transfer for you.",
   },
 ];
 
