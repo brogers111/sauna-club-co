@@ -46,8 +46,8 @@ const SERVICES = (locationName: string) => [
     description: `Precision-chilled cold plunge tubs at the ${locationName} location for contrast therapy and recovery.`,
   },
   {
-    name: "Hot Tub",
-    description: `Hot tub access at the ${locationName} location for total-body recovery.`,
+    name: "Hot Mineral Bath",
+    description: `Hot mineral bath access at the ${locationName} location for total-body recovery.`,
   },
 ];
 
@@ -70,11 +70,11 @@ function buildLocationServices(location: Location): ServiceItem[] {
       paragraph: `Sink into the heat at ${location.name}'s go-to sauna. Our custom-built saunas are designed for a deep, consistent warmth that helps you sweat out stress, loosen tight muscles, and unwind after a long day — the kind of sauna experience ${nearestArea}-area locals keep coming back for.`,
     },
     {
-      slug: "hot-tub",
-      heading: "Hot Tub",
+      slug: "hot-mineral-bath",
+      heading: "Hot Mineral Bath",
       steamVariant: "right",
       image: { src: "/images/people-sauna-2.webp", alt: "A group socializing together inside the sauna" },
-      paragraph: `Every contrast therapy session ends the same way — easing into our ${location.name} hot tub to relax, warm back up, and catch up with the friends you came with. It's the social heart of the club, and the reason so many members treat Sauna Club Co like their neighborhood gathering spot.`,
+      paragraph: `Every contrast therapy session ends the same way — easing into our ${location.name} hot mineral bath to relax, warm back up, and catch up with the friends you came with. It's the social heart of the club, and the reason so many members treat Sauna Club Co like their neighborhood gathering spot.`,
     },
   ];
 }
