@@ -40,7 +40,11 @@ function FooterColumn({ title, links, pathname }: { title: string; links: Footer
       <span className="text-md font-bold">{title}</span>
       <nav className="flex flex-col items-center gap-2 md:items-start">
         {links.map((link) => {
-          const active = isActiveNavLink(pathname, link.href);
+          // External links (social) can never be the "current page" — and
+          // an empty href (social links with no URL set yet) would
+          // otherwise false-positive as active, since every pathname
+          // starts with "" + "/".
+          const active = !link.external && isActiveNavLink(pathname, link.href);
 
           // A plain <a>, not next/link's <Link> — /sitemap.xml is a route
           // handler that serves raw XML, not an app page, so Link's
@@ -81,15 +85,15 @@ export function Footer() {
           so the logo sits in the middle either way with no separate
           mobile/desktop markup needed. */}
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-8 py-12 md:flex-row md:items-start md:justify-between md:px-4">
-        <FooterColumn title="Navigation:" links={NAVIGATION_LINKS} pathname={pathname} />
-        <FooterColumn title="Join Us:" links={JOIN_US_LINKS} pathname={pathname} />
+        <FooterColumn title="Explore:" links={NAVIGATION_LINKS} pathname={pathname} />
+        <FooterColumn title="Get Started:" links={JOIN_US_LINKS} pathname={pathname} />
 
         <Link href="/" aria-label="Sauna Club Co home" className="md:self-center">
           <Image src="/images/full-logo-white.png" alt="Sauna Club Co" width={320} height={168} loading="eager" className="h-16 w-auto md:h-20" />
         </Link>
 
-        <FooterColumn title="Learn:" links={LEARN_LINKS} pathname={pathname} />
-        <FooterColumn title="Follow Us:" links={FOLLOW_US_LINKS} pathname={pathname} />
+        <FooterColumn title="Good to Know:" links={LEARN_LINKS} pathname={pathname} />
+        <FooterColumn title="Say Hi:" links={FOLLOW_US_LINKS} pathname={pathname} />
       </div>
 
       <CopyrightNotice />
