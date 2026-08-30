@@ -61,25 +61,21 @@ export default function AboutPage() {
               <div className="mt-4 flex flex-col gap-4 text-center text-cream/80 md:text-left">
                 <p>
                   Sauna Club Co started with a simple idea: meeting together with friends at Clear Creek in Golden to hop in the river and 
-                  spend time together outdoors. We’d play tunes on the river bank, share stories and laughs from our week, float down the 
-                  river on tubes, bask in the sun, and generally just enjoy nature together. A “Colorado Beach Day” as we’d call it! Such a 
-                  gathering is no uncommon occurrence in Colorado, with many partaking in a river dip after hiking, climbing, running, 
-                  mountain biking, and more. During the week, however, it can be tough to make it out to the mountains with traffic and the 
-                  draws of daily life, yet we often still need that reset before heading back to work the next day. We saw a need to bring the 
-                  river and warmth of nature to the people without the commute, and hence created a dedicated outdoor-indoor space where heat, 
-                  cold, and community could live under one roof.
+                  spend time together outdoors. We’d play tunes on the river bank, share stories and laughs from our week, bask in the sun, 
+                  and generally just enjoy nature together. A “Colorado Beach Day” as we’d call it! We saw a need to bring this experience to 
+                  the public without the commute, and hence created a dedicated outdoor-indoor space where heat, cold, and community could 
+                  live under one roof.
                 </p>
                 <p>
-                  Sauna Club Co is different from our river gatherings in that we lean into the massive benefits of heat exposure and sauna 
-                  culture in addition to cold water immersion. Our saunas are classic Finnish saunas, made entirely of natural cedar and are 
-                  heated to the maximum temperature allowed in commercial markets. They CRANK. Our cold plunges are extra large, allow you to 
-                  lay down completely for full immersion, and utilize temperatures 37-59 degrees. Our plunges also feature 24/7 UV + Ozone 
-                  sterilization so the water is as clear, sterile, and pure as possible (also with less waste!). Our mineral hot tub will soothe 
-                  your joints and soften your skin as you bathe in 102-104F degree water enhanced with delicate minerals and magnesium.
+                  Sauna Club Co expands on our river gatherings with the added benefits of heat exposure and sauna culture. Our saunas are 
+                  classic Finnish saunas, made entirely of natural cedar and are heated to the maximum temperature allowed in commercial 
+                  markets. They CRANK. Our cold plunges are extra large, allow you to lay down completely for full immersion, and utilize 
+                  temperatures 37-59 degrees. Our mineral hot tub will soothe your joints and soften your skin as you bathe in 102-104F 
+                  degree water enhanced with delicate minerals and magnesium.
                 </p>
                 <p>
                   Our goal at Sauna Club Co is simple: bring together our community in a wellness-oriented space, where we all can unplug, 
-                  unwind, and reconnect with the natural world and our fellow human beings. We welcome you all and hope to see you at the club soon!
+                  unwind, and reconnect with each other and with ourselves. We welcome you all and hope to see you soon!
                 </p>
               </div>
             </div>
