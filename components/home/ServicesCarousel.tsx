@@ -42,7 +42,7 @@ const DEFAULT_SERVICES: ServiceItem[] = [
     steamVariant: "right",
     image: { src: "/images/people-sauna-2.webp", alt: "A group socializing together inside the sauna" },
     paragraph:
-      "Put the phone down. Pick a bench up. No screens. No scrolling. Just heat, cold, and the people next to you. Sauna Club Co. is built for conversation; the kind that happens naturally when you're sweating next to a stranger who's about to become a friend. Real conversation lowers stress and lifts mood faster than almost anything else and it's a lot harder to come by when everyone's heads-down in a phone. Come for the heat, stay for the company.",
+      "Put the phone down. Pick a bench up. No screens. No scrolling. Just heat, cold, and the people next to you. Sauna Club Co is built for conversation; the kind that happens naturally when you're sweating next to a stranger who's about to become a friend. Real conversation lowers stress and lifts mood faster than almost anything else and it's a lot harder to come by when everyone's heads-down in a phone. Come for the heat, stay for the company.",
   },
 ];
 

@@ -28,7 +28,7 @@ export const GLOFOX_IFRAME_RESIZER_SRC = "https://cdnjs.cloudflare.com/ajax/libs
 export const SITE_NAME = "Sauna Club Co";
 
 export const SITE_DESCRIPTION =
-  "Sauna Club Co. is a sauna, cold plunge, and community wellness studio in Wheat Ridge, Colorado. Come unwind and socialize!";
+  "Sauna Club Co is a sauna, cold plunge, and community wellness studio in Wheat Ridge, Colorado. Come unwind and socialize!";
 
 export const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/saunaclubcollc/",
