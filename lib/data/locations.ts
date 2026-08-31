@@ -75,15 +75,15 @@ export const locations: Location[] = [
     metaDescription:
       "Ready to sauna, plunge, and socialize with fellow Wheat Ridge locals? Stop by Sauna Club Co for your post-work escape.",
     description: [
-      "Tucked into the heart of Wheat Ridge, our flagship location is built around three simple pillars: heat, cold, and connection. It's a space to shake off the day, heighten your wellness, and leave lighter than you walked in.",
+      "Tucked into the heart of Wheat Ridge, our flagship location is built around three simple pillars: heat, cold, and community. It's a space to shake off the day, heighten your wellness, and leave lighter than you walked in.",
       "Inside, two custom-built Finnish saunas deliver deep heat for muscle relief and mental clarity, paired with three precision-chilled plunge tubs and a mineral hot tub for total-body recovery. Move between fire and ice at your own pace. Then stay awhile! This isn't a facility you rush through; it's a room full of regulars, new faces, and real conversation, built for the moment your workday ends and the rest of your life begins.",
     ],
     locationsIndexDescription: [
-      "Welcome to Wheat Ridge — Sauna Club Co.'s home base, built around three simple pillars: heat, cold, and community. Come to sweat, come to plunge, come to sit still for the first time all day. Bring friends and family. Bring a warm heart. Bring an open mind.",
+      "Welcome to Wheat Ridge — Sauna Club Co's home base, built around three simple pillars: heat, cold, and community. Come to sweat, come to plunge, come to sit still for the first time all day. Bring friends and family. Bring a warm heart. Bring an open mind.",
       "Two classic cedar saunas set the tone for deep, restorative heat. Three precision-chilled plunge tubs bring the shock that clears your head. A mineral hot tub rounds it all out, easing you back to baseline. Cycle through at your own pace — there's no clock here, no rush to the next thing. Just fire, ice, and a room full of people who get it. Stay for one round or many; either way, you'll leave better than you came.",
     ],
     detailPageDescription: [
-      "Sauna Club Co is Wheat Ridge's home for contrast therapy and connection. Alternate between heat and cold, soak in our mineral hot tub, and stick around to hang with people who get it. This isn't a solo wellness routine; it's a social club built around feeling better together.",
+      "Sauna Club Co is Wheat Ridge's home for contrast therapy and community. Alternate between heat and cold, soak in our mineral hot tub, and stick around to hang with people who get it. This isn't a solo wellness routine; it's a social club built around feeling better together.",
       "Inside, you'll find everything you need for recovering your body and mind. We have two custom saunas, three precision-chilled cold plunge tubs, and a hot mineral bath for total-body recovery. Drop in for a single session or make it a habit with a membership. Either way, you'll walk out looser, clearer-headed, and already planning your next visit.",
     ],
     nearbyAreas: ["Denver", "Lakewood", "Golden", "Arvada"],

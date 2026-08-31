@@ -30,9 +30,8 @@ export const SITE_NAME = "Sauna Club Co";
 export const SITE_DESCRIPTION =
   "Sauna Club Co. is a sauna, cold plunge, and community wellness studio in Wheat Ridge, Colorado. Come unwind and socialize!";
 
-// TODO: fill in real social profile URLs before launch
 export const SOCIAL_LINKS = {
-  instagram: "",
-  facebook: "",
-  tiktok: "",
+  instagram: "https://www.instagram.com/saunaclubcollc/",
+  facebook: "https://www.facebook.com/people/Sauna-Club-Co-LLC/61593920043011/",
+  tiktok: "https://www.tiktok.com/@saunaclubcollc",
 };

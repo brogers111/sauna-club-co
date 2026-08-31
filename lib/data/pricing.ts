@@ -19,7 +19,7 @@ export const pricingTiers: PricingTier[] = [
     tagline: "Perfect for first-timers, drop-ins, or simple resets.",
     features: [
       "Full facility access",
-      "•Saunas, cold plunges, & hot mineral tub",
+      "Saunas, cold plunges, & hot mineral tub",
       "Showers & changing rooms",
       "Great for trying contrast therapy or when traveling",
     ],
@@ -61,8 +61,8 @@ export const pricingTiers: PricingTier[] = [
     tagline: "Maximum flexibility to develop a daily habit.",
     features: [
       "Unlimited visits every month",
+      "Up to 2 sessions per day",
       "Full facility access",
-      "Daily sauna, cold plunge & hot tub",
       "Billed month-to-month",
     ],
     priceUSD: 149,

@@ -70,7 +70,7 @@ export default function AboutPage() {
                   Sauna Club Co expands on our river gatherings with the added benefits of heat exposure and sauna culture. Our saunas are 
                   classic Finnish saunas, made entirely of natural cedar and are heated to the maximum temperature allowed in commercial 
                   markets. They CRANK. Our cold plunges are extra large, allow you to lay down completely for full immersion, and utilize 
-                  temperatures 37-59 degrees. Our mineral hot tub will soothe your joints and soften your skin as you bathe in 102-104F 
+                  temperatures 37-59 °F. Our mineral hot tub will soothe your joints and soften your skin as you bathe in 102-104F 
                   degree water enhanced with delicate minerals and magnesium.
                 </p>
                 <p>

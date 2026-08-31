@@ -89,7 +89,7 @@ export function Footer() {
         <FooterColumn title="Get Started:" links={JOIN_US_LINKS} pathname={pathname} />
 
         <Link href="/" aria-label="Sauna Club Co home" className="md:self-center">
-          <Image src="/images/full-logo-white.png" alt="Sauna Club Co" width={320} height={168} loading="eager" className="h-16 w-auto md:h-20" />
+          <Image src="/images/tan-logo.png" alt="Sauna Club Co" width={320} height={168} loading="eager" className="h-16 w-auto md:h-20" />
         </Link>
 
         <FooterColumn title="Good to Know:" links={LEARN_LINKS} pathname={pathname} />

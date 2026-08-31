@@ -30,7 +30,7 @@ export function Header({ overlay = false }: HeaderProps) {
         <div className="relative flex w-full items-center justify-between gap-6 rounded-b-2xl bg-tan-dark px-6 py-4 shadow-[0_12px_30px_-8px_rgba(0,0,0,0.9)] md:w-auto md:gap-10 md:px-10">
           <Link href="/" className="flex items-center gap-2" aria-label="Sauna Club Co home">
             <Image
-              src="/images/full-logo-white.png"
+              src="/images/tan-logo.png"
               alt="Sauna Club Co"
               width={200}
               height={104}
