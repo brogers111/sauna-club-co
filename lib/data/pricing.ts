@@ -47,7 +47,7 @@ export const pricingTiers: PricingTier[] = [
     features: [
       "8 Single passes",
       "Full facility access",
-      "Best value for regular drop-ins",
+      "Commitment with flexibility",
       "Credits valid for 1 year after purchase",
     ],
     priceUSD: 179,
@@ -63,7 +63,7 @@ export const pricingTiers: PricingTier[] = [
       "Unlimited visits every month",
       "Up to 2 sessions per day",
       "Full facility access",
-      "Billed month-to-month",
+      "Best value for regular drop-ins",
     ],
     priceUSD: 149,
     billingDescription: "Billed month-to-month",
