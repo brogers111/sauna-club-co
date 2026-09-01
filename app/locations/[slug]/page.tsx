@@ -385,7 +385,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
         </section>
 
         <section className="mx-auto max-w-6xl px-6 py-16">
-          <SectionHeading as="h2" className="text-center md:text-left">Directions</SectionHeading>
+          <SectionHeading as="h2" className="text-center md:text-left">Directions &amp; Hours</SectionHeading>
 
           <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
             <a
@@ -406,7 +406,12 @@ export default async function LocationPage({ params }: LocationPageProps) {
             </a>
 
             <div>
-              <p className="text-center font-sans text-cream/80 md:text-left">{location.drivingDirections}</p>
+              <p className="text-center font-sans font-bold text-cream">
+                7:00 am – 10:00 pm Monday–Friday
+                <br />
+                8:00 am – 9:00 pm Saturday &amp; Sunday
+              </p>
+              <p className="mt-6 text-center font-sans text-cream/80">{location.drivingDirections}</p>
 
               <div className="mt-6 flex justify-center">
                 <a

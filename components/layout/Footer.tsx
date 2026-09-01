@@ -88,12 +88,19 @@ export function Footer() {
         <FooterColumn title="Explore:" links={NAVIGATION_LINKS} pathname={pathname} />
         <FooterColumn title="Get Started:" links={JOIN_US_LINKS} pathname={pathname} />
 
-        <Link href="/" aria-label="Sauna Club Co home" className="md:self-center">
-          <Image src="/images/tan-logo.png" alt="Sauna Club Co" width={320} height={168} loading="eager" className="h-16 w-auto md:h-20" />
-        </Link>
+        <div className="flex flex-col items-center gap-5 md:-mt-4 md:self-center">
+          <Link href="/" aria-label="Sauna Club Co home">
+            <Image src="/images/tan-logo.png" alt="Sauna Club Co" width={320} height={168} loading="eager" className="h-16 w-auto md:h-20" />
+          </Link>
+          <p className="text-center font-sans text-sm text-cream">
+            7:00 am – 10:00 pm Monday–Friday
+            <br />
+            8:00 am – 9:00 pm Saturday &amp; Sunday
+          </p>
+        </div>
 
         <FooterColumn title="Good to Know:" links={LEARN_LINKS} pathname={pathname} />
-        <FooterColumn title="Say Hi:" links={FOLLOW_US_LINKS} pathname={pathname} />
+        <FooterColumn title="Follow Us:" links={FOLLOW_US_LINKS} pathname={pathname} />
       </div>
 
       <CopyrightNotice />
