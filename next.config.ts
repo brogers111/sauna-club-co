@@ -7,14 +7,15 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
 const canonicalHost = SITE_URL ? new URL(SITE_URL).hostname : null;
 const isLocalHost = canonicalHost === "localhost";
 const isDev = process.env.NODE_ENV !== "production";
+const GOOGLE_TAG_MANAGER = "https://www.googletagmanager.com";
 const CSP = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline' ${IFRAME_RESIZER_CDN}${isDev ? " 'unsafe-eval'" : ""}`,
+  `script-src 'self' 'unsafe-inline' ${IFRAME_RESIZER_CDN} ${GOOGLE_TAG_MANAGER}${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data:",
+  `img-src 'self' data: ${GOOGLE_TAG_MANAGER} https://www.google-analytics.com https://www.google.com`,
   "font-src 'self'",
-  `connect-src 'self'${isDev ? " ws:" : ""}`,
-  `frame-src ${GLOFOX_PORTAL_ORIGIN}`,
+  `connect-src 'self' ${GOOGLE_TAG_MANAGER} https://*.google-analytics.com https://*.analytics.google.com${isDev ? " ws:" : ""}`,
+  `frame-src ${GLOFOX_PORTAL_ORIGIN} ${GOOGLE_TAG_MANAGER}`,
   "frame-ancestors 'self'",
   "base-uri 'self'",
   "form-action 'self'",

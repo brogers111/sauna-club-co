@@ -6,6 +6,7 @@ function resolveSiteUrl() {
 }
 
 export const SITE_URL = resolveSiteUrl();
+export const GTM_ID = "GTM-M99BSB98";
 export const GLOFOX_BRANCH_ID = "6a7a099409481f1d490ae9e4";
 export const GLOFOX_PORTAL_ORIGIN = "https://app.glofox.com";
 
