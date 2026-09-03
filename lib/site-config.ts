@@ -35,4 +35,6 @@ export const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/saunaclubcollc/",
   facebook: "https://www.facebook.com/people/Sauna-Club-Co-LLC/61593920043011/",
   tiktok: "https://www.tiktok.com/@saunaclubcollc",
+  youtube: "https://www.youtube.com/channel/UCvdZTEk4cdy1OanFe_OVmWw",
+  twitter: "https://x.com/saunaclubcollc",
 };

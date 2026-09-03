@@ -32,6 +32,8 @@ const FOLLOW_US_LINKS: FooterLink[] = [
   { href: SOCIAL_LINKS.instagram, label: "Instagram", external: true },
   { href: SOCIAL_LINKS.facebook, label: "Facebook", external: true },
   { href: SOCIAL_LINKS.tiktok, label: "TikTok", external: true },
+  { href: SOCIAL_LINKS.youtube, label: "YouTube", external: true },
+  { href: SOCIAL_LINKS.twitter, label: "Twitter", external: true },
 ];
 
 function FooterColumn({ title, links, pathname }: { title: string; links: FooterLink[]; pathname: string }) {
