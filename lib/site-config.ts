@@ -17,7 +17,7 @@ const GLOFOX_PORTAL_BASE = `${GLOFOX_PORTAL_ORIGIN}/portal/#/branch/${GLOFOX_BRA
 export const GLOFOX_URLS = {
   bookSessions: `${GLOFOX_PORTAL_BASE}/classes-list-view`,
   buyMembership: `${GLOFOX_PORTAL_BASE}/memberships`,
-  loginRegister: `${GLOFOX_PORTAL_BASE}/classes-list-view?login`,
+  loginRegister: `${GLOFOX_PORTAL_BASE}/memberships?login`,
   leadRegister: `${GLOFOX_PORTAL_BASE}/lead-register`,
 };
 
