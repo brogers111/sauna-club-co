@@ -1,17 +1,26 @@
 import Image from "next/image";
-import Link from "next/link";
+import { InPageOrRouteLink } from "@/components/ui/InPageOrRouteLink";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 
 type GalleryTeaserProps = {
   // "dark" is for the homepage, whose section background is black.
   background?: "light" | "dark";
+  // Overrides the "See More" link, e.g. the landing page's "Signup Early"
+  // button that jumps back to its form.
+  cta?: { label: string; href: string };
+  // Vertical spacing; pages that space their sections themselves can override it.
+  className?: string;
 };
 
-export function GalleryTeaser({ background = "light" }: GalleryTeaserProps) {
+export function GalleryTeaser({
+  background = "light",
+  cta = { label: "See More", href: "/locations/wheat-ridge" },
+  className = "pb-10",
+}: GalleryTeaserProps) {
   const isDark = background === "dark";
 
   return (
-    <section className="mx-auto max-w-6xl px-6 pb-10">
+    <section className={`mx-auto max-w-6xl px-6 ${className}`}>
       {/* Mobile: simple 3-photo vertical stack. */}
       <div className="flex flex-col gap-4 md:hidden">
         <div className="relative aspect-3/2 w-3/4 self-start overflow-hidden rounded-2xl">
@@ -44,13 +53,13 @@ export function GalleryTeaser({ background = "light" }: GalleryTeaserProps) {
           />
         </div>
 
-        <Link
-          href="/locations/wheat-ridge"
+        <InPageOrRouteLink
+          href={cta.href}
           className={`group inline-flex items-center gap-3 self-end transition-colors hover:text-orange-light ${isDark ? "text-cream" : "text-cream"}`}
         >
-          <span className="font-display text-4xl uppercase tracking-wide">See More</span>
+          <span className="font-display text-4xl uppercase tracking-wide">{cta.label}</span>
           <ArrowIcon direction="right" className="-mt-1 h-5 w-5 shrink-0" />
-        </Link>
+        </InPageOrRouteLink>
       </div>
 
       {/* Desktop: original staggered 5-photo layout. */}
@@ -75,13 +84,13 @@ export function GalleryTeaser({ background = "light" }: GalleryTeaserProps) {
             />
           </div>
 
-          <Link
-            href="/locations/wheat-ridge"
+          <InPageOrRouteLink
+            href={cta.href}
             className={`group mt-2 inline-flex items-center gap-3 self-end transition-colors hover:text-orange-light ${isDark ? "text-cream" : "text-cream"}`}
           >
-            <span className="font-display text-4xl uppercase tracking-wide">See More</span>
+            <span className="font-display text-4xl uppercase tracking-wide">{cta.label}</span>
             <ArrowIcon direction="right" className="-mt-1 h-5 w-5 shrink-0" />
-          </Link>
+          </InPageOrRouteLink>
         </div>
 
         <div className="relative col-span-5 overflow-hidden rounded-2xl">

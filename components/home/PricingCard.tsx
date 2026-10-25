@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { InPageOrRouteLink } from "@/components/ui/InPageOrRouteLink";
 import type { PricingTier } from "@/lib/data/pricing";
 
 type PricingColor = {
@@ -57,9 +57,17 @@ const PRICING_COLORS: PricingColor[] = [
 // the single/multi-session tiers still book through the sessions portal.
 const MEMBERSHIP_SLUGS = ["monthly-unlimited", "3-month-unlimited"];
 
-export function PricingCard({ tier, index }: { tier: PricingTier; index: number }) {
+type PricingCardProps = {
+  tier: PricingTier;
+  index: number;
+  ctaLabel?: string;
+  // Where the non-membership (session/credit pack) tiers link to.
+  sessionHref?: string;
+};
+
+export function PricingCard({ tier, index, ctaLabel = "Book Now", sessionHref = "/book-session" }: PricingCardProps) {
   const color = PRICING_COLORS[index % PRICING_COLORS.length];
-  const bookingHref = MEMBERSHIP_SLUGS.includes(tier.slug) ? "/buy-membership" : "/book-session";
+  const bookingHref = MEMBERSHIP_SLUGS.includes(tier.slug) ? "/buy-membership" : sessionHref;
 
   return (
     <div className={`flex flex-col rounded-2xl border-2 ${color.border} bg-tan-dark px-4 py-6 ${color.cardShadow}`}>
@@ -98,12 +106,12 @@ export function PricingCard({ tier, index }: { tier: PricingTier; index: number 
         ))}
       </ul>
 
-      <Link
+      <InPageOrRouteLink
         href={bookingHref}
         className={`mt-8 inline-flex items-center justify-center rounded-xl border-2 ${color.border} bg-tan-dark px-5 py-3 font-display text-lg uppercase tracking-wide text-cream transition-colors ${color.buttonShadow} ${color.buttonHoverBg} hover:text-white`}
       >
-        Book Now
-      </Link>
+        {ctaLabel}
+      </InPageOrRouteLink>
     </div>
   );
 }

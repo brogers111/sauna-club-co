@@ -27,7 +27,7 @@ export function CopyrightNotice() {
 
   return (
     <p className="pb-4 text-center font-sans text-sm text-cream/50">
-      Sauna Club Co LLC{year !== null ? `, © ${year}` : ""}
+      Sauna Club Co LLC{year !== null ? ` © ${year}` : ""}
     </p>
   );
 }

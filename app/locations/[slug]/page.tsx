@@ -8,10 +8,13 @@ import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BookNowButton } from "@/components/ui/BookNowButton";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
-import { ServicesCarousel, type ServiceItem } from "@/components/home/ServicesCarousel";
+import { ServicesCarousel } from "@/components/home/ServicesCarousel";
 import { NewsletterSection } from "@/components/home/NewsletterSection";
+import { DirectionsAndHours } from "@/components/locations/DirectionsAndHours";
+import { MembershipCta } from "@/components/locations/MembershipCta";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { getLocationBySlug, locations, type Location } from "@/lib/data/locations";
+import { getLocationBySlug, locations } from "@/lib/data/locations";
+import { buildLocationServices } from "@/lib/data/location-services";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { breadcrumbListSchema, faqSchema, localBusinessSchema, serviceSchema } from "@/lib/seo/schema";
 
@@ -50,34 +53,6 @@ const SERVICES = (locationName: string) => [
     description: `Hot mineral bath access at the ${locationName} location for total-body recovery.`,
   },
 ];
-
-function buildLocationServices(location: Location): ServiceItem[] {
-  const nearestArea = location.nearbyAreas[0];
-
-  return [
-    {
-      slug: "cold-plunge",
-      heading: "Cold Plunge",
-      steamVariant: "left",
-      image: { src: "/images/man-cold-plunge.webp", alt: "Man submerged in a cold plunge tub at Sauna Club Co" },
-      paragraph: `Our ${location.name} cold plunge tubs are precision-chilled for real contrast therapy, the practice of cycling between hot and cold. Contrast therapy promotes flushing of cardiovascular and lymphatic systems while also acting to sharpen focus, speed muscle recovery, and invigorate your entire body. If you're searching for a cold plunge near ${nearestArea} or ${location.name}, this is where locals come to reset.`,
-    },
-    {
-      slug: "sauna",
-      heading: "Sauna",
-      steamVariant: "middle",
-      image: { src: "/images/guys-sauna-1.webp", alt: "Two men relaxing on the cedar benches inside the sauna" },
-      paragraph: `Sink into the heat at ${location.name}'s go-to sauna. Our custom-built saunas are designed for a deep, consistent warmth that helps you sweat out stress, loosen tight muscles, and unwind after a long day. This is a sauna experience that ${nearestArea}-area locals keep coming back for.`,
-    },
-    {
-      slug: "hot-mineral-bath",
-      heading: "Hot Mineral Bath",
-      steamVariant: "right",
-      image: { src: "/images/people-sauna-2.webp", alt: "A group socializing together inside the sauna" },
-      paragraph: `Ease into our ${location.name} mineral bath to warm back up, soothe your joints, and elevate your complexion. Delicate minerals and magnesium soften your skin as you ease into a deep sense of relaxation, calming you from head to toe.`,
-    },
-  ];
-}
 
 const DIFFERENTIATORS = [
   {
@@ -251,8 +226,6 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
   const services = SERVICES(location.name);
   const locationServices = buildLocationServices(location);
-  const address = `${location.streetAddress}, ${location.city}, ${location.region} ${location.postalCode}`;
-  const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 
   const badges = [
     `${location.amenities.saunas} Sauna${location.amenities.saunas === 1 ? "" : "s"}`,
@@ -384,56 +357,9 @@ export default async function LocationPage({ params }: LocationPageProps) {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-6 py-16">
-          <SectionHeading as="h2" className="text-center md:text-left">Directions &amp; Hours</SectionHeading>
+        <MembershipCta />
 
-          <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
-            <a
-              href={mapsHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block overflow-hidden rounded-2xl border-2 border-blue shadow-[8px_8px_0_0_var(--color-blue)]"
-            >
-              <div className="relative aspect-4/3 w-full">
-                <Image
-                  src={location.mapImage.src}
-                  alt={location.mapImage.alt}
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            </a>
-
-            <div>
-              <p className="text-center font-sans font-bold text-cream">
-                7:00 am – 10:00 pm Monday–Friday
-                <br />
-                8:00 am – 9:00 pm Saturday &amp; Sunday
-              </p>
-              <p className="mt-6 text-center font-sans text-cream/80">{location.drivingDirections}</p>
-
-              <div className="mt-6 flex justify-center">
-                <a
-                  href={mapsHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl bg-blue px-6 py-3 text-sm font-medium text-tan-light transition hover:opacity-80"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true" className="h-5 w-5 shrink-0">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 21c-4-4.5-7-8.2-7-11.5A7 7 0 0 1 12 2a7 7 0 0 1 7 7.5C19 12.8 16 16.5 12 21Z"
-                    />
-                    <circle cx="12" cy="9.5" r="2.25" />
-                  </svg>
-                  Get Directions
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+        <DirectionsAndHours location={location} />
 
         <NewsletterSection />
 
@@ -444,12 +370,6 @@ export default async function LocationPage({ params }: LocationPageProps) {
           </div>
         </section>
 
-        <div className="mx-[calc(50%-50vw)] mb-20 px-5">
-          <div className="flex flex-col items-center gap-4 rounded-2xl bg-green-light px-6 py-10 text-center">
-            <p className="font-display text-4xl uppercase tracking-wide text-tan-light">Find the right membership for you</p>
-            <BookNowButton variant="outline" size="lg" />
-          </div>
-        </div>
       </main>
       <Footer />
     </>

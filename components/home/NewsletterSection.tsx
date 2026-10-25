@@ -6,6 +6,12 @@ type NewsletterSectionProps = {
   // "dark" is for the homepage, whose section background is black; other
   // pages (e.g. the Wheat Ridge location page) use the light default.
   background?: "light" | "dark";
+  heading?: string;
+  description?: string;
+  // Anchor target, e.g. so the early-signup landing page can scroll back here.
+  id?: string;
+  // Vertical spacing; pages that space their sections themselves can override it.
+  className?: string;
 };
 
 // Glofox's lead-register embed — the client team confirmed this needs to
@@ -15,14 +21,20 @@ type NewsletterSectionProps = {
 // styling (plus the required "powered by Glofox" badge) doesn't blend
 // into the footer's tight, custom-branded layout the way a dedicated
 // section can absorb it.
-export function NewsletterSection({ background = "light" }: NewsletterSectionProps) {
+export function NewsletterSection({
+  background = "light",
+  heading = "Stay In The Loop",
+  description = "Sign up to hear about new sessions, events, and offers at Sauna Club Co.",
+  id,
+  className = "py-16",
+}: NewsletterSectionProps) {
   const isDark = background === "dark";
 
   return (
-    <section className="mx-auto max-w-2xl px-6 py-16">
-      <SectionHeading className={`text-center ${isDark ? "text-cream!" : ""}`}>Stay In The Loop</SectionHeading>
+    <section id={id} className={`mx-auto max-w-2xl px-6 ${className}`}>
+      <SectionHeading className={`text-center ${isDark ? "text-cream!" : ""}`}>{heading}</SectionHeading>
       <p className={`mx-auto mt-4 max-w-xl text-center ${isDark ? "text-cream/80" : "text-cream/80"}`}>
-        Sign up to hear about new sessions, events, and offers at Sauna Club Co.
+        {description}
       </p>
 
       <div className="mt-8 rounded-2xl border-2 border-green-light bg-tan-dark p-2 shadow-[8px_8px_0_0_var(--color-green-light)]">
