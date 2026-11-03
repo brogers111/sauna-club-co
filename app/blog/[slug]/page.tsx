@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { BlogByline } from "@/components/blog/BlogByline";
 import { BlogContentRenderer } from "@/components/blog/BlogContentRenderer";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { blogPosts, getBlogPostBySlug } from "@/lib/data/blog";
-import { getAuthorBySlug } from "@/lib/data/authors";
+import { ArrowIcon } from "@/components/ui/ArrowIcon";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { Button } from "@/components/ui/Button";
+import { blogPosts, getBlogPostBySlug, getFaqItems } from "@/lib/data/blog";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { articleSchema, breadcrumbListSchema } from "@/lib/seo/schema";
+import { SITE_URL } from "@/lib/site-config";
+import { articleSchema, breadcrumbListSchema, faqSchema } from "@/lib/seo/schema";
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>;
@@ -24,12 +27,24 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const post = getBlogPostBySlug(slug);
   if (!post) return {};
 
-  return buildMetadata({
+  const metadata = buildMetadata({
     title: post.title,
     description: post.metaDescription,
     path: `/blog/${post.slug}`,
-    image: post.featuredImage.src,
+    image: post.socialImage.src,
   });
+  const socialImage = {
+    url: `${SITE_URL}${post.socialImage.src}`,
+    width: post.socialImage.width,
+    height: post.socialImage.height,
+    alt: post.featuredImage.alt,
+  };
+
+  return {
+    ...metadata,
+    openGraph: { ...metadata.openGraph, type: "article", publishedTime: post.publishedAt, images: [socialImage] },
+    twitter: { ...metadata.twitter, images: [socialImage] },
+  };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
@@ -37,54 +52,55 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const post = getBlogPostBySlug(slug);
   if (!post) notFound();
 
-  const author = getAuthorBySlug(post.authorSlug);
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog" },
+    { name: post.title, path: `/blog/${post.slug}` },
+  ];
+  const faqs = getFaqItems(post);
 
   return (
     <>
       <JsonLd
         data={[
-          breadcrumbListSchema([
-            { name: "Home", path: "/" },
-            { name: "Blog", path: "/blog" },
-            { name: post.title, path: `/blog/${post.slug}` },
-          ]),
-          ...(author
-            ? [
-                articleSchema({
-                  headline: post.title,
-                  description: post.metaDescription,
-                  path: `/blog/${post.slug}`,
-                  datePublished: post.publishedAt,
-                  authorName: author.name,
-                  authorPath: `/blog/authors/${author.slug}`,
-                  image: post.featuredImage.src,
-                }),
-              ]
-            : []),
+          breadcrumbListSchema(breadcrumbs),
+          articleSchema({
+            headline: post.headline,
+            description: post.metaDescription,
+            path: `/blog/${post.slug}`,
+            datePublished: post.publishedAt,
+            image: post.featuredImage.src,
+          }),
+          ...(faqs.length > 0 ? [faqSchema(faqs)] : []),
         ]}
       />
       <Header overlay />
       <main>
-        <section className="relative flex h-[50dvh] min-h-90 items-center justify-center overflow-hidden">
+        <section className="relative h-[50dvh] min-h-90 overflow-hidden">
           <Image src={post.featuredImage.src} alt={post.featuredImage.alt} fill priority sizes="100vw" className="object-cover" />
-          <h1 className="relative z-10 max-w-4xl px-6 text-center font-display text-4xl uppercase tracking-wide text-cream [text-shadow:0_4px_24px_rgb(0_0_0/45%)] md:text-6xl">
-            {post.title}
-          </h1>
         </section>
 
-        <div className="mx-auto max-w-3xl px-6 py-16">
-          <div className="flex flex-wrap items-center gap-3 font-sans text-sm text-cream/60">
-            {author ? (
-              <Link href={`/blog/authors/${author.slug}`} className="font-medium text-cream transition-colors hover:text-orange-light">
-                {author.name}
-              </Link>
-            ) : null}
-            <span aria-hidden="true">•</span>
-            <span>{post.readTimeMinutes} min read</span>
+        <article className="mx-auto max-w-3xl px-6 pt-6 pb-12 md:pt-12">
+          {/* Mobile: Back to Blogs above the breadcrumbs. Desktop: breadcrumbs
+              left, button right. */}
+          <div className="flex flex-col-reverse gap-4 md:flex-row md:items-center md:justify-between">
+            <Breadcrumbs items={breadcrumbs} />
+            {/* Styled like the nav's Book Session button. Centered on mobile
+                via the wrapper rather than the Button's own classes, which
+                hardcode inline-flex (see Header). */}
+            <div className="self-center md:self-auto">
+              <Button href="/blog" className="gap-2 text-tan-light!">
+                <ArrowIcon direction="left" className="h-4 w-4 shrink-0" />
+                Back to Blogs
+              </Button>
+            </div>
           </div>
 
+          <h1 className="mt-6 font-display md:mt-10 text-4xl uppercase tracking-wide text-cream md:text-6xl">{post.headline}</h1>
+          <BlogByline post={post} className="mt-4" />
+
           <BlogContentRenderer blocks={post.content} />
-        </div>
+        </article>
       </main>
       <Footer />
     </>

@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next";
-import { authors } from "@/lib/data/authors";
 import { blogPosts } from "@/lib/data/blog";
 import { locations } from "@/lib/data/locations";
 import { SITE_URL } from "@/lib/site-config";
@@ -25,15 +24,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: post.publishedAt,
     changeFrequency: "monthly",
     priority: 0.6,
   }));
 
-  const authorRoutes: MetadataRoute.Sitemap = authors.map((author) => ({
-    url: `${SITE_URL}/blog/authors/${author.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.4,
-  }));
-
-  return [...staticRoutes, ...locationRoutes, ...blogRoutes, ...authorRoutes];
+  return [...staticRoutes, ...locationRoutes, ...blogRoutes];
 }

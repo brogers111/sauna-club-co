@@ -123,15 +123,14 @@ export function faqSchema(items: { question: string; answer: string }[]) {
   };
 }
 
-// https://schema.org/Article + https://schema.org/Person — stub for the blog phase.
+// https://schema.org/Article — posts have no individual authors, so the
+// organization is credited as both author and publisher.
 export function articleSchema(article: {
   headline: string;
   description: string;
   path: string;
   datePublished: string;
   dateModified?: string;
-  authorName: string;
-  authorPath: string;
   image: string;
 }) {
   return {
@@ -142,18 +141,9 @@ export function articleSchema(article: {
     image: `${SITE_URL}${article.image}`,
     datePublished: article.datePublished,
     dateModified: article.dateModified ?? article.datePublished,
-    author: personSchema({ name: article.authorName, path: article.authorPath }),
+    author: { "@id": `${SITE_URL}/#organization` },
     publisher: { "@id": `${SITE_URL}/#organization` },
     mainEntityOfPage: `${SITE_URL}${article.path}`,
-  };
-}
-
-export function personSchema(author: { name: string; path: string }) {
-  return {
-    "@type": "Person",
-    "@id": `${SITE_URL}${author.path}#person`,
-    name: author.name,
-    url: `${SITE_URL}${author.path}`,
   };
 }
 

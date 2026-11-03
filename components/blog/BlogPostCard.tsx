@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { BlogPost } from "@/lib/data/blog";
+import { BlogByline } from "./BlogByline";
 
 export function BlogPostCard({ post }: { post: BlogPost }) {
   return (
@@ -14,8 +15,8 @@ export function BlogPostCard({ post }: { post: BlogPost }) {
           className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </div>
-      <h3 className="mt-4 font-display text-2xl uppercase tracking-wide">{post.title}</h3>
-      <p className="mt-1 font-sans text-sm text-cream/60">{post.readTimeMinutes} min read</p>
+      <h2 className="mt-4 font-display text-2xl uppercase tracking-wide">{post.title}</h2>
+      <BlogByline post={post} className="mt-1" />
       <p className="mt-2 font-sans text-sm text-cream/80">{post.metaDescription}</p>
     </Link>
   );
