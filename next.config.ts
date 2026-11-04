@@ -14,7 +14,9 @@ const CSP = [
   "style-src 'self' 'unsafe-inline'",
   `img-src 'self' data: ${GOOGLE_TAG_MANAGER} https://www.google-analytics.com https://www.google.com`,
   "font-src 'self'",
-  `connect-src 'self' ${GOOGLE_TAG_MANAGER} https://*.google-analytics.com https://*.analytics.google.com${isDev ? " ws:" : ""}`,
+  // www.google.com and *.g.doubleclick.net receive GA4's Google Signals
+  // (demographics / cross-device / Ads audiences) copy of each hit.
+  `connect-src 'self' ${GOOGLE_TAG_MANAGER} https://*.google-analytics.com https://*.analytics.google.com https://www.google.com https://*.g.doubleclick.net${isDev ? " ws:" : ""}`,
   `frame-src ${GLOFOX_PORTAL_ORIGIN} ${GOOGLE_TAG_MANAGER}`,
   "frame-ancestors 'self'",
   "base-uri 'self'",
