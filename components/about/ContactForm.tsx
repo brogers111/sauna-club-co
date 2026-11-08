@@ -1,32 +1,20 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useActionState, useState } from "react";
+import { sendContactMessage, type ContactFormState } from "@/app/about/actions";
 
 type ContactFormProps = {
   phone?: string;
 };
 
-// TODO: wire this up to Resend, delivering to CONTACT_EMAIL (lib/site-config)
-// — the payload is collected here for when that's ready, but submission is
-// a no-op for now.
+const INITIAL_STATE: ContactFormState = { status: "idle" };
+
+// Submits to sendContactMessage, which emails CONTACT_EMAIL via Resend.
 export function ContactForm({ phone }: ContactFormProps) {
   const [isMember, setIsMember] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [state, formAction, pending] = useActionState(sendContactMessage, INITIAL_STATE);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const payload = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      isMember,
-      message: formData.get("message"),
-    };
-    void payload;
-    setSubmitted(true);
-  }
-
-  if (submitted) {
+  if (state.status === "success") {
     return (
       <p className="mt-8 text-center font-display text-2xl uppercase tracking-wide text-cream">
         Your message has been sent!
@@ -49,8 +37,15 @@ export function ContactForm({ phone }: ContactFormProps) {
       <form
         className="mt-8 flex flex-col gap-4 rounded-2xl border-2 border-orange bg-tan-dark p-6 shadow-[8px_8px_0_0_var(--color-orange)] sm:p-8"
         aria-label="Contact Sauna Club Co"
-        onSubmit={handleSubmit}
+        action={formAction}
       >
+        <input type="hidden" name="isMember" value={isMember ? "yes" : "no"} />
+        {/* Honeypot for spam bots — hidden from people and screen readers. */}
+        <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+          <label htmlFor="contact-company">Company</label>
+          <input id="contact-company" name="company" type="text" tabIndex={-1} autoComplete="off" />
+        </div>
+
         <div className="flex flex-col gap-2">
           <label htmlFor="contact-name" className="font-sans text-sm font-medium text-cream">
             Name
@@ -119,11 +114,18 @@ export function ContactForm({ phone }: ContactFormProps) {
           />
         </div>
 
+        {state.status === "error" ? (
+          <p role="alert" className="font-sans text-sm text-orange-light">
+            {state.message}
+          </p>
+        ) : null}
+
         <button
           type="submit"
-          className="mt-2 cursor-pointer rounded-xl bg-orange px-6 py-3 font-medium text-cream transition hover:opacity-80"
+          disabled={pending}
+          className="mt-2 cursor-pointer rounded-xl bg-orange px-6 py-3 font-medium text-cream transition hover:opacity-80 disabled:cursor-wait disabled:opacity-60"
         >
-          Send Message
+          {pending ? "Sending..." : "Send Message"}
         </button>
       </form>
     </>

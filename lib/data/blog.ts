@@ -21,9 +21,12 @@ export type BlogContentBlock =
 
 export type BlogPost = {
   slug: string;
-  // Short title: the <title> tag (the site template appends "| Sauna Club Co"),
-  // the /blog card heading, and the last breadcrumb.
+  // The <title> tag (the site template appends "| Sauna Club Co") and the
+  // /blog card heading.
   title: string;
+  // As short as possible (e.g. "Sauna Hat") — the last breadcrumb, on the
+  // page and in the BreadcrumbList schema.
+  breadcrumbTitle: string;
   // The on-page H1 and Article schema headline.
   headline: string;
   // Short version for <meta> tags and the blog index card — not the full post.
@@ -48,6 +51,7 @@ export type BlogPost = {
 const coldPlungeBenefits: BlogPost = {
   slug: "cold-plunge-benefits",
   title: "The Benefits of Cold Plunge",
+  breadcrumbTitle: "Benefits of Cold Plunge",
   headline: "Cold Plunge Benefits: What Does Cold Water Immersion Do for Your Body?",
   metaDescription:
     "Curious about cold plunge benefits? Explore the science behind cold water, mood, alertness, and sauna rituals at Sauna Club Co.",
@@ -332,6 +336,7 @@ const coldPlungeBenefits: BlogPost = {
 const saunaHat: BlogPost = {
   slug: "sauna-hat",
   title: "Sauna Hat: Purpose, Benefits, History, and More",
+  breadcrumbTitle: "Sauna Hat",
   headline: "Sauna Hat Benefits: What Is a Sauna Hat and Why Wear One?",
   metaDescription:
     "Curious about sauna hat benefits? Sauna Club Co shares what sauna hats do, how to choose one, and how they can add comfort to your favorite heat ritual.",

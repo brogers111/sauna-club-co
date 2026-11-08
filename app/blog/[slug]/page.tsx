@@ -55,7 +55,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const breadcrumbs = [
     { name: "Home", path: "/" },
     { name: "Blog", path: "/blog" },
-    { name: post.title, path: `/blog/${post.slug}` },
+    { name: post.breadcrumbTitle, path: `/blog/${post.slug}` },
   ];
   const faqs = getFaqItems(post);
 
