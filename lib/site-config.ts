@@ -28,6 +28,10 @@ export const GLOFOX_IFRAME_RESIZER_SRC = "https://cdnjs.cloudflare.com/ajax/libs
 
 export const SITE_NAME = "Sauna Club Co";
 
+// Public contact address — shown on the site and where contact form
+// submissions should be delivered once Resend is wired up.
+export const CONTACT_EMAIL = "info@saunaclubco.com";
+
 export const SITE_DESCRIPTION =
   "Sauna Club Co is a sauna, cold plunge, and community wellness studio in Wheat Ridge, Colorado. Come unwind and socialize!";
 

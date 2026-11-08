@@ -11,8 +11,18 @@ const CARD_COLORS = [
   { border: "border-wood-light", shadow: "shadow-[8px_8px_0_0_var(--color-wood-light)]", accent: "text-wood-light" },
 ];
 
-export function BlogContentRenderer({ blocks }: { blocks: BlogContentBlock[] }) {
-  let ctaCount = 0;
+// Static class names so Tailwind generates them; 4 cards wrap as 2×2.
+const CARD_GRID_COLS: Record<number, string> = { 2: "sm:grid-cols-2", 3: "sm:grid-cols-3", 4: "sm:grid-cols-2" };
+
+type BlogContentRendererProps = {
+  blocks: BlogContentBlock[];
+  // Where this post's CTA banners start in the color rotation, so
+  // consecutive posts don't open with the same color.
+  ctaColorOffset?: number;
+};
+
+export function BlogContentRenderer({ blocks, ctaColorOffset = 0 }: BlogContentRendererProps) {
+  let ctaCount = ctaColorOffset;
 
   return (
     <div className="mt-10 flex flex-col gap-4 text-cream/80">
@@ -51,7 +61,7 @@ export function BlogContentRenderer({ blocks }: { blocks: BlogContentBlock[] }) 
             );
           case "cards":
             return (
-              <div key={index} className="my-4 grid grid-cols-1 gap-6 sm:grid-cols-3">
+              <div key={index} className={`my-4 grid grid-cols-1 gap-6 ${CARD_GRID_COLS[block.items.length] ?? "sm:grid-cols-3"}`}>
                 {block.items.map((item, itemIndex) => {
                   const color = CARD_COLORS[itemIndex % CARD_COLORS.length];
                   return (

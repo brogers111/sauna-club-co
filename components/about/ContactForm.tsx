@@ -6,8 +6,9 @@ type ContactFormProps = {
   phone?: string;
 };
 
-// TODO: wire this up to Resend — the payload is collected here for when
-// that's ready, but submission is a no-op for now.
+// TODO: wire this up to Resend, delivering to CONTACT_EMAIL (lib/site-config)
+// — the payload is collected here for when that's ready, but submission is
+// a no-op for now.
 export function ContactForm({ phone }: ContactFormProps) {
   const [isMember, setIsMember] = useState(false);
   const [submitted, setSubmitted] = useState(false);

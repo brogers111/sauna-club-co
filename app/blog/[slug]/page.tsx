@@ -99,7 +99,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <h1 className="mt-6 font-display md:mt-10 text-4xl uppercase tracking-wide text-cream md:text-6xl">{post.headline}</h1>
           <BlogByline post={post} className="mt-4" />
 
-          <BlogContentRenderer blocks={post.content} />
+          {/* Each post has two CTA banners, so offset by two colors per post. */}
+          <BlogContentRenderer blocks={post.content} ctaColorOffset={blogPosts.indexOf(post) * 2} />
         </article>
       </main>
       <Footer />

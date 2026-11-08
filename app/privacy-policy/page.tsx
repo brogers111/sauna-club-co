@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { breadcrumbListSchema } from "@/lib/seo/schema";
+import { CONTACT_EMAIL } from "@/lib/site-config";
 
 export const metadata: Metadata = buildMetadata({
   title: "Privacy Policy",
@@ -415,7 +416,10 @@ export default function PrivacyPolicyPage() {
           <br />
           Wheat Ridge, CO 80033
           <br />
-          Email: jenna@saunaclubco.com
+          Email:{" "}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-orange-light">
+            {CONTACT_EMAIL}
+          </a>
         </P>
       </main>
       <Footer />
