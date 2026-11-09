@@ -36,7 +36,8 @@ export default function LocationsIndexPage() {
               src="/images/locations-hero.webp"
               alt="Exterior of a Sauna Club Co wellness studio"
               fill
-              priority
+              preload
+              fetchPriority="high"
               sizes="100vw"
               className="object-cover"
             />

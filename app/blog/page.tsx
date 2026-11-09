@@ -34,7 +34,8 @@ export default function BlogIndexPage() {
               src="/images/blog-hero.webp"
               alt="Heated stones inside the sauna at Sauna Club Co"
               fill
-              priority
+              preload
+              fetchPriority="high"
               sizes="100vw"
               className="object-cover"
             />

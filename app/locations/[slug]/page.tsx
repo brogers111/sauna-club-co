@@ -255,7 +255,8 @@ export default async function LocationPage({ params }: LocationPageProps) {
             src={location.heroImage.src}
             alt={location.heroImage.alt}
             fill
-            priority
+            preload
+            fetchPriority="high"
             sizes="100vw"
             className="object-cover object-center"
           />

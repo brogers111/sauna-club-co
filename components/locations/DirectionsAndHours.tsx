@@ -48,9 +48,12 @@ export function DirectionsAndHours({
             <p className="mb-2 text-center font-sans text-xl font-bold text-cream md:text-2xl">{hoursLabel}</p>
           ) : null}
           <p className="text-center font-sans font-bold text-cream">
-            7:00 am – 10:00 pm Monday–Friday
-            <br />
-            8:00 am – 9:00 pm Saturday &amp; Sunday
+            {location.openingHours.map((hours, index) => (
+              <span key={hours.label}>
+                {index > 0 ? <br /> : null}
+                {hours.label}
+              </span>
+            ))}
           </p>
           <p className="mt-6 text-center font-sans text-cream/80">{directions}</p>
 

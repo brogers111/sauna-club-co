@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ContactForm } from "@/components/about/ContactForm";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getLocationBySlug } from "@/lib/data/locations";
+import { WHEAT_RIDGE_HOURS } from "@/lib/data/hours";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { breadcrumbListSchema } from "@/lib/seo/schema";
 
@@ -37,7 +38,8 @@ export default function AboutPage() {
               src="/images/about-hero.webp"
               alt="Close-up of the cedar sauna interior at Sauna Club Co"
               fill
-              priority
+              preload
+              fetchPriority="high"
               sizes="100vw"
               className="object-cover"
             />
@@ -114,9 +116,12 @@ export default function AboutPage() {
 
             <div>
               <p className="text-center font-sans font-bold text-cream">
-                7:00 am – 10:00 pm Monday–Friday
-                <br />
-                8:00 am – 9:00 pm Saturday &amp; Sunday
+                {WHEAT_RIDGE_HOURS.map((hours, index) => (
+                  <span key={hours.label}>
+                    {index > 0 ? <br /> : null}
+                    {hours.label}
+                  </span>
+                ))}
               </p>
               <p className="mt-6 text-center font-sans text-cream/80">{location?.drivingDirections}</p>
 

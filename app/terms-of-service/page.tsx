@@ -186,7 +186,7 @@ export default function TermsOfServicePage() {
         <H2>Contacting Sauna Club Co</H2>
         <P>
           You may contact us at the{" "}
-          <Link href="/contact" className="underline hover:text-orange-light">
+          <Link href="/about" className="underline hover:text-orange-light">
             Contact Us
           </Link>{" "}
           link.

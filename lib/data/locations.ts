@@ -1,14 +1,17 @@
+import { WHEAT_RIDGE_HOURS, type OpeningHours } from "./hours";
+
 export type Location = {
   slug: string;
   name: string;
   city: string;
   region: string;
-  // TODO: confirm real street address, postal code, phone, and coordinates before launch.
+  // TODO: confirm real street address, postal code, and phone before launch.
   streetAddress: string;
   postalCode: string;
   phone: string;
   latitude: number | null;
   longitude: number | null;
+  openingHours: OpeningHours[];
   amenities: {
     saunas: number;
     coldPlunges: number;
@@ -65,8 +68,10 @@ export const locations: Location[] = [
     streetAddress: "9695 W 44th Ave",
     postalCode: "80033",
     phone: "812-322-8066",
-    latitude: null,
-    longitude: null,
+    // From the US Census and OpenStreetMap geocoders (both agree).
+    latitude: 39.77820,
+    longitude: -105.10537,
+    openingHours: WHEAT_RIDGE_HOURS,
     amenities: {
       saunas: 2,
       coldPlunges: 3,

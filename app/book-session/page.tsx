@@ -31,7 +31,7 @@ const STEPS = [
     text: (
       <>
         Complete checkout to confirm your booking. If you have any questions along the way,{" "}
-        <Link href="/contact" className="underline hover:text-orange-light">
+        <Link href="/about" className="underline hover:text-orange-light">
           contact our team
         </Link>
         .
@@ -66,7 +66,8 @@ export default function BookPage() {
               src="/images/book-hero.webp"
               alt="Empty cedar sauna benches with ambient backlighting at Sauna Club Co"
               fill
-              priority
+              preload
+              fetchPriority="high"
               sizes="100vw"
               className="object-cover"
             />

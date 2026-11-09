@@ -1,6 +1,13 @@
 import { SITE_NAME, SITE_URL, SOCIAL_LINKS } from "@/lib/site-config";
 import type { Location } from "@/lib/data/locations";
-import type { PricingTier } from "@/lib/data/pricing";
+import { pricingTiers, type PricingTier } from "@/lib/data/pricing";
+
+// e.g. "$30–$399": cheapest single session to the priciest membership, so
+// it stays correct when prices on /pricing change.
+function priceRange() {
+  const prices = pricingTiers.flatMap((tier) => (tier.priceUSD != null ? [tier.priceUSD] : []));
+  return `$${Math.min(...prices)}–$${Math.max(...prices)}`;
+}
 
 // https://schema.org/Organization
 export function organizationSchema() {
@@ -54,6 +61,13 @@ export function localBusinessSchema(location: Location) {
         }
       : {}),
     telephone: location.phone,
+    openingHoursSpecification: location.openingHours.map((hours) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: hours.days.map((day) => `https://schema.org/${day}`),
+      opens: hours.opens,
+      closes: hours.closes,
+    })),
+    priceRange: priceRange(),
     areaServed: location.areasServed.map((name) => ({ "@type": "City", name })),
   };
 }

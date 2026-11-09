@@ -32,7 +32,8 @@ export default function PricingPage() {
               src="/images/pricing-hero.webp"
               alt="Interior of a Sauna Club Co wellness studio"
               fill
-              priority
+              preload
+              fetchPriority="high"
               sizes="100vw"
               className="object-cover"
             />

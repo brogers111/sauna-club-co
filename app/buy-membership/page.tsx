@@ -37,7 +37,7 @@ const STEPS = [
     text: (
       <>
         Complete checkout to confirm your purchase. If you have any questions along the way,{" "}
-        <Link href="/contact" className="underline hover:text-orange-light">
+        <Link href="/about" className="underline hover:text-orange-light">
           contact our team
         </Link>
         .
@@ -66,7 +66,8 @@ export default function BuyMembershipPage() {
               src="/images/sauna-interior.webp"
               alt="Interior of the wood-paneled sauna at Sauna Club Co"
               fill
-              priority
+              preload
+              fetchPriority="high"
               sizes="100vw"
               className="object-cover"
             />

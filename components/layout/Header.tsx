@@ -34,7 +34,7 @@ export function Header({ overlay = false }: HeaderProps) {
               alt="Sauna Club Co"
               width={200}
               height={104}
-              priority
+              preload
               className="h-13 w-auto"
             />
           </Link>

@@ -61,7 +61,8 @@ export default function EarlySignupLandingPage() {
             src="/images/hero-image.webp"
             alt="Person relaxing in a steaming cedar sauna at Sauna Club Co"
             fill
-            priority
+            preload
+            fetchPriority="high"
             sizes="100vw"
             className="object-cover object-center"
           />

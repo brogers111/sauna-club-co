@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { CopyrightNotice } from "./CopyrightNotice";
 import { isActiveNavLink } from "@/lib/nav";
 import { SOCIAL_LINKS } from "@/lib/site-config";
+import { WHEAT_RIDGE_HOURS } from "@/lib/data/hours";
 
 type FooterLink = { href: string; label: string; external?: boolean };
 
@@ -92,12 +93,15 @@ export function Footer() {
 
         <div className="flex flex-col items-center gap-5 md:-mt-4 md:self-center">
           <Link href="/" aria-label="Sauna Club Co home">
-            <Image src="/images/tan-logo.png" alt="Sauna Club Co" width={320} height={168} loading="eager" className="h-16 w-auto md:h-20" />
+            <Image src="/images/tan-logo.png" alt="Sauna Club Co" width={320} height={168} className="h-16 w-auto md:h-20" />
           </Link>
           <p className="text-center font-sans text-sm text-cream">
-            7:00 am – 10:00 pm Monday–Friday
-            <br />
-            8:00 am – 9:00 pm Saturday &amp; Sunday
+            {WHEAT_RIDGE_HOURS.map((hours, index) => (
+              <span key={hours.label}>
+                {index > 0 ? <br /> : null}
+                {hours.label}
+              </span>
+            ))}
           </p>
         </div>
 
