@@ -5,7 +5,6 @@ export type Location = {
   name: string;
   city: string;
   region: string;
-  // TODO: confirm real street address, postal code, and phone before launch.
   streetAddress: string;
   postalCode: string;
   phone: string;

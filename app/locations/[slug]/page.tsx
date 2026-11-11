@@ -268,6 +268,22 @@ export default async function LocationPage({ params }: LocationPageProps) {
           </h1>
         </section>
 
+        {/* Pre-opening announcement strip. The text repeats enough times to
+            cover the widest screens; only the first copy is read aloud. */}
+        <div className="flex items-center gap-12 overflow-hidden bg-cream px-6 py-4 whitespace-nowrap">
+          {Array.from({ length: 24 }, (_, index) => (
+            <p
+              key={index}
+              aria-hidden={index > 0 ? true : undefined}
+              // text-box trims the font's built-in space above the capitals
+              // and below the baseline, so equal padding looks equal.
+              className="shrink-0 font-display text-[24px] leading-none uppercase tracking-wide text-tan-light [text-box:trim-both_cap_alphabetic]"
+            >
+              Opening this Holiday Season
+            </p>
+          ))}
+        </div>
+
         <section className="mx-auto max-w-4xl px-6 py-16">
           <SectionHeading as="h2">About the Club</SectionHeading>
           <div className="mt-6 flex flex-col gap-2 md:flex-row md:flex-wrap">
