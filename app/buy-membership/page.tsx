@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { AnnouncementBanner } from "@/components/layout/AnnouncementBanner";
 import { FitText } from "@/components/home/FitText";
 import { GlofoxResizableEmbed } from "@/components/glofox/GlofoxResizableEmbed";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -87,6 +88,8 @@ export default function BuyMembershipPage() {
             </div>
           </div>
         </section>
+
+        <AnnouncementBanner />
 
         <div className="mx-auto max-w-6xl px-6 py-16">
           <SectionHeading as="h2">How It Works</SectionHeading>

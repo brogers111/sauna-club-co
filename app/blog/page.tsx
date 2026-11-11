@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { AnnouncementBanner } from "@/components/layout/AnnouncementBanner";
 import { FitText } from "@/components/home/FitText";
 import { BlogPostCard } from "@/components/blog/BlogPostCard";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -51,6 +52,8 @@ export default function BlogIndexPage() {
             </div>
           </div>
         </section>
+
+        <AnnouncementBanner />
 
         <div className="mx-auto max-w-6xl px-6 py-16">
           {posts.length === 0 ? (

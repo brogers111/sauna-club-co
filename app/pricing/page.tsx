@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { AnnouncementBanner } from "@/components/layout/AnnouncementBanner";
 import { FitText } from "@/components/home/FitText";
 import { GalleryTeaser } from "@/components/home/GalleryTeaser";
 import { PricingSection } from "@/components/home/PricingSection";
@@ -56,6 +57,8 @@ export default function PricingPage() {
             </div>
           </div>
         </section>
+
+        <AnnouncementBanner />
 
         <PricingSection />
 

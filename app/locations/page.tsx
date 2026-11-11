@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { AnnouncementBanner } from "@/components/layout/AnnouncementBanner";
 import { FitText } from "@/components/home/FitText";
 import { GalleryTeaser } from "@/components/home/GalleryTeaser";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
@@ -56,6 +57,8 @@ export default function LocationsIndexPage() {
             </div>
           </div>
         </section>
+
+        <AnnouncementBanner />
 
         <div className="mx-auto max-w-6xl px-6 py-16">
           <div className="flex flex-col gap-16">

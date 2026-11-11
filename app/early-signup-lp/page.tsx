@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { AnnouncementBanner } from "@/components/layout/AnnouncementBanner";
 import { NewsletterSection } from "@/components/home/NewsletterSection";
 import { ServicesCarousel } from "@/components/home/ServicesCarousel";
 import { PricingSection } from "@/components/home/PricingSection";
@@ -72,6 +73,8 @@ export default function EarlySignupLandingPage() {
             <span className="mt-2 block text-2xl tracking-wide sm:text-3xl md:text-5xl">In Wheat Ridge, CO</span>
           </h1>
         </section>
+
+        <AnnouncementBanner />
 
         {/* Sections drop their own vertical padding here so every gap on
             this page is the same 100px, on mobile and desktop. No bottom

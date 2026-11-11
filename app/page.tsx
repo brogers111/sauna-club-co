@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { AnnouncementBanner } from "@/components/layout/AnnouncementBanner";
 import { Hero } from "@/components/home/Hero";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { LocationsSection } from "@/components/home/LocationsSection";
@@ -22,6 +23,7 @@ export default function HomePage() {
       <Header overlay />
       <main>
         <Hero />
+        <AnnouncementBanner />
         <ServicesSection />
         <LocationsSection />
         <PricingSection />

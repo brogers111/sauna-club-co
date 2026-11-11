@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { AnnouncementBanner } from "@/components/layout/AnnouncementBanner";
 import { BlogByline } from "@/components/blog/BlogByline";
 import { BlogContentRenderer } from "@/components/blog/BlogContentRenderer";
 import { BlogPostCard } from "@/components/blog/BlogPostCard";
@@ -86,6 +87,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <section className="relative h-[50dvh] min-h-90 overflow-hidden">
           <Image src={post.featuredImage.src} alt={post.featuredImage.alt} fill preload fetchPriority="high" sizes="100vw" className="object-cover" />
         </section>
+
+        <AnnouncementBanner />
 
         <article className="mx-auto max-w-3xl px-6 pt-6 pb-12 md:pt-12">
           {/* Mobile: Back to Blogs above the breadcrumbs. Desktop: breadcrumbs
