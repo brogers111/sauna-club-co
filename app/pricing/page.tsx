@@ -7,6 +7,7 @@ import { FitText } from "@/components/home/FitText";
 import { GalleryTeaser } from "@/components/home/GalleryTeaser";
 import { PricingSection } from "@/components/home/PricingSection";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { breadcrumbListSchema } from "@/lib/seo/schema";
 
@@ -17,13 +18,15 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function PricingPage() {
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Pricing", path: "/pricing" },
+  ];
+
   return (
     <>
       <JsonLd
-        data={breadcrumbListSchema([
-          { name: "Home", path: "/" },
-          { name: "Pricing", path: "/pricing" },
-        ])}
+        data={breadcrumbListSchema(breadcrumbs)}
       />
       <Header overlay />
       <main>
@@ -59,6 +62,10 @@ export default function PricingPage() {
         </section>
 
         <AnnouncementBanner />
+
+        <div className="mx-auto max-w-6xl px-6 pt-6">
+          <Breadcrumbs items={breadcrumbs} />
+        </div>
 
         <PricingSection />
 

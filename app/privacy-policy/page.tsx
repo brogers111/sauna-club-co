@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { breadcrumbListSchema } from "@/lib/seo/schema";
 import { CONTACT_EMAIL } from "@/lib/site-config";
@@ -30,17 +31,21 @@ function UL({ children }: { children: ReactNode }) {
 }
 
 export default function PrivacyPolicyPage() {
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Privacy Policy", path: "/privacy-policy" },
+  ];
+
   return (
     <>
       <JsonLd
-        data={breadcrumbListSchema([
-          { name: "Home", path: "/" },
-          { name: "Privacy Policy", path: "/privacy-policy" },
-        ])}
+        data={breadcrumbListSchema(breadcrumbs)}
       />
       <Header />
       <main className="mx-auto max-w-4xl px-6 py-16">
-        <h1 className="font-display text-6xl uppercase tracking-wide text-cream md:text-7xl">Privacy Policy</h1>
+        <Breadcrumbs items={breadcrumbs} />
+
+        <h1 className="mt-6 font-display text-6xl uppercase tracking-wide text-cream md:text-7xl">Privacy Policy</h1>
 
         <H2>Introduction</H2>
         <P>

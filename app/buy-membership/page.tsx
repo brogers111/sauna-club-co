@@ -8,6 +8,7 @@ import { FitText } from "@/components/home/FitText";
 import { GlofoxResizableEmbed } from "@/components/glofox/GlofoxResizableEmbed";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { breadcrumbListSchema } from "@/lib/seo/schema";
 import { GLOFOX_BRANCH_ID, GLOFOX_URLS } from "@/lib/site-config";
@@ -51,13 +52,15 @@ const STEPS = [
 ];
 
 export default function BuyMembershipPage() {
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Buy Membership", path: "/buy-membership" },
+  ];
+
   return (
     <>
       <JsonLd
-        data={breadcrumbListSchema([
-          { name: "Home", path: "/" },
-          { name: "Buy Membership", path: "/buy-membership" },
-        ])}
+        data={breadcrumbListSchema(breadcrumbs)}
       />
       <Header overlay />
       <main>
@@ -90,6 +93,10 @@ export default function BuyMembershipPage() {
         </section>
 
         <AnnouncementBanner />
+
+        <div className="mx-auto max-w-6xl px-6 pt-6">
+          <Breadcrumbs items={breadcrumbs} />
+        </div>
 
         <div className="mx-auto max-w-6xl px-6 py-16">
           <SectionHeading as="h2">How It Works</SectionHeading>

@@ -6,6 +6,7 @@ import { AnnouncementBanner } from "@/components/layout/AnnouncementBanner";
 import { FitText } from "@/components/home/FitText";
 import { BlogPostCard } from "@/components/blog/BlogPostCard";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { getSortedBlogPosts } from "@/lib/data/blog";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { breadcrumbListSchema } from "@/lib/seo/schema";
@@ -19,13 +20,15 @@ export const metadata: Metadata = buildMetadata({
 export default function BlogIndexPage() {
   const posts = getSortedBlogPosts();
 
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog" },
+  ];
+
   return (
     <>
       <JsonLd
-        data={breadcrumbListSchema([
-          { name: "Home", path: "/" },
-          { name: "Blog", path: "/blog" },
-        ])}
+        data={breadcrumbListSchema(breadcrumbs)}
       />
       <Header overlay />
       <main>
@@ -54,6 +57,10 @@ export default function BlogIndexPage() {
         </section>
 
         <AnnouncementBanner />
+
+        <div className="mx-auto max-w-6xl px-6 pt-6">
+          <Breadcrumbs items={breadcrumbs} />
+        </div>
 
         <div className="mx-auto max-w-6xl px-6 py-16">
           {posts.length === 0 ? (

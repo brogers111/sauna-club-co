@@ -14,6 +14,7 @@ import { NewsletterSection } from "@/components/home/NewsletterSection";
 import { DirectionsAndHours } from "@/components/locations/DirectionsAndHours";
 import { MembershipCta } from "@/components/locations/MembershipCta";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { getLocationBySlug, locations } from "@/lib/data/locations";
 import { buildLocationServices } from "@/lib/data/location-services";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -231,19 +232,21 @@ export default async function LocationPage({ params }: LocationPageProps) {
   const badges = [
     `${location.amenities.saunas} Sauna${location.amenities.saunas === 1 ? "" : "s"}`,
     `${location.amenities.coldPlunges} Cold Plunge${location.amenities.coldPlunges === 1 ? "" : "s"}`,
-    `${location.amenities.hotTubs} Hot Tub${location.amenities.hotTubs === 1 ? "" : "s"}`,
+    `${location.amenities.hotTubs} Hot Mineral Bath${location.amenities.hotTubs === 1 ? "" : "s"}`,
     "∞ Community",
+  ];
+
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Locations", path: "/locations" },
+    { name: location.name, path: `/locations/${location.slug}` },
   ];
 
   return (
     <>
       <JsonLd
         data={[
-          breadcrumbListSchema([
-            { name: "Home", path: "/" },
-            { name: "Locations", path: "/locations" },
-            { name: location.name, path: `/locations/${location.slug}` },
-          ]),
+          breadcrumbListSchema(breadcrumbs),
           localBusinessSchema(location),
           ...services.map((service) => serviceSchema(location, service)),
           faqSchema(FAQS.map((faq) => ({ question: faq.question, answer: faq.plainAnswer }))),
@@ -270,6 +273,10 @@ export default async function LocationPage({ params }: LocationPageProps) {
         </section>
 
         <AnnouncementBanner />
+
+        <div className="mx-auto max-w-6xl px-6 pt-6">
+          <Breadcrumbs items={breadcrumbs} />
+        </div>
 
         <section className="mx-auto max-w-4xl px-6 py-16">
           <SectionHeading as="h2">About the Club</SectionHeading>

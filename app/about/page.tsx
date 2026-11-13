@@ -7,6 +7,7 @@ import { FitText } from "@/components/home/FitText";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ContactForm } from "@/components/about/ContactForm";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { getLocationBySlug } from "@/lib/data/locations";
 import { WHEAT_RIDGE_HOURS } from "@/lib/data/hours";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -23,13 +24,15 @@ export default function AboutPage() {
   const address = location ? `${location.streetAddress}, ${location.city}, ${location.region} ${location.postalCode}` : "";
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+  ];
+
   return (
     <>
       <JsonLd
-        data={breadcrumbListSchema([
-          { name: "Home", path: "/" },
-          { name: "About Us", path: "/about" },
-        ])}
+        data={breadcrumbListSchema(breadcrumbs)}
       />
       <Header overlay />
       <main>
@@ -58,6 +61,10 @@ export default function AboutPage() {
         </section>
 
         <AnnouncementBanner />
+
+        <div className="mx-auto max-w-6xl px-6 pt-6">
+          <Breadcrumbs items={breadcrumbs} />
+        </div>
 
         <section className="mx-auto max-w-6xl px-6 py-16">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">

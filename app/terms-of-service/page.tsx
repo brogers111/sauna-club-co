@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { breadcrumbListSchema } from "@/lib/seo/schema";
 import { CONTACT_EMAIL } from "@/lib/site-config";
@@ -31,17 +32,21 @@ function Term({ letter, title, children }: { letter: string; title: string; chil
 }
 
 export default function TermsOfServicePage() {
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Terms & Conditions", path: "/terms-of-service" },
+  ];
+
   return (
     <>
       <JsonLd
-        data={breadcrumbListSchema([
-          { name: "Home", path: "/" },
-          { name: "Terms & Conditions", path: "/terms-of-service" },
-        ])}
+        data={breadcrumbListSchema(breadcrumbs)}
       />
       <Header />
       <main className="mx-auto max-w-4xl px-6 py-16">
-        <h1 className="font-display text-6xl uppercase tracking-wide text-cream md:text-7xl">Terms &amp; Conditions</h1>
+        <Breadcrumbs items={breadcrumbs} />
+
+        <h1 className="mt-6 font-display text-6xl uppercase tracking-wide text-cream md:text-7xl">Terms &amp; Conditions</h1>
 
         <H2>1. Membership, Payments and Cancellation</H2>
         <Term letter="a" title="Recurring billing">

@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GlofoxResizableEmbed } from "@/components/glofox/GlofoxResizableEmbed";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { breadcrumbListSchema } from "@/lib/seo/schema";
 import { GLOFOX_URLS } from "@/lib/site-config";
@@ -14,17 +15,21 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function LoginPage() {
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Login or Register", path: "/profile" },
+  ];
+
   return (
     <>
       <JsonLd
-        data={breadcrumbListSchema([
-          { name: "Home", path: "/" },
-          { name: "Login or Register", path: "/profile" },
-        ])}
+        data={breadcrumbListSchema(breadcrumbs)}
       />
       <Header />
       <main className="mx-auto max-w-2xl px-6 py-16">
-        <h1 className="text-center font-display text-6xl uppercase tracking-wide text-cream md:text-7xl">
+        <Breadcrumbs items={breadcrumbs} />
+
+        <h1 className="mt-6 text-center font-display text-6xl uppercase tracking-wide text-cream md:text-7xl">
           Login or Register
         </h1>
         <p className="mt-4 text-center text-cream/80">

@@ -10,6 +10,7 @@ import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { Badge } from "@/components/ui/Badge";
 import { BookNowButton } from "@/components/ui/BookNowButton";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { locations } from "@/lib/data/locations";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { breadcrumbListSchema } from "@/lib/seo/schema";
@@ -21,13 +22,15 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function LocationsIndexPage() {
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Locations", path: "/locations" },
+  ];
+
   return (
     <>
       <JsonLd
-        data={breadcrumbListSchema([
-          { name: "Home", path: "/" },
-          { name: "Locations", path: "/locations" },
-        ])}
+        data={breadcrumbListSchema(breadcrumbs)}
       />
       <Header overlay />
       <main>
@@ -59,6 +62,10 @@ export default function LocationsIndexPage() {
         </section>
 
         <AnnouncementBanner />
+
+        <div className="mx-auto max-w-6xl px-6 pt-6">
+          <Breadcrumbs items={breadcrumbs} />
+        </div>
 
         <div className="mx-auto max-w-6xl px-6 py-16">
           <div className="flex flex-col gap-16">
