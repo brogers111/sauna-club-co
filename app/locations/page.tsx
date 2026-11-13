@@ -66,7 +66,7 @@ export default function LocationsIndexPage() {
               const badges = [
                 `${location.amenities.saunas} Sauna${location.amenities.saunas === 1 ? "" : "s"}`,
                 `${location.amenities.coldPlunges} Cold Plunge${location.amenities.coldPlunges === 1 ? "" : "s"}`,
-                `${location.amenities.hotTubs} Hot Tub${location.amenities.hotTubs === 1 ? "" : "s"}`,
+                `${location.amenities.hotTubs} Hot Mineral Bath${location.amenities.hotTubs === 1 ? "" : "s"}`,
                 "∞ Community",
               ];
 

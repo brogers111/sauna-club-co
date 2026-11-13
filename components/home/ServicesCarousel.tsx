@@ -22,11 +22,11 @@ export type ServiceItem = {
 const DEFAULT_SERVICES: ServiceItem[] = [
   {
     slug: "cold-plunge",
-    heading: "Cold Plunge",
+    heading: "Cold Plunge and Hot Mineral Bath",
     steamVariant: "left",
     image: { src: "/images/man-cold-plunge.webp", alt: "Man submerged in a cold plunge tub at Sauna Club Co" },
     paragraph:
-      "Cold water immersion has been used for centuries, from Scandinavian ice bathing to Roman cold plunge pools, for its ability to sharpen the mind and lift mood through a natural rush of adrenaline and dopamine. Beyond the immediate high, regular cold exposure supports faster muscle recovery, reduced inflammation, increased fat metabolism, and a stronger long-term resilience to stress.",
+      "Cold water immersion has been used for centuries, from Scandinavian ice bathing to Roman cold plunge pools, for its ability to sharpen the mind and lift mood through a natural rush of adrenaline and dopamine. Beyond the immediate high, regular cold exposure supports faster muscle recovery, reduced inflammation, increased fat metabolism, and a stronger long-term resilience to stress. Hot mineral baths can improve blood circulation, relieve tight muscles, improve joint pain, and enhance skin health. When paired with cold water immersion, it can have a tremendous recovery and healing effect from an injury or punishing physical training.",
   },
   {
     slug: "sauna",
@@ -34,11 +34,11 @@ const DEFAULT_SERVICES: ServiceItem[] = [
     steamVariant: "middle",
     image: { src: "/images/guys-sauna-1.webp", alt: "Two men relaxing on the cedar benches inside the sauna" },
     paragraph:
-      " Experience a profound sense of relaxation and renewal as you settle into our expertly crafted saunas. Custom-built, real wood, real steam, real heat, no shortcuts. Enjoy our large, multi-person saunas for a shared social heat, or zen out alone for a more reflective session. Beyond the soothing warmth and immediate relief of muscle tension, regular sauna use supports cardiovascular health, detoxification, and improves sleep quality. Recover. Circulate. Sleep deeper. Think clearer. Train harder. Glow.",
+      " Experience a profound sense of relaxation and renewal as you settle into our expertly crafted saunas. Custom-built, real wood, real steam, real heat, no shortcuts. Enjoy our large, multi-person saunas for a shared social heat, or zen out alone for a more reflective session. Beyond the soothing warmth and immediate relief of muscle tension, regular sauna use supports cardiovascular health, detoxification, and improves sleep quality. Recover. Circulate. Sleep deeper. Think clearer. Train harder. Thrive.",
   },
   {
-    slug: "socialize",
-    heading: "Socialize",
+    slug: "community",
+    heading: "Community",
     steamVariant: "right",
     image: { src: "/images/people-sauna-2.webp", alt: "A group socializing together inside the sauna" },
     paragraph:
