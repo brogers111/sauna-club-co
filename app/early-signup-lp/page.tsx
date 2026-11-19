@@ -19,7 +19,7 @@ import type { Location } from "@/lib/data/locations";
 const SIGNUP_ID = "early-signup";
 
 const PRE_OPENING_DIRECTIONS =
-  "Coming early 2027, Sauna Club Co will be located just off I-70. You can take the Kipling exit south, hang a left at Winchell's Donuts, and keep going past Dairy Queen. You'll spot us on the left, just before New Image Brewing Company.";
+  "Coming late 2026, Sauna Club Co will be located just off I-70. You can take the Kipling exit south, hang a left at Winchell's Donuts, and keep going past Dairy Queen. You'll spot us on the left, just before New Image Brewing Company.";
 
 // Future-tense carousel copy, since the club hasn't opened yet. Images and
 // headings still come from the shared location services.
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   ...buildMetadata({
     title: "Early Signup Discounts",
     description:
-      "Join the Sauna Club Co waitlist and receive discounts on memberships & session credit packs once we open in early 2027.",
+      "Join the Sauna Club Co waitlist and receive discounts on memberships & session credit packs once we open in late 2026.",
     path: "/early-signup-lp",
   }),
   robots: { index: false, follow: false },
@@ -83,7 +83,7 @@ export default function EarlySignupLandingPage() {
           <NewsletterSection
             id={SIGNUP_ID}
             heading="Discounts on Early Signups"
-            description="Join the Sauna Club Co waitlist and receive discount codes closer to our opening date in early 2027!"
+            description="Join the Sauna Club Co waitlist and receive discount codes closer to our opening date late 2026!"
             className="scroll-mt-28"
           />
 
