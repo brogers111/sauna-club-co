@@ -579,9 +579,469 @@ const saunaHat: BlogPost = {
   ],
 };
 
+const howLongToSauna: BlogPost = {
+  slug: "how-long-to-sauna",
+  title: "How Long Should You Stay in a Sauna?",
+  breadcrumbTitle: "How Long to Sauna",
+  headline: "How Long Should You Stay in a Sauna? A Guide to Sauna Session Length",
+  metaDescription:
+    "Wondering how long to stay in a sauna? Get practical tips on session length, beginner advice, and enjoying the heat at Sauna Club Co.",
+  readTimeMinutes: 8,
+  publishedAt: "2026-11-15",
+  featuredImage: {
+    src: "/images/how-long-to-sauna.webp",
+    alt: "Warmly lit cedar sauna with curved wooden benches, a tower sauna heater, and a copper bucket beside folded towels",
+  },
+  socialImage: {
+    src: "/images/how-long-to-sauna.jpg",
+    width: 1200,
+    height: 670,
+  },
+  content: [
+    {
+      type: "paragraph",
+      text: "One of the first questions people ask when they try a sauna is, \"How long am I supposed to stay in here?\" It's a good question! You want enough time to settle into the warmth, relax, and enjoy the experience without feeling like you're trying to win some kind of endurance contest.",
+    },
+    {
+      type: "paragraph",
+      text: "For most healthy adults, a sauna session of around 10–20 minutes is a common goal. If you're new to sauna bathing, just 5–10 minutes is an excellent starting point. Your ideal time depends on the sauna's temperature, your experience with heat, and how you're feeling that day.",
+    },
+    {
+      type: "paragraph",
+      text: [
+        "At ",
+        { text: "Sauna Club Co", href: "/about" },
+        " in Wheat Ridge, Colorado, we want sauna and cold plunge culture to be something you look forward to. Whether you're a longtime sauna fan or stepping into one for the first time, here's how to find a session length that feels right.",
+      ],
+    },
+
+    { type: "heading", text: "How Long Should You Stay in a Sauna?" },
+    {
+      type: "paragraph",
+      text: "A traditional Finnish sauna is typically enjoyed in sessions around 5–20 minutes. Many people settle into the 10–20-minute range once they're comfortable with the heat, but there's no single number everyone needs to hit.",
+    },
+    {
+      type: "paragraph",
+      text: "If you're new, start with 5–10 minutes and see how you feel. As you get familiar with the heat, you can gradually spend more time in the sauna. Experienced sauna-goers may enjoy sessions closer to 20 minutes, depending on the temperature and their comfort level.",
+    },
+    {
+      type: "paragraph",
+      text: "The goal isn't to stay as long as possible. It's to enjoy the warmth, give yourself a chance to unwind, and leave feeling good.",
+    },
+
+    { type: "heading", text: "What Factors Affect How Long You Should Stay in a Sauna?" },
+    {
+      type: "paragraph",
+      text: "A few things can change how quickly the heat feels intense. The biggest are temperature, humidity, and your own experience with sauna bathing.",
+    },
+    {
+      type: "paragraph",
+      text: "Traditional Finnish saunas use high temperatures, commonly around 175–195°F, although settings vary. The hotter the sauna, the more quickly you may feel the effects of the heat. A session that feels comfortable at one temperature may feel quite different at another.",
+    },
+    {
+      type: "paragraph",
+      text: "Also, traditional Finnish saunas are generally relatively dry, although adding water to the hot sauna stones creates a burst of steam and increases humidity. That can make the heat feel more intense. Humidity is one reason sauna experiences can feel different even when the temperature reading hasn't changed.",
+    },
+    {
+      type: "paragraph",
+      text: "If you're new to sauna bathing, your first few visits are a chance to get acquainted with the environment. Start with shorter sessions and gradually find your rhythm. If you've been enjoying saunas for years, you may already know what session length feels best for you. Remember, your comfort can vary from one visit to the next. There's no need to make every session identical.",
+    },
+
+    { type: "heading", text: "What Are the Benefits of Regular Sauna Use?" },
+    {
+      type: "paragraph",
+      text: "For many people, the biggest immediate appeal of a sauna is simple: it feels wonderful to slow down and spend time in the warmth. The heat encourages you to pause, put your phone away, and give yourself a little breathing room.",
+    },
+    {
+      type: "paragraph",
+      text: "There's also a growing body of research exploring the potential benefits of regular sauna bathing. Studies have examined associations with cardiovascular health and other aspects of well-being. During a sauna session, for example, heart rate typically increases as the body responds to the heat. Researchers are interested in how these temporary changes, along with repeated heat exposure over time, may relate to long-term health.",
+    },
+    {
+      type: "paragraph",
+      text: [
+        "A large Finnish study ",
+        {
+          text: "published in JAMA Internal Medicine",
+          href: "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2130724",
+        },
+        " found that more frequent sauna bathing was associated with a lower risk of fatal cardiovascular events among the middle-aged men studied. A separate long-term study ",
+        { text: "published in BMC Medicine", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6262976/" },
+        " examined sauna habits among both men and women and also found associations between more frequent sauna use and lower cardiovascular mortality.",
+      ],
+    },
+    {
+      type: "paragraph",
+      text: "You don't have to approach sauna bathing as a health project, though. Plenty of people simply enjoy the warmth, the chance to unplug, and the ritual of making time for themselves.",
+    },
+    { type: "heading", level: 3, text: "What Does Research Say About Sauna Session Length?" },
+    {
+      type: "paragraph",
+      text: "If you've looked into sauna research, you may have noticed that studies don't all use the same session length. Some examine a single sauna visit, while others look at people's habits over many years. Temperature, frequency, and time spent in the sauna can vary, too.",
+    },
+    {
+      type: "paragraph",
+      text: [
+        "A review ",
+        { text: "published in Mayo Clinic Proceedings", href: "https://pubmed.ncbi.nlm.nih.gov/30077204/" },
+        " describes traditional Finnish sauna sessions as typically lasting 5–20 minutes, with cooling-off periods in between. It also explains how sauna heat affects the cardiovascular system, including increasing heart rate and changing blood flow. Long-term Finnish studies often discussed in sauna research look at patterns of use over time—not a magic number of minutes in a single visit. They also don't establish that staying longer in one session automatically produces better results.",
+      ],
+    },
+    {
+      type: "paragraph",
+      text: "The practical takeaway? You don't need to chase a specific session length to enjoy a sauna. Start with a manageable amount of time, get comfortable with the heat, and build a routine you genuinely enjoy.",
+    },
+
+    { type: "cta", target: "book", text: "Find your perfect session length in our saunas" },
+
+    { type: "heading", text: "Should You Use a Sauna in Multiple Shorter Rounds?" },
+    {
+      type: "paragraph",
+      text: "Absolutely, give it a try! Many people enjoy breaking up their sauna time into a few shorter rounds rather than staying in for one continuous session. For example, you might spend 10–15 minutes enjoying the heat, step out to cool down, and then head back in for another round if you're feeling good.",
+    },
+    {
+      type: "paragraph",
+      text: "This approach is a natural part of traditional Finnish sauna culture. It gives you a chance to enjoy the warmth, take a breather, and settle back in without feeling like you need to do everything in one stretch. You can experiment with different session lengths and find a rhythm that makes your sauna experience even more enjoyable.",
+    },
+    { type: "heading", level: 3, text: "How Long Should You Rest Between Sauna Rounds?" },
+    {
+      type: "paragraph",
+      text: "There's no set amount of time you need to spend cooling down between rounds. The idea is to give yourself a chance to relax, rehydrate, and let your body temperature come down before returning to the heat.",
+    },
+    {
+      type: "paragraph",
+      text: "Some people enjoy a few minutes outside the sauna, while others prefer a longer break. At Sauna Club Co, you can use that time to unwind, enjoy the surroundings, or simply take a moment before your next round. When you feel refreshed and comfortable, you can decide whether you'd like to head back in.",
+    },
+    { type: "heading", level: 3, text: "Should You Combine a Sauna With a Cold Plunge?" },
+    {
+      type: "paragraph",
+      text: "If you're curious about cold plunging, pairing it with a sauna is a popular way to experience contrast therapy. The combination alternates the warmth of the sauna with the invigorating sensation of cool water, creating a fun change of pace during your visit.",
+    },
+    {
+      type: "paragraph",
+      text: "Some people love moving between hot and cold, while others prefer to enjoy the sauna on its own. Both are great ways to spend your time to improve your overall wellness. At Sauna Club Co, you can explore the traditional sauna, cold plunges, and mineral hot tub at your own pace. There's no required sequence or pressure to try everything—just enjoy the experience in the way that feels right to you.",
+    },
+
+    { type: "heading", text: "How to Enjoy a Sauna Safely" },
+    {
+      type: "paragraph",
+      text: "A little preparation goes a long way toward making sauna time comfortable and enjoyable. Pay attention to how you're feeling throughout your visit, and remember that your personal health and heat tolerance matter more than following a prescribed number of minutes.",
+    },
+    {
+      type: "paragraph",
+      text: "Certain health conditions and medications can affect how your body responds to heat. If you're pregnant, have a cardiovascular condition or blood-pressure concerns, or take medication that affects circulation or temperature regulation, talk with a healthcare professional about how to approach sauna sessions.",
+    },
+    { type: "heading", level: 3, text: "What Are the Signs You Have Stayed in a Sauna Too Long?" },
+    {
+      type: "paragraph",
+      text: "Wondering how to tell when you've spent enough time in the sauna? Watch for symptoms such as dizziness, lightheadedness, nausea, headache, unusual weakness, or a racing heartbeat. These can be signs that your body is having trouble handling the heat.",
+    },
+    {
+      type: "paragraph",
+      text: "If you experience any of them, leave the sauna and move somewhere cooler. Rest and allow yourself time to recover. Seek medical attention if symptoms are severe or don't improve, or if you experience fainting, chest pain, or difficulty breathing. The best sauna experience is one you finish feeling good about, not one where you have to push through discomfort.",
+    },
+    { type: "heading", level: 3, text: "Is It Safe to Use a Sauna Every Day?" },
+    {
+      type: "paragraph",
+      text: "For many healthy adults, frequent sauna bathing can be part of a regular wellness routine. Some people enjoy a sauna several times a week, while others prefer less frequent visits. Research on traditional Finnish sauna use has examined a range of weekly habits, including more frequent sessions.",
+    },
+    {
+      type: "paragraph",
+      text: "Ultimately, how often you enjoy a sauna is a personal choice. Find a routine that fits your schedule and feels good, whether that's a few visits a week or an occasional chance to unplug and relax. As you make friends and find your community with us, you might find yourself drawn to spend more time in our space.",
+    },
+
+    { type: "cta", target: "book", text: "Ready to settle into the heat?" },
+
+    { type: "heading", text: "Experience Sauna and Cold Plunge Culture at Sauna Club Co" },
+    {
+      type: "paragraph",
+      text: "If you're curious about sauna bathing, there's no need to show up as an expert. That's what trying something new is all about!",
+    },
+    {
+      type: "paragraph",
+      text: "At Sauna Club Co, the experience brings together traditional Finnish sauna, cold plunges, and a mineral hot tub in a welcoming social setting. You can enjoy the heat, take a break, cool off, and find a vibe that works for you.",
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Some people come for a quiet moment to themselves. Others enjoy catching up with friends or meeting people who share an appreciation for sauna and cold-plunge culture. There's room for both. Whether it's your first sauna session or one of many, start where you are, take your time, and enjoy the experience. We're happy to welcome you in. Explore our ",
+        { text: "pricing and memberships", href: "/pricing" },
+        " to learn more.",
+      ],
+    },
+
+    { type: "heading", text: "Sauna Timeframe FAQs" },
+    {
+      type: "faq",
+      items: [
+        {
+          question: "How long should you stay in a sauna?",
+          answer:
+            "For many healthy adults, 10–20 minutes is a typical sauna session. Beginners can start with 5–10 minutes and gradually increase their time as they become comfortable with the heat.",
+        },
+        {
+          question: "Is 30 minutes too long in a sauna?",
+          answer:
+            "Thirty minutes is longer than a typical continuous session in a traditional Finnish sauna. Most people are better off enjoying shorter rounds with time to cool down in between rather than trying to stay in for one extended session.",
+        },
+        {
+          question: "How long should you rest between sauna rounds?",
+          answer:
+            "Take enough time to cool down, hydrate, and feel comfortable before heading back in. Some people enjoy a few minutes between rounds; others prefer a longer break. There's no required countdown.",
+        },
+        {
+          question: "Can you cold plunge between sauna rounds?",
+          answer:
+            "Yes! Alternating between sauna heat and a cold plunge is a popular way to enjoy contrast therapy. At Sauna Club Co, you can explore that combination at your own pace. The cold plunge is optional, and you can enjoy the sauna without it.",
+        },
+        {
+          question: "How often should you use a sauna?",
+          answer:
+            "That depends on your preferences, health, and how your body responds to heat. Some people enjoy sauna bathing several times a week, while others visit more occasionally. Start with a routine that feels manageable and enjoyable.",
+        },
+      ],
+    },
+  ],
+};
+
+const saunaHealthBenefits: BlogPost = {
+  slug: "sauna-health-benefits",
+  title: "The Health Benefits of a Sauna",
+  breadcrumbTitle: "Sauna Benefits",
+  headline: "What Are the Health Benefits of Using a Sauna?",
+  metaDescription:
+    "Discover the many health benefits of sauna use, from relaxation and heart health to better sleep. Find your new favorite wellness ritual at Sauna Club Co.",
+  readTimeMinutes: 8,
+  publishedAt: "2026-11-24",
+  featuredImage: {
+    src: "/images/sauna-health-benefits.webp",
+    alt: "Softly lit wooden sauna with curved benches, steam rising from a stone-filled heater, and a copper bucket beside folded towels",
+  },
+  socialImage: {
+    src: "/images/sauna-health-benefits.jpg",
+    width: 1200,
+    height: 670,
+  },
+  content: [
+    {
+      type: "paragraph",
+      text: "You know that feeling when you step into a warm sauna, settle onto the bench, and suddenly have nowhere else to be? No notifications to answer, no errands to run, no reason to rush. Just soothing warmth, a little quiet, and some much-needed time to yourself.",
+    },
+    {
+      type: "paragraph",
+      text: [
+        "That alone makes a pretty good case for sauna time. But there's a lot more to the experience than just relaxation. Research suggests that regular sauna use supports a healthy heart, helps ease muscle pain, and can even give your brain, lungs, and sleep a boost. ",
+        { text: "Sauna Club Co", href: "/about" },
+        " is here to explain why this wellness practice is one of the best overall ways to take care of yourself.",
+      ],
+    },
+    {
+      type: "paragraph",
+      text: "So, what are the benefits of a sauna, what does the science say, and how often should you book a session? Let's dive in to learn more.",
+    },
+
+    { type: "heading", text: "What Is a Sauna and How Does It Work?" },
+    {
+      type: "paragraph",
+      text: "At its simplest, a sauna is a heated room where you spend a short amount of time warming up and sweating. As your body temperature rises, your heart rate increases, blood vessels near your skin expand, and your body starts sweating to cool itself down. It's a natural and healthy response to heat.",
+    },
+    {
+      type: "paragraph",
+      text: "Traditional saunas use heated stones, wood-burning stoves, or electric heaters to warm the air. Temperatures commonly range from about 150°F to 195°F, with relatively low humidity. The experience varies based on sauna type, but the idea is the same: settle in, enjoy the warmth, and give yourself a chance to slow down.",
+    },
+    { type: "heading", level: 3, text: "What Is the Difference Between a Dry Sauna, Steam Sauna, and Infrared Sauna?" },
+    {
+      type: "paragraph",
+      text: "However, not all sauna experiences feel the same. Traditional dry saunas, like the ones we offer at Sauna Club Co, feature high temperatures and relatively low humidity. A steam sauna, more commonly called a steam room, creates a warm, humid environment with lower air temperatures but plenty of moisture in the air. Meanwhile, an infrared sauna works a little differently, using infrared heaters to warm the body directly rather than relying on high ambient air temperatures.",
+    },
+    {
+      type: "paragraph",
+      text: "Each offers its own kind of warmth, so choosing one often comes down to personal preference.",
+    },
+
+    { type: "heading", text: "What Are the Main Benefits of Sauna Use?" },
+    {
+      type: "paragraph",
+      text: [
+        "Researchers have studied sauna bathing for its potential effects on several aspects of health. For example, a ",
+        { text: "review published in Mayo Clinic Proceedings", href: "https://pubmed.ncbi.nlm.nih.gov/30077204/" },
+        " examined research linking sauna use to cardiovascular, respiratory, and brain health, among other outcomes.",
+      ],
+    },
+    { type: "heading", level: 3, text: "1. Supports Cardiovascular Health" },
+    {
+      type: "paragraph",
+      text: [
+        "Your heart gets a light workout in the heat of a sauna. As your body warms up, your heart rate increases, and blood vessels widen, temporarily boosting circulation. These responses are part of how your body adapts to the sauna environment. There's also some interesting long-term research. A ",
+        {
+          text: "study published in JAMA Internal Medicine",
+          href: "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2130724",
+        },
+        " followed more than 2,000 Finnish men and found that those who used a sauna more frequently had a lower risk of fatal cardiovascular events during the study period.",
+      ],
+    },
+    {
+      type: "paragraph",
+      text: "That review we mentioned in Mayo Clinic Proceedings discusses possible connections between regular sauna bathing, blood pressure, and vascular function. We think a sauna is one of the best possible additions to a heart-healthy lifestyle, alongside the habits we already know matter.",
+    },
+    { type: "heading", level: 3, text: "2. Promotes Relaxation and Stress Relief" },
+    {
+      type: "paragraph",
+      text: "Sometimes you just crave 20 minutes to yourself when nobody needs anything from you. The warmth and quiet of a sauna make it a natural place to unwind. You can sit back, breathe, let your mind wander, or catch up with a friend without feeling like you need to be doing something else.",
+    },
+    {
+      type: "paragraph",
+      text: [
+        "There's a scientific interest in this side of sauna bathing, too. ",
+        { text: "Cleveland Clinic's overview of sauna benefits", href: "https://health.clevelandclinic.org/sauna-benefits" },
+        " discusses research suggesting sauna use may help reduce stress. Whether you prefer a peaceful solo session or a little light conversation to break up your day, making time to decompress is a worthwhile part of any daily routine.",
+      ],
+    },
+    { type: "heading", level: 3, text: "3. Aids Better Sleep" },
+    {
+      type: "paragraph",
+      text: "If you've ever had a relaxing evening and felt yourself naturally winding down afterward, you already understand part of the appeal. After a sauna session, your body starts cooling down, and that process complements its natural preparation for sleep as you leave the day's distractions behind. If a sauna helps you build a calmer evening routine, that's a pretty nice bonus on top of all the other benefits of sauna noted here.",
+    },
+    { type: "heading", level: 3, text: "4. Provides Temporary Relief From Muscle Tension and Pain" },
+    {
+      type: "paragraph",
+      text: "There's a reason warmth feels so good when you're stiff or sore. Heat increases blood flow near the skin and can create a soothing sensation throughout the body. Some studies have looked at sauna use for chronic pain and stiffness, including conditions such as rheumatoid arthritis and chronic back pain. The Mayo Clinic Proceedings review discusses these findings. But you don't need a specific ache or condition to appreciate the feeling – a little warmth goes a long way in easing the normal tension we build up throughout the day.",
+    },
+    { type: "heading", level: 3, text: "5. Positive Effects on Inflammation" },
+    {
+      type: "paragraph",
+      text: [
+        "Additionally, researchers are interested in whether regular sauna use may have an effect on inflammation in the body. One ",
+        { text: "study published in the European Journal of Epidemiology", href: "https://pubmed.ncbi.nlm.nih.gov/29209938/" },
+        " looked at sauna frequency and levels of C-reactive protein, a marker of systemic inflammation. It found that men who used a sauna more frequently tended to have lower levels of this marker, which is especially interesting if you struggle with this health issue.",
+      ],
+    },
+    { type: "heading", level: 3, text: "6. Associated With Long-Term Brain Health" },
+    {
+      type: "paragraph",
+      text: "Some long-term observational studies involving Finnish adults have found an association between more frequent sauna bathing and a lower risk of dementia and Alzheimer's disease. This connection is also discussed in the broader Mayo Clinic Proceedings review of sauna research.",
+    },
+    { type: "heading", level: 3, text: "7. Improved Respiratory Health" },
+    {
+      type: "paragraph",
+      text: [
+        "A ",
+        {
+          text: "long-term study published in the European Journal of Epidemiology",
+          href: "https://pubmed.ncbi.nlm.nih.gov/28905164/",
+        },
+        " found that more frequent sauna use was associated with a lower incidence of respiratory diseases among the Finnish men studied. Since the humidity of steam rooms can aggravate respiratory symptoms for some people, dry saunas may be a better option. This is something to ask your healthcare provider about if you have asthma, COPD, or another breathing-related condition.",
+      ],
+    },
+
+    { type: "cta", target: "book", text: "Feel the benefits of sauna for yourself" },
+
+    { type: "heading", text: "Does a Sauna Burn Calories, Fat, or Boost Your Metabolism?" },
+    {
+      type: "paragraph",
+      text: "It's easy to assume all that sweating in a sauna must be burning a lot of calories, but the reality is a little different. Yes, your body does use energy to regulate its temperature in a sauna, and your heart rate rises as it works to keep you cool. However, that doesn't mean you're burning significant amounts of fat or getting the same metabolic benefits as exercise.",
+    },
+    {
+      type: "paragraph",
+      text: "You might notice the scale dip after a session, but that's mostly water weight lost through sweating. Once you rehydrate, it may come back. So, enjoy the sauna for how it makes you feel, not what it does to the number on the scale.",
+    },
+
+    { type: "heading", text: "What Are the Benefits of Combining a Sauna With a Cold Plunge?" },
+    {
+      type: "paragraph",
+      text: "For many people, the sauna is just the beginning. Pairing a warm sauna session with a cold plunge creates a completely different kind of experience, with a refreshing shift from heat to cold. Often called contrast therapy, alternating between hot and cold has become a popular wellness ritual.",
+    },
+    {
+      type: "paragraph",
+      text: "Many people enjoy the invigorating sensation of a cold plunge after warming up in the sauna. It can also be a fun experience to share with friends. And there's no requirement to plunge: a sauna session is plenty satisfying on its own.",
+    },
+
+    { type: "heading", text: "How Often Should You Use and Stay in a Sauna?" },
+    {
+      type: "paragraph",
+      text: "There's no magic number of sauna sessions that works for everyone. Some people enjoy going once or twice a week; others make it more or less a part of their regular routine.",
+    },
+    {
+      type: "paragraph",
+      text: "Research on traditional Finnish sauna bathing often looks at multiple sessions per week, but those patterns aren't a prescription for everyone. If you're new to sauna use, start with a shorter session of around 5 to 10 minutes. As you get comfortable, you can gradually work up to longer sessions. Many people stay around 15 to 20 minutes, depending on the temperature and their individual tolerance.",
+    },
+
+    { type: "heading", text: "Sauna Safety: Precautions to Know" },
+    {
+      type: "paragraph",
+      text: "For healthy adults, sauna use is generally well tolerated when sessions are reasonable, and hydration is maintained. Still, heat exposure places demands on the cardiovascular system, so it's worth taking extra care if you have an underlying health condition.",
+    },
+    {
+      type: "paragraph",
+      text: [
+        "If you're pregnant, have heart disease or blood pressure concerns, have recently experienced a heart attack or stroke, or take medication that may affect hydration or temperature regulation, talk with your healthcare provider before using a sauna. ",
+        { text: "Cleveland Clinic's sauna safety guidance", href: "https://health.clevelandclinic.org/sauna-benefits" },
+        " offers additional information about who should take precautions.",
+      ],
+    },
+    {
+      type: "paragraph",
+      text: "The goal is to enjoy the warmth and leave feeling good—not to see how long you can tough it out.",
+    },
+
+    { type: "cta", target: "book", text: "Ready to make sauna part of your routine?" },
+
+    { type: "heading", text: "Experience the Benefits of Sauna at Sauna Club Co" },
+    {
+      type: "paragraph",
+      text: "A sauna session can mean a whole lot more than just spending time in a warm room. It's a chance to slow down, reconnect with yourself, and make wellness something you genuinely look forward to.",
+    },
+    {
+      type: "paragraph",
+      text: [
+        "At Sauna Club Co in Wheat Ridge, Colorado, we're bringing together the warmth of sauna bathing, the refreshing experience of cold plunging, and a welcoming atmosphere built around community. Whether you're a longtime sauna enthusiast or trying it for the first time, there's room to find your own path with us through ",
+        { text: "individual sessions", href: "/book-session" },
+        " and ",
+        { text: "membership options", href: "/buy-membership" },
+        ".",
+      ],
+    },
+    {
+      type: "paragraph",
+      text: "Come for the heat, stay for the reset, and make a little more space in your routine for feeling good.",
+    },
+
+    { type: "heading", text: "Sauna Benefits FAQs" },
+    {
+      type: "faq",
+      items: [
+        {
+          question: "What are the benefits of sauna use for overall health?",
+          answer:
+            "The benefits of a sauna include supporting cardiovascular and respiratory health, relaxation, and sleep while also easing muscle tension and promoting overall well-being.",
+        },
+        {
+          question: "Are saunas good for you every day?",
+          answer:
+            "Some people enjoy daily sauna sessions, but you don't need to use a sauna every day to enjoy the experience. Find a frequency that feels comfortable for you, and give yourself time to cool down and rehydrate between sessions.",
+        },
+        {
+          question: "Does a sauna detox your body?",
+          answer:
+            "Sweating helps regulate body temperature, and sweating it out can feel amazing. However, it's your liver and kidneys that really handle the body's detoxification processes.",
+        },
+        {
+          question: "Does combining a sauna with a cold plunge provide additional health benefits?",
+          answer:
+            "Combining a sauna with a cold plunge creates a contrast therapy experience, and many people enjoy the invigorating effect of moving from a warm sauna into cool water. The combination can make a wellness session feel even more refreshing, and it's a popular way to mix things up.",
+        },
+        {
+          question: "What are the benefits of using a sauna consistently?",
+          answer:
+            "Consistent sauna use allows you to make heat exposure a regular part of your wellness routine. Some long-term studies have linked frequent use with positive health outcomes.",
+        },
+      ],
+    },
+  ],
+};
+
 // Oldest first — a post's position here also sets its CTA banner colors
 // (see BlogContentRenderer), so append new posts to the end.
-export const blogPosts: BlogPost[] = [coldPlungeBenefits, saunaHat];
+export const blogPosts: BlogPost[] = [coldPlungeBenefits, saunaHat, howLongToSauna, saunaHealthBenefits];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);
